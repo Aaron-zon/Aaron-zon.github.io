@@ -3,12 +3,12 @@
 layout: home
 
 hero:
-  name: "My Blog And Docs"
-  text: "我的博客与文档"
+  name: "My Blog And Notes"
+  text: "我的博客与笔记"
   tagline: My great project tagline
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: Blog
       link: /markdown-examples
     - theme: alt
       text: API Examples
