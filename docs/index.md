@@ -3,15 +3,15 @@
 layout: home
 
 hero:
-  name: "My Blog And Notes"
-  text: "我的博客与笔记"
-  tagline: My great project tagline
+  name: "Aaron Blog And Notes"
+  text: "Aaron-zon记录与分享"
+  tagline: Recording and sharing
   actions:
     - theme: brand
-      text: Blog
+      text: 博客
       link: /markdown-examples
     - theme: alt
-      text: API Examples
+      text: 记录
       link: /api-examples
 
 features:
