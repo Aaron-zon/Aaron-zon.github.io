@@ -1,15 +1,28 @@
 import { defineConfig } from 'vitepress'
 
-const nav = [
+import type { Config as ThemeConfig } from '@vue/theme'
+
+const nav: ThemeConfig['nav'] = [
   // { text: 'Home', link: '/' },
   // { text: 'Examples', link: '/markdown-examples' },
   {
     text: '笔记',
     items: [
-      { text: 'vue3', link: '/vue3' }
+      { text: 'vue3', link: '/vue3/index' }
     ]
   }
 ]
+
+export const sidebar = {
+  '/vue3/': [
+    {
+      text: '开始',
+      items: [
+        { text: '简介', link: '/vue3/introduction' }
+      ]
+    }
+  ]
+}
 
 
 // https://vitepress.dev/reference/site-config
