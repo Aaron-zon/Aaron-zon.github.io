@@ -6,7 +6,6 @@ const nav: ThemeConfig['nav'] = [
     text: '笔记',
     items: [
       { text: 'vue3', link: '/vue3/change-efficiency' }
-
     ]
   }
 ]
@@ -14,9 +13,11 @@ const nav: ThemeConfig['nav'] = [
 export const sidebar: ThemeConfig['sidebar'] = {
   '/vue3/': [
     {
-      text: '开始',
+      text: '重大改变',
       items: [
-        { text: '重大改变', link: '/vue3/change-efficiency' }
+        { text: '效率提升', link: '/vue3/change-efficiency' },
+        { text: 'API和数据响应式的变化', link: '/vue3/change-api-and-reactivity' },
+        { text: '从 Webpack 到 Vite', link: '/vue3/change-webpack-to-vite' },
       ]
     }
   ]
