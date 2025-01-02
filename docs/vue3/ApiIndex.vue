@@ -3,6 +3,7 @@ import { data as apiIndex, APIGroup } from './api.data'
 import { onMounted, computed, ref } from 'vue'
 import { withBase } from 'vitepress'
 
+
 const search = ref()
 const query = ref('')
 

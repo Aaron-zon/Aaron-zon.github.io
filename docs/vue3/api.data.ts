@@ -23,7 +23,7 @@ export declare const data: APIGroup[]
 export default {
     watch: './*.md',
     load(): APIGroup[] {
-        return (sidebar)['/vue3/'].map((group) => ({
+        return (sidebar as MultiSidebarConfig)['/vue3/'].map((group) => ({
             text: group.text,
             anchor: slugify(group.text),
             items: group.items.map((item) => ({
