@@ -1,11 +1,7 @@
 import { defineConfig } from 'vitepress'
-
 import type { Config as ThemeConfig } from '@vue/theme'
-import { text } from 'stream/consumers'
 
 const nav: ThemeConfig['nav'] = [
-  // { text: 'Home', link: '/' },
-  // { text: 'Examples', link: '/markdown-examples' },
   {
     text: '笔记',
     items: [
@@ -14,7 +10,7 @@ const nav: ThemeConfig['nav'] = [
   }
 ]
 
-export const sidebar = {
+export const sidebar: ThemeConfig['sidebar'] = {
   '/vue3/': [
     {
       text: '开始',
