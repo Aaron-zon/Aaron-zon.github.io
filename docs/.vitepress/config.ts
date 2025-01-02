@@ -23,7 +23,6 @@ export const sidebar: ThemeConfig['sidebar'] = {
   ]
 }
 
-
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "My Blog",
