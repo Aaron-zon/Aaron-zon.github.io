@@ -13,7 +13,9 @@ SSR 渲染效率比 `Vue2` 提升了 2 ~ 3 倍
 - 预字符串化
 - 缓存事件处理函数
 - Block Tree
-- PatchFlag
+- PatchFlag  
+
+[Vue3 官网描述]([/guide/scaling-up/ssr#client-hydration](https://cn.vuejs.org/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom))
 
 ## 静态提升 {#static-promotion}
 
