@@ -3,16 +3,28 @@ import { blogRouter } from '../.vitepress/blogRouter'
 import { onMounted, computed, ref } from 'vue';
 import { withBase } from 'vitepress'
 
+const filtered = computed(() => {
+    const yearList = Object.keys(blogRouter).sort().reverse()
+    const result = []
+    for (const year of yearList) {
+        blogRouter[year].year = year
+        result.push(blogRouter[year])
+    }
+    return result
+})
 </script>
 
 <template>
     <div>Blog</div>
     <div class="blog-container">
         <ul class="year-blog-wrapper">
-            <li class="year-blog-group" v-for="(blogList, year) in blogRouter" :key="year">
-                <div class="year">{{ year }}</div>
-                <p v-for="item of blogList" :key="item.text" class="year-blog-item">
-                    <a :href="withBase(item.link) + '.html#'">{{ item.text  }}</a>
+            <li class="year-blog-group" v-for="blogList in filtered" :key="blogList.year">
+                <div class="year">{{ blogList.year }}</div>
+                <p v-for="item of blogList" 
+                    :key="item.text" 
+                    class="year-blog-item"
+                >
+                    <a class="text" :href="withBase(item.link) + '.html#'">{{ item.text  }}</a>
                 </p>
             </li>
         </ul>
@@ -22,7 +34,42 @@ import { withBase } from 'vitepress'
 <style scoped>
 .year-blog-wrapper {
     list-style: none;
+}
+
+.year-blog-group {
     position: relative;
+    margin-top: 100px;
+}
+
+.year-blog-item {
+    margin: 0;
+    padding: 0;
+}
+
+.year-blog-item a {
+    color: #666;
+    text-decoration: none;
+    position: relative;
+}
+
+.year-blog-item a:hover {
+    color: #000;
+}
+
+.text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.1s ease, left 0.1s ease;
+}
+
+.text:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .year {
@@ -41,7 +88,7 @@ import { withBase } from 'vitepress'
     tab-size: 4;
     text-size-adjust: 100%;
     position: absolute;
-    top: -70px;
+    top: -105px;
     left: -50px;
     opacity: .2;
     color: transparent;

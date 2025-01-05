@@ -7,5 +7,8 @@ export const blogRouter = {
 		{ text: 'React Native 极光推送 jpush-react-native', link: '/blog/blog-test-1'},
 		{ text: 'React Native 极光推送 react-native-amap-geolocation', link: '/blog/blog-test-1'},
 		{ text: 'window虚拟机与主机互ping问题', link: '/blog/blog-test-1'},
+	],
+	2023: [
+        { text: '第一篇文章', link: '/blog/blog-test-1'},
 	]
 }
