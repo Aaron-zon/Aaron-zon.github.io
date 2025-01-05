@@ -1,34 +1,33 @@
 <script setup>
-// import { data as blogRouter } from './blog.data'
 import { blogRouter } from '../.vitepress/blogRouter'
 import { onMounted, computed, ref } from 'vue';
 import { withBase } from 'vitepress'
 
-console.log('sda', blogRouter)
 </script>
 
 <template>
     <div>Blog</div>
     <div class="blog-container">
-        <ul>
-            <li v-for="(blogList, key) in blogRouter" :key="key">
-                <div class="year">{{ key }}</div>
-                <div v-for="blog in blogList" :key="blog.text">
-                    {{ blog.text }}
-                </div>
+        <ul class="year-blog-wrapper">
+            <li class="year-blog-group" v-for="(blogList, year) in blogRouter" :key="year">
+                <div class="year">{{ year }}</div>
+                <p v-for="item of blogList" :key="item.text" class="year-blog-item">
+                    <a :href="withBase(item.link) + '.html#'">{{ item.text  }}</a>
+                </p>
             </li>
         </ul>
     </div>
 </template>
 
 <style scoped>
-li {
+.year-blog-wrapper {
     list-style: none;
+    position: relative;
 }
 
 .year {
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: rgb(170, 170, 170);
+    -webkit-text-stroke-color: rgb(80, 80, 80);
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     font-feature-settings: normal;
     font-size: 128px;
@@ -42,10 +41,10 @@ li {
     tab-size: 4;
     text-size-adjust: 100%;
     position: absolute;
-    top: -32px;
-    left: -48px;
-    opacity: .1;
+    top: -70px;
+    left: -50px;
+    opacity: .2;
     color: transparent;
-
+    z-index: -1;
 }
 </style>
