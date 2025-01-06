@@ -88,7 +88,7 @@ function vuePlugin(rawOptions = {}) {
   const compiler = options.value.compiler = options.value.compiler || resolveCompiler(options.value.root);
 ```
 
-代码中会判断 `options.value.compiler` 是否有值，如果有则继续使用 `options.value.compiler`，如果没有则调用 `resolveCompiler` 方法，并用结果为 `options.value.compiler` 赋值。
+代码中会判断 `options.value.compiler` 是否有值，如果有则继续使用寄存的 `options.value.compiler`，如果没有则调用 `resolveCompiler` 方法，并用结果为 `options.value.compiler` 赋值。
 
 那么 `resolveCompiler` 是如何获取编译 `.vue文件` 所用的各种方法的呢？这些方法又存在哪里呢？
 
@@ -112,4 +112,5 @@ function tryResolveCompiler() {
 代码很简单，就是判断使用的 `Vue` 版本，如果是 `Vue3` 及以上版本就引入 `vue/compiler-sfc`，并将内容赋值给 `options.value.compiler`。
 
 也就是说我们要使用的编译 `.vue文件` 的方法来自于 `vue/compiler-sfc`。
+
 
