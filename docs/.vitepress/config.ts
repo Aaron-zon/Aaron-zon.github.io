@@ -19,6 +19,12 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'API和数据响应式的变化', link: '/vue3/change-api-and-reactivity' },
         { text: '从 Webpack 到 Vite', link: '/vue3/change-webpack-to-vite' },
       ]
+    },
+    {
+      text: 'Vue3 源码分析',
+      items: [
+        { text: 'Vue 文件编译', link: '/vue3/vue-file-compile' }
+      ]
     }
   ]
 }
