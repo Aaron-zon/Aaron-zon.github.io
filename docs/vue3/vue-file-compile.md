@@ -1,3 +1,6 @@
+---
+outline: deep
+---
 # Vue 文件编译
 
 ## 前言
@@ -173,7 +176,7 @@ async function transformMain(code, filename, options, ...) {
 }
 ```
 
-## createDescriptor
+#### createDescriptor
 
 `createDescriptor` 函数主要是将代码字符串拆解成 `descriptor` 对象，这个对象中包含 `script`、`template`、`style` 等部分。
 
@@ -240,14 +243,14 @@ export interface SFCDescriptor {
 
 ![descriptor](./images/vue-file-compile/7.png)
 
-#### 流程图
+**流程图**
 
 ![createDescriptor](./images/vue-file-compile/8.png)
 
-## genScriptCode
+#### genScriptCode
 
-## genTemplateCode
+#### genTemplateCode
 
-## genStyleCode
+#### genStyleCode
 
 ## transformStyle
