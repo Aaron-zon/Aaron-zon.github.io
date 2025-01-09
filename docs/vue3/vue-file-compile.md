@@ -127,13 +127,23 @@ function tryResolveCompiler() {
 以下是简化后的 `transform` 函数：
 
 ```ts
+/**
+ * id: 被导入文件路径（如：E:/xxx/project-name/src/test.vue?a=1?b=2）
+ */
 transform(code, id, opt) {
-  // ...
-  if (如果是vue文件) {
+  // filename: 被导入的文件名（E:/xxx/project-name/src/test.vue?a=1?b=2 -》 E:/xxx/project-name/src/test.vue）
+  // query: 文件路径后的参数（E:/xxx/project-name/src/test.vue?a=1?b=2 -》 {a: 1, b: 2}）
+  const { filename, query } = parseVueRequest(id);
+
+  // 判断是否有 vue 参数
+  if (!query.vue) {
     return transformMain(...)
   } else {
-    // 如果不是vue文件（如：.css）
-    return transformStyle(...)
+    const descriptor = query.src ? getSrcDescriptor(filename, query) || getTempSrcDescriptor(filename, query) : getDescriptor(filename, options.value);
+    // 判断是否为文件类型是否为 style
+    if (query.type === "style") {
+      return transformStyle(...)
+    }
   }
 }
 ```
@@ -203,7 +213,7 @@ function createDescriptor(filename, source, {
 
 编译 `descriptor` 对象使用了 `vue/compiler-sfc` 中暴露出来的函数 `parse`，这是我们遇到的第一个 Vue3 底层 API，在进入源码后，我们可以找到 `parse` 的定义，以及他的 **参数（SFCParseResult）** 和 **返回值（SFCParseResult）**，通过返回值我们还可以找到 `descriptor` 的接口定义 `SFCDescriptor`。
 
-```
+```ts
 export declare function parse(source: string, options?: SFCParseOptions): SFCParseResult;
 
 export interface SFCParseOptions {
@@ -249,8 +259,263 @@ export interface SFCDescriptor {
 
 #### genScriptCode
 
+`genScriptCode` 函数主要是将 `descriptor` 当作参数传入，将原代码的 `<script setup>` 部分编译为浏览器可执行的 js 代码。
+
+```ts
+function genScriptCode(descriptor, ...) {
+  // scriptIdentifier 是在全局定义的一个常量值 `_sfc_main`, 这句话相当于 const _sfc_main = {}
+  let scriptCode = `const ${scriptIdentifier} = {}`
+  // 这里调用 resolveScript 函数用于执行编译
+  const script = resolveScript(descriptor, options, ssr, customElement)
+  if (script) {
+    // 将编译后的代码赋值给 scriptCode
+    scriptCode = script.content
+    map = script.map
+  }
+  return { scriptCode, map }
+}
+
+/** 用于对 <script setup> 脚本代码进行编译 */
+function resolveScript(descriptor, options, ssr, customElement) : SFCScriptBlock {
+  let resolved = null
+  // 使用 vue/compiler-sfc 的 compileScript 函数进行编译
+  resolved = options.compiler.compileScript(descriptor, ...)
+  return resolved
+}
+
+```
+
+`SFCScriptBlock` 接口定义:
+
+```ts
+export interface SFCScriptBlock extends SFCBlock {
+  type: 'script'
+  setup?: string | boolean
+  bindings?: BindingMetadata
+  imports?: Record<string, ImportBinding>
+  scriptAst?: import('@babel/types').Statement[]
+  scriptSetupAst?: import('@babel/types').Statement[]
+  warnings?: string[]
+  deps?: string[]
+}
+
+export interface SFCBlock {
+  type: string
+  content: string // 编译后的 js 代码
+  attrs: Record<string, string | true>
+  loc: SourceLocation
+  map?: RawSourceMap
+  lang?: string
+  src?: string
+}
+
+```
+
+`scriptCode` 的值（`SFCBlock.content`）：
+
+![scriptCode](./images/vue-file-compile/9.png)
+
+原代码：
+
+```ts
+import { ref } from "vue";
+
+const msg = ref("hello word");
+```
+
+`genScriptCode` 执行流程图：
+
+![genScriptCode](./images/vue-file-compile/10.png)
+
 #### genTemplateCode
+
+`genTemplateCode` 函数主要是将 `descriptor` 当作参数传入，将原代码的 `<template>` 部分编译为浏览器可执行的 js 代码。
+
+```ts
+async function genTemplateCode(descriptor, ...) {
+  const template = descript.template
+  // template.content 就是 App.vue 中 template 标签内的代码，注意是标签内代码，不涵盖 template 标签
+  return transformTemplateInMain(template.content, ...)
+}
+
+function transformTemplate(code, ...) {
+  const result = compile(code, ...)
+
+  return {
+    ...result,
+    code: result.code.replace(
+      /\nexport (function|const) (render|ssrRender)/,
+      "\n$1 _sfc_$2"
+    )
+  }
+}
+
+function compile(code, ...) : SFCTemplateCompileResults {
+  const result = options.compiler.compileTemplate({
+    ...,
+    source: code
+  })
+  return result
+}
+```
+
+代码流程如上，`genTemplateCode` 先会调用 `transformTemplate` 函数，再由 `transformTemplate` 函数调用 `compile` 函数进行编译。
+
+`compile` 函数中，编译通样使用了 `vue/compiler-sfc` 中的函数，只不过这次由于编译的是 `template` 因此使用的是 `compileTemplate` 函数，返回值也变成了 `SFCTemplateCompileResults`。
+
+`SFCTemplateCompileResults` 接口定义:
+
+```ts
+export interface SFCTemplateCompileResults {
+    code: string; // 编译后的 js 代码
+    ast?: RootNode;
+    preamble?: string;
+    source: string; // 原代码
+    tips: string[];
+    errors: (string | CompilerError)[];
+    map?: RawSourceMap;
+}
+```
+
+`SFCTemplateCompileResults.code` :
+
+![SFCTemplateCompileResults.code](./images/vue-file-compile/11.png)
+
+原代码：
+
+```html
+<h1 class="msg" data-v-inspector="src/App.vue:8:3">{{ msg }}</h1>
+```
+
+`genTemplateCode` 执行流程图：
+
+![genTemplateCode](./images/vue-file-compile/12.png)
+
 
 #### genStyleCode
 
+`genStyleCode` 函数主要是将 `descriptor` 当作参数传入，将原代码的 `<style>` 部分编译为 **导入（import）** 语句。
+
+```ts
+async function genStyleCode(descriptor, ...) {
+  let styleCode = ``;
+
+  // 因为可能有多个 <script> 标签，因此需要循环遍历
+  if (descriptor.styles.length) {
+    const style = descriptor.styles[i];
+    const src = style.src || descriptor.filename;
+    const attrsQuery = attrsToQuery(style.attrs, "css");
+    const srcQuery = style.src ? style.scoped ? `&src=${descriptor.id}` : "&src=true" : "";
+    const directQuery = customElement ? `&inline` : ``;
+    const scopedQuery = style.scoped ? `&scoped=${descriptor.id}` : ``;
+    const query = `?vue&type=style&index=${i}${srcQuery}${directQuery}${scopedQuery}`;
+    const styleRequest = src + query + attrsQuery;
+
+    // 制作导入语句，换行是为了和其他 import 分隔开
+    stylesCode += `
+      import ${JSON.stringify(styleRequest)}`
+  }
+
+  return styleCode
+}
+```
+我们发现这里没有调用 `vue/compiler-sfc`，因为 `style` 真正的编译将在 `transformStyle` 函数中完成。此处只是制作导入语句，当导入语句被执行时会导入文件会触发 `transform` 函数，并在对文件类型判断后进入 `transformStyle` 函数。
+
+以下时 `App.vue` 的 `script` 被编译后，通过打印可以发现已经转换成了 **import** 语句。并且路径是当前 `App.vue`，只是后面多了几个 `query`，分别是：`vue`、`type`、`index`、`scoped`、`lang`。
+
+![styleCode](./images/vue-file-compile/13.png)
+
+还记得这段代码吗？ `transform` 会判断 `query` 中 是否带有 `vue` 参数，如果没有有 `vue` 参数，则进入 `transformMain` 函数。
+
+如果 `query` 中有 `vue` 参数，且 `query.type` 为 `style`，则进入 `transformStyle` 函数。
+
+```ts
+transform(code, id, opt) {
+  const { filename, query } = parseVueRequest(id);
+  if (!query.vue) {
+    // ...
+  } else {
+    const descriptor = query.src ? getSrcDescriptor(filename, query) || getTempSrcDescriptor(filename, query) : getDescriptor(filename, options.value);
+    if (query.type === "style") {
+      return transformStyle(...);
+    }
+  }
+}
+```
+
+`genStyleCode` 流程图：
+
+![genStyleCode](./images/vue-file-compile/14.png)
+
 ## transformStyle
+
+`transformStyle` 函数的作用是编译导入的 `style` 文件。
+
+以刚刚的`App.vue`为例，经过 `genStyleCode` 函数后，`styleCode` 的值为：
+
+```ts
+import "E:/pro/myPro/VueCore/vue-lear1/src/App.vue?vue&type=style&index=0&scoped=7a7a37b1&lang.css"
+```
+
+在文件导入时会触发 `transform`，经过 `query` 的判断后不出意外的执行 `transformStyle` 函数。
+
+![transform](./images/vue-file-compile/15.png)
+
+```ts
+async function transformStyle(code, descriptor, ...) {
+  const block = descriptor.styles[index];
+  const result = await options.compiler.compileStyleAsync({
+    source: code, // 原代码
+    scoped: block.scoped, // 是否带有 scoped
+    id: `data-v-${descriptor.id}`, // scoped 作用域id
+    ...
+  })
+
+  return {
+    code: result.code,
+    ...
+  }
+}
+```
+
+`compileStyleAsync` 的返回值类型：
+
+```ts
+export interface SFCStyleCompileResults {
+    code: string; // 编译后的 css 代码
+    map: RawSourceMap | undefined;
+    rawResult: Result | LazyResult | undefined;
+    errors: Error[];
+    modules?: Record<string, string>;
+    dependencies: Set<string>;
+}
+```
+
+`SFCStyleCompileResults.code` 的值：
+
+![SFCStyleCompileResults.code](./images/vue-file-compile/16.png)
+
+原代码：
+
+![App.vue style](./images/vue-file-compile/17.png)
+
+## 总结
+
+拆分来看 `Vue` 文件编译成 `JS` 的过程十分简单，每当 `Vite` 加载模块时，就会触发 `fransform` 函数。
+
+`fransform` 将 `Vue` 文件的 `script setup`、`template`、`style` 部分拆分并生成了 `descriptor` 对象。
+
+之后分别针对它们调用 `fransformMain` 中的 `genScriptCode`、`genTemplateCode`、`genStyleCode` 函数，编译生成 `JS` 代码。
+
+- `genScriptCode`：编译 `script setup` 部分，生成 `JS` 代码
+  - ⬆使用 `vue/compiler-sfc` 中的 `compileScript` 函数
+- `genTemplateCode`：编译 `template` 部分，生成 `render` 方法
+  - ⬆使用 `vue/compiler-sfc` 中的 `compileTemplate` 函数
+- `genStyleCode`：编译 `style` 部分，生成 `import` 语句
+
+在编译后进行组合也就完成了 `Vue` 到 `JS` 的转换。
+
+在之后当浏览器执行到 `import "E:/pro/myPro/VueCore/vue-lear1/src/App.vue?vue&type=style&index=0&scoped=7a7a37b1&lang.css"` 时，再次触发了模块加载，进入 `transform` 钩子函数，此时由于 `import` 语句的 `url` 中带有 `vue` 参数和 `type=style`，因此会执行 `transformStyle` 函数。
+
+在 `transformStyle` 中，使用了 `vue/compiler-sfc` 中的 `compileStyleAsync` 函数，将 `style` 部分编译为 `css` 代码。
+
