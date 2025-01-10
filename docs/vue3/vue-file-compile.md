@@ -368,7 +368,7 @@ function compile(code, ...) : SFCTemplateCompileResults {
 ```ts
 export interface SFCTemplateCompileResults {
     code: string; // 编译后的 js 代码
-    ast?: RootNode;
+    ast?: RootNode; // AST抽象语法树
     preamble?: string;
     source: string; // 原代码
     tips: string[];
