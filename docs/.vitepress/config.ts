@@ -5,7 +5,8 @@ const nav: ThemeConfig['nav'] = [
   {
     text: '笔记',
     items: [
-      { text: 'vue3', link: '/vue3/change-efficiency' }
+      { text: 'vue3', link: '/vue3/change-efficiency' },
+      { text: 'css', link: '/css3/css-selector' }
     ]
   }
 ]
@@ -24,6 +25,41 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Vue3 源码分析',
       items: [
         { text: 'Vue 文件编译', link: '/vue3/vue-file-compile' }
+      ]
+    },
+    {
+      text: 'Template 部分',
+      items: [
+        { text: 'baseCompile 函数', link: '/vue3/base-compile' }
+      ]
+    }
+
+    // Script
+    // Style
+  ],
+  '/css3/': [
+    {
+      text: 'CSS',
+      items: [
+        { text: 'CSS 选择器', link: '/css3/css-selector' },
+        // css 引入方式
+        // css 可继承属性
+        // 文字相关属性
+      ]
+    },
+    {
+      text: 'CSS3',
+      items: [
+        { text: 'css 和 css3 的关系', link: '/css3/css-and-css3' },
+        { text: 'css3 选择器', link: '/css3/css3-selector' },
+        // 背景
+        // 边框
+        // box
+        // text
+        // 预处理器和后处理器
+        // 网格布局
+        // 盒模型
+        // 动画
       ]
     }
   ]
