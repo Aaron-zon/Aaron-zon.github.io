@@ -42,7 +42,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'CSS',
       items: [
         { text: 'CSS 选择器', link: '/css3/css-selector' },
-        // css 引入方式
+        { text: 'CSS 引入方式', link: '/css3/css-import' },
         // css 可继承属性
         // 文字相关属性
       ]
