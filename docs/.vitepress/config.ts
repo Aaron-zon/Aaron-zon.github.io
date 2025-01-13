@@ -53,7 +53,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '预处理器和后处理器', link: '/css/preprocessor-and-postprocessor'},
         { text: 'CSS3 选择器', link: '/css/css3-selector' },
         { text: '盒模型', link: '/css/css3-box' },
-        { text: 'flex 布局', link: '/css/css3-flex' }
+        { text: 'Flex 布局', link: '/css/css3-flex' }
 
         // 背景
         // 边框
