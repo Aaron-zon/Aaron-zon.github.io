@@ -45,15 +45,13 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'CSS 引入方式', link: '/css3/css-import' },
         { text: 'CSS 常用样式', link: '/css3/css-base-style'},
         { text: 'CSS 可继承样式', link: '/css3/css-extends-style'},
-
-        // css 可继承属性
-        // 文字相关属性
       ]
     },
     {
       text: 'CSS3',
       items: [
         { text: 'css 和 css3 的关系', link: '/css3/css-and-css3' },
+        { text: '预处理器和后处理器', link: '/css3/preprocessor-and-postprocessor'},
         { text: 'css3 选择器', link: '/css3/css3-selector' },
         // 背景
         // 边框
