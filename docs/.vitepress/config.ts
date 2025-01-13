@@ -6,7 +6,7 @@ const nav: ThemeConfig['nav'] = [
     text: '笔记',
     items: [
       { text: 'vue3', link: '/vue3/change-efficiency' },
-      { text: 'css', link: '/css3/css-selector' }
+      { text: 'css', link: '/css/css-selector' }
     ]
   }
 ]
@@ -33,26 +33,26 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'baseCompile 函数', link: '/vue3/base-compile' }
       ]
     }
-
     // Script
     // Style
   ],
-  '/css3/': [
+  '/css/': [
     {
       text: 'CSS',
       items: [
-        { text: 'CSS 选择器', link: '/css3/css-selector' },
-        { text: 'CSS 引入方式', link: '/css3/css-import' },
-        { text: 'CSS 常用样式与单位', link: '/css3/css-base-style'},
-        { text: 'CSS 可继承样式', link: '/css3/css-extends-style'},
+        { text: 'CSS 选择器', link: '/css/css-selector' },
+        { text: 'CSS 引入方式', link: '/css/css-import' },
+        { text: 'CSS 常用样式与单位', link: '/css/css-base-style'},
+        { text: 'CSS 可继承样式', link: '/css/css-extends-style'},
       ]
     },
     {
       text: 'CSS3',
       items: [
-        { text: 'css 和 css3 的关系', link: '/css3/css-and-css3' },
-        { text: '预处理器和后处理器', link: '/css3/preprocessor-and-postprocessor'},
-        { text: 'css3 选择器', link: '/css3/css3-selector' },
+        { text: 'css 和 css3 的关系', link: '/css/css-and-css3' },
+        { text: '预处理器和后处理器', link: '/css/preprocessor-and-postprocessor'},
+        { text: 'css3 选择器', link: '/css/css3-selector' },
+        { text: '盒模型', link: '/css/css3-box' }
         // 背景
         // 边框
         // box
