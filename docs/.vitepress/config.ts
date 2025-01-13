@@ -49,10 +49,12 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'CSS3',
       items: [
-        { text: 'css 和 css3 的关系', link: '/css/css-and-css3' },
+        { text: 'CSS 和 CSS3 的关系', link: '/css/css-and-css3' },
         { text: '预处理器和后处理器', link: '/css/preprocessor-and-postprocessor'},
-        { text: 'css3 选择器', link: '/css/css3-selector' },
-        { text: '盒模型', link: '/css/css3-box' }
+        { text: 'CSS3 选择器', link: '/css/css3-selector' },
+        { text: '盒模型', link: '/css/css3-box' },
+        { text: 'flex 布局', link: '/css/css3-flex' }
+
         // 背景
         // 边框
         // box
