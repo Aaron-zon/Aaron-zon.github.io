@@ -69,6 +69,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
 export default defineConfig({
   title: "My Blog",
   description: "我的博客和文档",
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vite.svg' }],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav,
