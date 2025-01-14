@@ -54,7 +54,7 @@ Flex 布局，即 弹性布局，是 CSS3 中新增的布局方式，它允许�
 | <nobr> align-items </nobr> | 设置交叉轴对齐方式 | flex-start / flex-end / center / baseline / stretch |
 | <nobr> align-content </nobr> | 设置多根轴线对齐方式 | flex-start / flex-end / center / space-between / space-around / stretch |
 
-### flex-direction
+### flex-direction（主轴方向）
 
 `flex-direction` 决定了主轴的方向。
 
@@ -65,13 +65,51 @@ Flex 布局，即 弹性布局，是 CSS3 中新增的布局方式，它允许�
 
 ![flex-direction](./images/css3-flex/1.png)
 
-### flex-wrap
+### flex-wrap（换行）
 
 `flex-wrap` 决定如何换行。正常情况下在容器尺寸不足时，元素会换行并继续按照主轴方向排列。
 
 `Flex 布局`中提供了多种灵活的换行方式
 
-- nowrap：不换行，元素会溢出容器。
-- wrap：正常换行。
-- wrap-reverse：换行，但换行方向相反。
+- **nowrap**：（默认）不换行，元素会溢出容器。
+![nowrap](./images/css3-flex/2.png)
+- **wrap**：正常换行。
+![wrap](./images/css3-flex/3.png)
+- **wrap-reverse**：换行，但换行方向相反。
+![wrap-reverse](./images/css3-flex/4.png)
 
+### flex-flow（主轴方向 换行）
+
+`flex-flow` 是 `flex-direction` 和 `flex-wrap` 的结合，默认值为 `row nowrap`。
+
+他的参数有两个，第一个用于设置 `flex-direction`，第二个用于设置 `flex-wrap`。
+
+```css
+.box {
+  flex-flow: <flex-direction> || <flex-wrap>;
+}
+```
+
+### justify-content（主轴对其方式）
+
+`justify-content` 属性决定主轴上的对齐方式。
+
+注意是主轴方向的对齐方式，因为 `flex 布局` 可以使用 `flex-direction` 来改变主轴，因此主轴不是一直都是水平方向。
+
+- flex-start：（默认）左对齐
+- flex-end：右对齐
+- center：居中
+- spance-between：两队对其，项目之间间隔相等
+- spance-around：每个项目两侧相等，因此项目之间的间隔比项目与边框的间隔大一倍。
+
+![justify-content](./images/css3-flex/5.png)
+
+### align-items（交叉轴对齐方式）
+
+`align-items` 属性决定交叉轴上的对齐方式。
+
+- flex-start
+- flex-end
+- center
+- baseline
+- stretch
