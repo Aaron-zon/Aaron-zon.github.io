@@ -99,7 +99,7 @@ Flex 布局，即 弹性布局，是 CSS3 中新增的布局方式，它允许�
 - flex-start：（默认）左对齐
 - flex-end：右对齐
 - center：居中
-- spance-between：两队对其，项目之间间隔相等
+- spance-between：两队对齐，项目之间间隔相等
 - spance-around：每个项目两侧相等，因此项目之间的间隔比项目与边框的间隔大一倍。
 
 ![justify-content](./images/css3-flex/5.png)
@@ -108,8 +108,19 @@ Flex 布局，即 弹性布局，是 CSS3 中新增的布局方式，它允许�
 
 `align-items` 属性决定交叉轴上的对齐方式。
 
-- flex-start
-- flex-end
-- center
-- baseline
-- stretch
+- flex-start：交叉轴起点对齐
+- flex-end：交叉轴终点对齐
+- center：交叉轴中点对齐
+- baseline：项目第一行文字基线对齐
+- stretch：（默认）如果未设置高度或设置为auto时，沾满整个容器
+
+### align-content
+
+`align-content` 属性定义了多根轴线的对齐方式，如果项目只有一根轴线，该属性不起作用
+
+- flex-start：与交叉轴的起点对齐
+- flex-end：与交叉轴的终点对齐
+- center：交叉轴的中点对齐
+- space-between：与交叉轴两端对齐，轴线之间的间隔平均分布
+- space-around：根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍
+- stretch：（默认）轴线占满整个交叉轴
