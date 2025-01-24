@@ -114,6 +114,8 @@ Flex 布局，即 弹性布局，是 CSS3 中新增的布局方式，它允许�
 - baseline：项目第一行文字基线对齐
 - stretch：（默认）如果未设置高度或设置为auto时，沾满整个容器
 
+![align-items](./images/css3-flex/6.png)
+
 ### align-content
 
 `align-content` 属性定义了多根轴线的对齐方式，如果项目只有一根轴线，该属性不起作用
@@ -124,3 +126,74 @@ Flex 布局，即 弹性布局，是 CSS3 中新增的布局方式，它允许�
 - space-between：与交叉轴两端对齐，轴线之间的间隔平均分布
 - space-around：根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍
 - stretch：（默认）轴线占满整个交叉轴
+
+![align-content](./images/css3-flex/7.png)
+
+## 子元素的样式
+
+以下的样式需要设置在 `flex` 容器的子元素上
+
+- order
+- flex-grow
+- flex-shrink
+- flex-basis
+- flex
+- align-self
+
+### order
+
+`order` 属性用于对容器内子元素进行排序，值越小，排列越靠前，默认为 0。
+
+```html
+<div class="box">
+  <div class="item-1">1</div>
+  <div class="item-2">2</div>
+  <div class="item-3">3</div>
+  ...
+</div>
+```
+```css
+.box { display: flex; }
+
+.item-1 { order: 1; }
+.item-2 { order: 2; }
+...
+```
+
+![order](./images/css3-flex/8.png)
+
+### flex-grow
+
+`flex-grow` 用于设置容器内子元素的放大比例，默认为0（即就算存在剩余空间，也不放大）。
+
+```css
+.item-1 {
+  flex-grow: <number>; /* default 0 */
+}
+```
+
+![flex-grow](./images/css3-flex/9.png)
+
+如果所有项目的 `flex-grow` 属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的 `flex-grow` 属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
+
+### flex-shrink
+
+`flex-shrink` 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+
+```css
+.item-1 {
+  flex-shrink: <number>; /* default 1 */
+}
+```
+
+![flex-shrink](./images/css3-flex/10.png)
+
+如果所有项目的 `flex-shrink` 属性都为1，当空间不足时，都将等比例缩小。如果一个项目的 `flex-shrink` 属性为0，其他项目都为1，则空间不足时，前者不缩小。
+
+负值对该属性无效。
+
+### flex-basis
+
+### flex
+
+### align-self
