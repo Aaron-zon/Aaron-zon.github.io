@@ -7,9 +7,9 @@ hero:
   text: "Aaron-zon记录与分享"
   tagline: Recording and sharing
   actions:
-    - theme: brand
-      text: 博客
-      link: /blog
+    # - theme: brand
+    #   text: 博客
+    #   link: /blog
     # - theme: alt
     #   text: 记录
     #   link: /api-examples
