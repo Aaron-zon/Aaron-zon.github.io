@@ -56,15 +56,29 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'Flex 布局', link: '/css/css3-flex' },
         { text: 'background', link: '/css/css3-background' },
         { text: 'border', link: '/css/css3-border' },
-        // box
         // text
-        // 预处理器和后处理器
         // 网格布局
-        // 盒模型
         // 动画
       ]
     }
-  ]
+  ],
+  '/python/': [
+    {
+      text: 'Python 基础',
+      items: [
+        { text: 'python 介绍', link: '/python/python-intro' },
+        { text: 'python 安装', link: '/python/python-install' },
+        { text: 'python 数据类型', link: '/python/python-' },
+        { text: 'python 流程控制', link: '/python/python-' },
+        { text: 'python 正则', link: '/python/python-' },
+        { text: 'python 模块化', link: '/python/python-' },
+        { text: 'python IO', link: '/python/python-' },
+        { text: 'python 异常处理', link: '/python/python-' },
+        { text: 'python JSON', link: '/python/python-' },
+        { text: 'python 常用内置包', link: '/python/python-' },
+      ],
+    }
+  ],
 }
 
 // https://vitepress.dev/reference/site-config
