@@ -24,24 +24,24 @@ python -V
 
 ## Python 常用命令行参数
 
-- python -V 或 python --version
+- `python -V` 或 `python --version`
   - 查看当前 Python 版本
-- python -c <command>
+- `python -c <command>`
   - 直接运行单行 Python 代码
   - 示例：python -c "print('Hello World')"
-- python -m <module>
+- `python -m <module>`
   - 以脚本形式运行模块
   - 示例：python -m http.server （启动一个简单的 HTTP 服务器）
-- python -i <script.py>
+- `python -i <script.py>`
   - 运行脚本后进入交互模式，保留变量和状态
   - python -i script.py
-- python -h 或 python --help
+- `python -h` 或 `python --help`
   - 查看 Python 命令行帮助信息
-- python -m pip install <package>
+- `python -m pip install <package>`
   - 使用 `pip` 安装 Python 包
-- python -m site
+- `python -m site`
   - 查看 Python 的路径配置
-  
+
 ## pip 介绍
 
 `pip` 是 Python 的官方包管理工具（相当于前端的 npm）。它用于 `安装`、`管理`、`卸载` 第三方 Python 包，是在项目开发、脚本运行、构建应用程序时不可或缺的工具
@@ -82,7 +82,7 @@ python get-pip.py
 
 ## pip 的基本用法
 
-安装包
+**安装包**
 
 ```bash
 pip install <package_name>
@@ -100,7 +100,7 @@ pip install <package_name>==<version>
 pip install requests==1.21.0
 ```
 
-卸载包
+**卸载包**
 
 ```bash
 pip uninstall <package_name>
@@ -109,7 +109,7 @@ pip uninstall <package_name>
 pip uninstall requests
 ```
 
-升级包
+**升级包**
 
 ```bash
 pip install --upgrade <package_name>
@@ -168,7 +168,7 @@ pip install <package_name> -i <mirror_url>
 pip install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-永久修改镜像源
+**永久修改镜像源**
 
 ```bash
 pip config set global.index-url <mirror_url>
