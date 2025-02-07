@@ -6,7 +6,8 @@ const nav: ThemeConfig['nav'] = [
     text: '笔记',
     items: [
       { text: 'vue3', link: '/vue3/change-efficiency' },
-      { text: 'css', link: '/css/css-selector' }
+      { text: 'css', link: '/css/css-selector' },
+      { text: 'python', link: '/python/python-intro' },
     ]
   }
 ]
@@ -68,7 +69,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'python 介绍', link: '/python/python-intro' },
         { text: 'python 安装', link: '/python/python-install' },
-        { text: 'python 数据类型', link: '/python/python-' },
+        { text: 'python 数据类型', link: '/python/python-data-type' },
         { text: 'python 流程控制', link: '/python/python-' },
         { text: 'python 正则', link: '/python/python-' },
         { text: 'python 模块化', link: '/python/python-' },
