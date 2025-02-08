@@ -70,7 +70,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'python 介绍', link: '/python/python-intro' },
         { text: 'python 安装', link: '/python/python-install' },
         { text: 'python 数据类型', link: '/python/python-data-type' },
-        { text: 'python 流程控制', link: '/python/python-' },
+        { text: 'python 流程控制', link: '/python/python-control' },
         { text: 'python 正则', link: '/python/python-' },
         { text: 'python 模块化', link: '/python/python-' },
         { text: 'python IO', link: '/python/python-' },
