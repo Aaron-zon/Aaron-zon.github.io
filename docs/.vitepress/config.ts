@@ -72,7 +72,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'python 数据类型', link: '/python/python-data-type' },
         { text: 'python 流程控制', link: '/python/python-control' },
         { text: 'python 正则', link: '/python/python-reg-exp' },
-        { text: 'python 模块化', link: '/python/python-' },
+        { text: 'python 模块化', link: '/python/python-modules' },
         { text: 'python IO', link: '/python/python-' },
         { text: 'python 异常处理', link: '/python/python-' },
         { text: 'python JSON', link: '/python/python-' },
