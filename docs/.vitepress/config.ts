@@ -22,18 +22,18 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '从 Webpack 到 Vite', link: '/vue3/change-webpack-to-vite' },
       ]
     },
-    // {
-    //   text: '模板编译',
-    //   items: [
-    //     { text: 'Vue 文件编译', link: '/vue3/vue-file-compile' },
-    //     {
-    //       text: 'Template 部分',
-    //       items: [
-    //         { text: 'baseCompile 函数', link: '/vue3/base-compile' }
-    //       ]
-    //     }
-    //   ]
-    // },
+    {
+      text: '模板编译',
+      items: [
+        { text: 'Vue 文件编译', link: '/vue3/vue-file-compile' },
+        {
+          text: 'Template 部分',
+          items: [
+            { text: 'baseCompile 函数', link: '/vue3/base-compile' }
+          ]
+        }
+      ]
+    },
     // {
     //   text: '响应式原理',
     //   items: [
