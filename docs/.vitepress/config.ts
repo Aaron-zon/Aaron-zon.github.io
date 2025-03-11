@@ -22,42 +22,42 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '从 Webpack 到 Vite', link: '/vue3/change-webpack-to-vite' },
       ]
     },
-    {
-      text: '模板编译',
-      items: [
-        { text: 'Vue 文件编译', link: '/vue3/vue-file-compile' },
-        {
-          text: 'Template 部分',
-          items: [
-            { text: 'baseCompile 函数', link: '/vue3/base-compile' }
-          ]
-        }
-      ]
-    },
-    {
-      text: '响应式原理',
-      items: [
-        { text: 'MVVM 和 MVC', link: '/vue3/reactive-mvvm-mvc' },
-        { text: '响应式原理', link: '/vue3/reactive-principle' },
-        { text: '响应式实现', link: '/vue3/reactive-implement' },
-      ]
-    },
-    {
-      text: '虚拟DOM',
-      items: []
-    },
-    {
-      text: 'diff 算法',
-      items: []
-    },
-    {
-      text: '组件渲染与更新',
-      items: []
-    },
-    {
-      text: '异步更新',
-      items: []
-    }
+    // {
+    //   text: '模板编译',
+    //   items: [
+    //     { text: 'Vue 文件编译', link: '/vue3/vue-file-compile' },
+    //     {
+    //       text: 'Template 部分',
+    //       items: [
+    //         { text: 'baseCompile 函数', link: '/vue3/base-compile' }
+    //       ]
+    //     }
+    //   ]
+    // },
+    // {
+    //   text: '响应式原理',
+    //   items: [
+    //     { text: 'MVVM 和 MVC', link: '/vue3/reactive-mvvm-mvc' },
+    //     { text: '响应式原理', link: '/vue3/reactive-principle' },
+    //     { text: '响应式实现', link: '/vue3/reactive-implement' },
+    //   ]
+    // },
+    // {
+    //   text: '虚拟DOM',
+    //   items: []
+    // },
+    // {
+    //   text: 'diff 算法',
+    //   items: []
+    // },
+    // {
+    //   text: '组件渲染与更新',
+    //   items: []
+    // },
+    // {
+    //   text: '异步更新',
+    //   items: []
+    // }
     // {
     //   text: 'Template 部分',
     //   items: [
