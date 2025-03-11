@@ -23,25 +23,25 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: '模板编译',
+      text: 'Vue 文件编译',
       items: [
-        { text: 'Vue 文件编译', link: '/vue3/vue-file-compile' },
-        {
-          text: 'Template 部分',
-          items: [
-            { text: 'baseCompile 函数', link: '/vue3/base-compile' }
-          ]
-        }
+        { text: 'Vue 文件编译成 JS 文件', link: '/vue3/vue-file-compile' },
       ]
     },
-    // {
-    //   text: '响应式原理',
-    //   items: [
-    //     { text: 'MVVM 和 MVC', link: '/vue3/reactive-mvvm-mvc' },
-    //     { text: '响应式原理', link: '/vue3/reactive-principle' },
-    //     { text: '响应式实现', link: '/vue3/reactive-implement' },
-    //   ]
-    // },
+    {
+      text: '模板编译 Template',
+      items: [
+        { text: 'baseCompile 函数', link: '/vue3/base-compile' }
+      ]
+    },
+    {
+      text: '响应式原理',
+      items: [
+        { text: 'MVVM 和 MVC', link: '/vue3/reactive-mvvm-mvc' },
+        { text: '响应式原理', link: '/vue3/reactive-principle' },
+        // { text: '响应式实现', link: '/vue3/reactive-implement' },
+      ]
+    },
     // {
     //   text: '虚拟DOM',
     //   items: []
