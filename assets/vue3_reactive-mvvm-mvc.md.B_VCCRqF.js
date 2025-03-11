@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.Db5sgsAJ.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/reactive-mvvm-mvc.md","filePath":"vue3/reactive-mvvm-mvc.md"}'),c={name:"vue3/reactive-mvvm-mvc.md"};function r(v,m,o,s,n,i){return a(),t("div")}const d=e(c,[["render",r]]);export{_ as __pageData,d as default};
