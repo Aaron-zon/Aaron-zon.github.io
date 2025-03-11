@@ -40,9 +40,6 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'MVVM 和 MVC', link: '/vue3/reactive-mvvm-mvc' },
         { text: '响应式原理', link: '/vue3/reactive-principle' },
         { text: '响应式实现', link: '/vue3/reactive-implement' },
-        { text: 'Object.defineProperty', link: '/vue3/reactive-Object-defineProperty' },
-        { text: 'Proxy', link: '/vue3/reactive-proxy' },
-
       ]
     },
     {
