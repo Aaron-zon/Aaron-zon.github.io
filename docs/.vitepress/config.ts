@@ -39,13 +39,17 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'MVVM 和 MVC', link: '/vue3/reactive-mvvm-mvc' },
         { text: '响应式原理', link: '/vue3/reactive-principle' },
+        // 订阅者 Dep
+        // 观察者 Watcher
         // { text: '响应式实现', link: '/vue3/reactive-implement' },
       ]
     },
-    // {
-    //   text: '虚拟DOM',
-    //   items: []
-    // },
+    {
+      text: '虚拟DOM',
+      items: [
+        { text: '什么是虚拟 DOM', link: '/vue3/virtual-dom' }
+      ]
+    },
     // {
     //   text: 'diff 算法',
     //   items: []
