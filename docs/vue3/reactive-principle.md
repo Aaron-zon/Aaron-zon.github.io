@@ -75,3 +75,9 @@ data.arr.push(4) // [1, 2, 3, 4]
 // 无法触发响应式
 data.arr[4] = 5
 ```
+
+此外还有一些细节问题，比如 `Object.defineProperty` 只能对对象本身进行监听，不能对对象内的属性进行监听。因此 Vue2 使用 `Object.defineProperty` 的同时还进行了 **递归处理** ，为每一个需要监听的属性递归调用 `Object.defineProperty` 。
+
+## Vue3 的响应式原理
+
+Vue3 使用了 ES6 的 `Proxy` 对象来处理响应式。
