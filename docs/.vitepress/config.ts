@@ -8,6 +8,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'vue3', link: '/vue3/change-efficiency' },
       { text: 'css', link: '/css/css-selector' },
       { text: 'python', link: '/python/python-intro' },
+      { text: 'docker', link: '/docker/docker-intro' },
     ]
   }
 ]
@@ -110,6 +111,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ],
     }
   ],
+  '/docker/': [
+    {
+      text: 'Docker 基础',
+      items: [
+        {text: 'docker 介绍', link: '/docker/docker-intro'}
+      ]
+    }
+  ]
 }
 
 // https://vitepress.dev/reference/site-config
