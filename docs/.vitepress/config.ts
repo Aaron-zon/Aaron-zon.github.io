@@ -45,15 +45,12 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: '虚拟DOM',
+      text: '虚拟DOM算法',
       items: [
-        { text: '什么是虚拟 DOM', link: '/vue3/virtual-dom' }
+        { text: '什么是虚拟 DOM', link: '/vue3/virtual-dom' },
+        { text: 'diff 算法', link: '/vue3/diff' }
       ]
     },
-    // {
-    //   text: 'diff 算法',
-    //   items: []
-    // },
     // {
     //   text: '组件渲染与更新',
     //   items: []
