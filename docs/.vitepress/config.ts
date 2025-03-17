@@ -115,7 +115,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'Docker 基础',
       items: [
-        {text: 'docker 介绍', link: '/docker/docker-intro'}
+        {text: 'docker 介绍', link: '/docker/docker-intro'},
+        {text: 'docker 安装', link: '/docker/docker-install'},
       ]
     }
   ]
