@@ -93,6 +93,28 @@ Mosaic Netscape 0.9 虽然仍是beta版本但却称为了当时最热门的浏�
 
 微软的IE 和 Mozilla Fierfox其早期版本皆是以Mosaic为基础而开发的，微软买下拥有Mosaic版权的Spy Glass公司，Mozilla Firefox是网景公司在 2003年 开放源代码后衍生出的版本。
 
-## js 发展史
+**2001年微软发布 IE6**
+
+首次实现对js引擎的优化和分离
+
+**Chrome**
+
+2008年 谷歌和苹果联合开发浏览器，它采用优化后的JavaScript引擎，引擎代号为V8，因能把js代码直接转化为机械码来执行，进而以速度快而闻名。
+
+2008年9月1日Google在其官方博客上宣布推出Chrome浏览器
+
+**js 发展**
 
 为取得技术支持微软推出JScript，CEnvi推出ScriptEase，与JavaScript同样可以在浏览器上运行，为了统一规格，JavaScript兼容ECMA标准，因此也称为ECMAScript。
+
+## 浏览器及内核
+
+浏览器由 shell（外观）与内核组成。
+
+一般主流浏览器指有独立开发内核的浏览器。
+
+- IE：Trident内核，也是俗称的IE内核，已经淘汰；
+- Chrome：之前使用 Webkit，现在是Blink；
+- Firefox：Gecko内核；
+- Safari：Webkit内核；
+- Opera：最初是自己的 Presto 内核，之后该换Webkit、Blink；
