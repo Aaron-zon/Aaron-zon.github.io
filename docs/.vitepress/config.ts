@@ -20,6 +20,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'js 基础',
       items: [
         { text: 'js 介绍', link: 'js/js-intro'},
+        { text: 'js 事件循环', link: '/js/js-event-loop' }
       ]
     }
   ],
