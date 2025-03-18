@@ -5,6 +5,7 @@ const nav: ThemeConfig['nav'] = [
   {
     text: '笔记',
     items: [
+      { text: 'javaScript', link: '/js/js-intro'}
       { text: 'vue3', link: '/vue3/change-efficiency' },
       { text: 'css', link: '/css/css-selector' },
       { text: 'python', link: '/python/python-intro' },
@@ -14,6 +15,14 @@ const nav: ThemeConfig['nav'] = [
 ]
 
 export const sidebar: ThemeConfig['sidebar'] = {
+  '/js/': [
+    {
+      text: 'js 基础',
+      items: [
+        { text: 'js 介绍', link: 'js/js-intro'},
+      ]
+    }
+  ],
   '/vue3/': [
     {
       text: '重大改变',
