@@ -5,7 +5,7 @@ const nav: ThemeConfig['nav'] = [
   {
     text: '笔记',
     items: [
-      { text: 'javaScript', link: '/js/js-intro'}
+      { text: 'javaScript', link: '/js/js-intro'},
       { text: 'vue3', link: '/vue3/change-efficiency' },
       { text: 'css', link: '/css/css-selector' },
       { text: 'python', link: '/python/python-intro' },
