@@ -21,6 +21,9 @@ features:
   - title: Css
     details: Css 样式笔记
     link: /css/css-selector
+  - title: WebPack
+    details: WebPack 学习笔记
+    link: /webpack/webpack-intro
   - title: Python
     details: Python 学习笔记
     link: /python/python-intro
