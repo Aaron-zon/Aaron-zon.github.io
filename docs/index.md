@@ -12,18 +12,18 @@ hero:
     #   link: /js/js-intro
 
 features:
+  - title: Vue
+    details: Vue 基础笔记
+    link: /vue3/change-efficiency
   - title: JavaScript
     details: JavaScript 基础笔记
     link: /js/js-intro
-  - title: Vue
-    details: Vue 基础笔记
-    link: /vue/vue-intro
   - title: Css
     details: Css 样式笔记
-    link: /css/css-intro
+    link: /css/css-selector
   - title: Python
     details: Python 学习笔记
-    link: /css/css-intro
+    link: /python/python-intro
   - title: Docker
     details: Docker 学习笔记
     link: /docker/docker-intro
