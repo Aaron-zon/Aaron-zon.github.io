@@ -21,8 +21,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'JS',
       items: [
         { text: 'js 介绍', link: 'js/js-intro'},
-        { text: 'js 事件循环', link: '/js/js-event-loop' },
-        { text: 'js 预编译', link: '/js/js-precompile' }
+        { text: '事件循环', link: '/js/js-event-loop' },
+        { text: '预编译', link: '/js/js-precompile' }
       ]
     }
   ],
@@ -110,7 +110,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'webpack',
       items: [
-        { text: 'webpack 介绍', link: '/webpack/webpack-intro'}
+        { text: 'webpack 介绍', link: '/webpack/webpack-intro'},
+        { text: '配置文件', link: '/webpack/webpack-config'},
       ]
     }
   ],
