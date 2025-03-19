@@ -8,18 +8,24 @@ hero:
   tagline: Recording and sharing
   actions:
     # - theme: brand
-    #   text: 博客
-    #   link: /blog
-    # - theme: alt
-    #   text: 记录
-    #   link: /api-examples
+    #   text: JavaScript
+    #   link: /js/js-intro
 
-# features:
-#   - title: Feature A
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature B
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature C
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+features:
+  - title: JavaScript
+    details: JavaScript 基础笔记
+    link: /js/js-intro
+  - title: Vue
+    details: Vue 基础笔记
+    link: /vue/vue-intro
+  - title: Css
+    details: Css 样式笔记
+    link: /css/css-intro
+  - title: Python
+    details: Python 学习笔记
+    link: /css/css-intro
+  - title: Docker
+    details: Docker 学习笔记
+    link: /docker/docker-intro
 ---
 
