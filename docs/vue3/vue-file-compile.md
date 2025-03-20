@@ -5,8 +5,6 @@ outline: deep
 
 ## 前言
 
-参考[Vue3 编译原理揭秘](https://vue-compiler.iamouyang.cn/)。
-
 因为浏览器无法直接使用 `Vue` 文件，所以需要编译为 `JavaScript` 文件。
 
 在 `Webpack` 中，是通过 `vue-loader` 插件实现。而在 `Vite` 中，则是通过 `@vitejs/plugin-vue` 插件实现。

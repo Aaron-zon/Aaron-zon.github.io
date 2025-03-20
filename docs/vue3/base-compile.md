@@ -5,8 +5,6 @@ outline: deep
 
 ## 前言
 
-参考 [compileTemplate 函数](https://vue-compiler.iamouyang.cn/template/baseCompile.html)
-
 了解 `compileTemplate` 函数是如何将 `template` 模块编译为 `render` 函数的。
 
 ## @vue 下的几个包
