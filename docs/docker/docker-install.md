@@ -38,9 +38,12 @@ Docker 可以运行在 Mac、Windows 和绝大多数 Linux （CentOS、Ubuntu）
 
 ![alt text](image-13.png)
 
-如果出现WSL2 的错误可以再下面 **常见问题** 部分找到应对 WSL2 的说明
+如果出现 WSL2 的错误，可能是因为没有安装 WSL2，那么就需要安装 WSL2 了。
 
 ![alt text](image-14.png)
+
+### 4.安装 WSL2
+
 
 ### 问题
 
