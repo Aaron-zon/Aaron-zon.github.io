@@ -9,9 +9,38 @@ Docker 可以运行在 Mac、Windows 和绝大多数 Linux （CentOS、Ubuntu）
 
 > 网址：https://www.docker.com/
 
-windows 的安装很简单，在官网下载安装用的 exe 文件然后一直下一步下一步的安装就可以了。
+### 1.下载 Docker
 
 ![alt text](image.png)
+
+### 2.开启Hyper-V
+
+> 选择虚拟机平台
+![alt text](image-7.png)
+
+> 选择 Hyper-V
+![alt text](image-8.png)
+
+> 选择适用于 Linux 的 Windows 子系统
+![alt text](image-9.png)
+
+### 3.安装 Docker
+
+![alt text](image-10.png)
+
+安装成功后重启 Windows，再启动安装好的 Docker Desktop
+
+![alt text](image-11.png)
+
+![alt text](image-12.png)
+
+可以暂时先不登录
+
+![alt text](image-13.png)
+
+如果出现WSL2 的错误可以再下面 **常见问题** 部分找到应对 WSL2 的说明
+
+![alt text](image-14.png)
 
 ### 问题
 
@@ -38,7 +67,5 @@ window10 版本不兼容的问题，可以使用 winver 命令查看当前系统
 3.在 **Windows 更新** 中选择 **检查更新**，如果有可更近的版本就会推送更新
 
 ![alt text](image-6.png)
-
-#### WSL2功能
 
 ## Linux 安装 Docker
