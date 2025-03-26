@@ -112,6 +112,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'webpack 介绍', link: '/webpack/webpack-intro'},
         { text: '配置文件', link: '/webpack/webpack-config'},
+        { text: '编译过程', link: '/webpack/webpack-process'},
+        { text: '入口和出口', link: '/webpack/webpack-entry-and-output'},
       ]
     }
   ],

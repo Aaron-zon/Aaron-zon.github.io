@@ -25,3 +25,17 @@ webpack 提供了许多参数，我们可以直接使用命令行来调用。
 **注意：** 只能是通过CommonJS导出，在这里es6的导出方式会报错，这是由于配置文件是在打包的过程中进行读取的，而打包的过程只能在node环境中进行，这时要由node读取配置文件中的内容。
 
 ## webpack基本配置
+
+- mode：编译模式（字符串），取值为 `development` 或 `production`，指定编译结果运行的环境，回影响奥webpack对编译结果代码格式的处理。
+- entry：入口（字符串），指定入口文件（字符串路径）
+- output：出口（字符串），指定编译结果文件（字符串路径）
+
+![alt text](image-5.png)
+
+### 其他配置
+
+- source map：开发环境中使用的一种调试手段，可以方便调试代码，但是会增加编译后的代码体积，所以生产环境中一般不启用。
+  - 具体配置文档：https://www.webpackjs.com/configuration/devtool/
+- devServe.proxy：中转代理配置，前后端分离希望在同一域上发送 API 请求时使用
+  - 具体配置文档：https://www.webpackjs.com/configuration/dev-server/#devserverproxy
+
