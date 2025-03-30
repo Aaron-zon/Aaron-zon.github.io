@@ -9,6 +9,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'vue3', link: '/vue3/change-efficiency' },
       { text: 'css', link: '/css/css-selector' },
       { text: 'webpack', link: '/webpack/webpack-intro' },
+      { text: 'node', link: '/node/node-global'},
       { text: 'python', link: '/python/python-intro' },
       { text: 'docker', link: '/docker/docker-intro' },
     ]
@@ -114,6 +115,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '配置文件', link: '/webpack/webpack-config'},
         { text: '编译过程', link: '/webpack/webpack-process'},
         { text: '入口和出口', link: '/webpack/webpack-entry-and-output'},
+      ]
+    }
+  ],
+  '/node/': [
+    {
+      text: '基础',
+      items: [
+        { text: 'node 全局对象', link: '/node/node-global' },
       ]
     }
   ],
