@@ -123,6 +123,11 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: '基础',
       items: [
         { text: 'node 全局对象', link: '/node/node-global' },
+        { text: '基本内置模块', link: '/node/node-modules'}
+        // io
+        // net
+        // http
+        // https
       ]
     }
   ],
