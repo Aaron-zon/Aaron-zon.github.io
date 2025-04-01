@@ -53,5 +53,5 @@ obj.obj = obj;
 
     ![alt text](image-7.png)
 
-    - kill(pid)：用于杀死进程
-    - env：获取环境变量
+    - kill(pid)：用于杀死进程，传入进程id即可杀死目标进程
+    - env：获取系统环境变量
