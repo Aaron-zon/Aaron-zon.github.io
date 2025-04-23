@@ -3,7 +3,7 @@ import type { Config as ThemeConfig } from '@vue/theme'
 
 const nav: ThemeConfig['nav'] = [
   {
-    text: '笔记',
+    text: '笔记1',
     items: [
       { text: 'javaScript', link: '/js/js-intro'},
       { text: 'vue3', link: '/vue3/change-efficiency' },
