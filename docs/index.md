@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "Aaron Blog And Notes"
+  name: "Aaron Notes"
   text: "Aaron-zon记录与分享"
-  tagline: Recording and sharing
+  tagline: Notes and sharing
   actions:
     # - theme: brand
     #   text: JavaScript
