@@ -7,9 +7,9 @@ hero:
   text: "Aaron-zon记录与分享"
   tagline: Notes and sharing
   actions:
-    # - theme: brand
-    #   text: JavaScript
-    #   link: /js/js-intro
+    - theme: brand
+      text: 文章
+      link: /blog/index
 
 features:
   - title: Vue

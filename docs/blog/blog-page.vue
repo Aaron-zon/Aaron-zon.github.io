@@ -43,13 +43,15 @@ const filtered = computed(() => {
 
 .year-blog-item {
     margin: 0;
-    padding: 0;
+    padding: 5px;
+
 }
 
 .year-blog-item a {
     color: #666;
     text-decoration: none;
     position: relative;
+    font-size: 18px;
 }
 
 .year-blog-item a:hover {
