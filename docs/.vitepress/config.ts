@@ -85,6 +85,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
     // Script
     // Style
   ],
+  'React': [
+    {
+      text: '概览',
+      items: [
+        { text: 'React 介绍', link: '/react/react-intro' }
+      ]
+    }
+  ],
   '/css/': [
     {
       text: 'CSS',

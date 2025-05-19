@@ -12,9 +12,12 @@ hero:
       link: /blog/index
 
 features:
-  - title: Vue
+  - title: Vue3
     details: Vue 基础笔记
     link: /vue3/change-efficiency
+  - title: React
+    details: React 笔记
+    link: /react/react-intro
   - title: JavaScript
     details: JavaScript 基础笔记
     link: /js/js-intro
