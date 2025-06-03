@@ -6,5 +6,8 @@ export const blogRouter = {
     { text: 'springboot 文件下载', link: 'springboot-file-download'},
     { text: 'Html: table如何固定首行', link: 'table-first-line'},
     { text: 'windows虚拟机与主机互ping问题', link: 'windows-vm-ping'},
+    { text: 'Scoop 添加文字扩展（nerd-fonts）', link: 'scoop-nerd-fonts'},
+
+    
   ],
 }
