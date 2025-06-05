@@ -97,10 +97,6 @@ scoop list
 
 4.重启VS Code（保存设置，重启一下 VS Code 就能看到效果啦！）
 
-
-
-
-
 ## 异常
 
 **错误信息**：`Initializing...
