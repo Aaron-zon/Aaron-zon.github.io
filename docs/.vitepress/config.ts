@@ -15,7 +15,10 @@ const nav: ThemeConfig['nav'] = [
       { text: 'webpack', link: '/webpack/webpack-intro' },
       { text: 'node', link: '/node/node-global'},
       { text: 'python', link: '/python/python-intro' },
+      // { text: 'docker', link: '/docker/docker-intro' },
       { text: 'docker', link: '/docker/docker-intro' },
+
+      { text: 'ai 知识库', link: '/knowledgeBase/knowledgeBase-intro' },
     ]
   }
 ]
@@ -161,12 +164,21 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ],
     }
   ],
-  '/docker/': [
+  '/docker2/': [
     {
       text: 'Docker 基础',
       items: [
         {text: 'docker 介绍', link: '/docker/docker-intro'},
         {text: 'docker 安装', link: '/docker/docker-install'},
+      ]
+    }
+  ],
+  '/knowledgeBase/': [
+    {
+      text: 'AI 知识库',
+      items: [
+        {text: '介绍', link: '/knowledgeBase/knowledgeBase-intro'},
+        {text: '搭建AI知识库', link: '/knowledgeBase/cherryStudio-siliconflow'},
       ]
     }
   ]

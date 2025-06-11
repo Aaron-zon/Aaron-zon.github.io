@@ -36,5 +36,8 @@ features:
   - title: Docker
     details: Docker 学习笔记
     link: /docker/docker-intro
+  - title: AI 知识库
+    details: AI 知识库
+    link: /knowledgeBase/knowledgeBase-intro
 ---
 
