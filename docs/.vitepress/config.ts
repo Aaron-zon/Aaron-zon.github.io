@@ -17,8 +17,8 @@ const nav: ThemeConfig['nav'] = [
       { text: 'python', link: '/python/python-intro' },
       // { text: 'docker', link: '/docker/docker-intro' },
       { text: 'docker', link: '/docker/docker-intro' },
-
       { text: 'ai 知识库', link: '/knowledgeBase/knowledgeBase-intro' },
+      { text: 'linux', link: '/linux/linux-intro' },
     ]
   }
 ]
@@ -179,6 +179,18 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         {text: '介绍', link: '/knowledgeBase/knowledgeBase-intro'},
         {text: '搭建AI知识库', link: '/knowledgeBase/cherryStudio-siliconflow'},
+      ]
+    }
+  ],
+  '/linux/': [
+    {
+      text: 'Linux',
+      items: [
+        {text: 'Linux 介绍', link: '/linux/linux-intro'},
+        {text: 'Linux 目录', link: '/linux/linux-directory'},
+        {text: 'Linux 基本命令', link: '/linux/linux-command'},
+        {text: 'Linux 下载安装软件', link: '/linux/linux-software'},
+        {text: 'Linux 安装java和tomcat', link: '/linux/java-tomcat'},
       ]
     }
   ]
