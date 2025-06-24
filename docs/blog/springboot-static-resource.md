@@ -29,11 +29,7 @@ src/
 
 Spring Boot 默认情况下就会把 `src/main/resources/static` 目录当成静态资源目录。也就是说：
 
-要访问 `src/main/resources/static/pdf/1.pdf` 只需启动项目后，直接访问：
-
-```
-http://127.0.0.1:8080/pdf/1.pdf
-```
+要访问 `src/main/resources/static/pdf/1.pdf` 只需启动项目后，直接访问：`http://127.0.0.1:xxxx/pdf/1.pdf`
 
 也就是说，放在 static/pdf/ 下的所有文件，都会自动映射到 http://localhost:8080/pdf/ 下面。
 
@@ -54,11 +50,7 @@ http://127.0.0.1:8080/pdf/1.pdf
 
 ## 1.访问静态资源
 
-直接访问：
-
-```
-http://127.0.0.1:8080/pdf/1.pdf
-```
+直接访问：`http://127.0.0.1:xxxx/pdf/1.pdf`
 
 ## 2.拒绝访问时（HTTP ERROR 403）
 
