@@ -178,7 +178,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'AI 知识库',
       items: [
         {text: '介绍', link: '/knowledgeBase/knowledgeBase-intro'},
-        {text: '搭建AI知识库', link: '/knowledgeBase/cherryStudio-siliconflow'},
+        {text: 'cherryStudio知识库', link: '/knowledgeBase/cherryStudio-siliconflow'},
+        {text: '搭建知识库（Java）', link: '/knowledgeBase/java-knowledgeBase'},
       ]
     }
   ],
