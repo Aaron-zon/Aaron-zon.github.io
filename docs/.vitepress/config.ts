@@ -192,6 +192,12 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'Linux 基本命令', link: '/linux/linux-command'},
         {text: 'Linux 下载安装软件', link: '/linux/linux-software'},
         {text: 'Linux 安装java和tomcat', link: '/linux/java-tomcat'},
+        {text: 'Linux 关闭防火墙', link: '/linux/linux-firewall'},
+        {text: 'Linux curl基本用法', link: '/linux/linux-curl'},
+        {text: 'Linux 压缩和解压', link: '/linux/linux-zip'},
+        {text: 'Linux scp传输', link: '/linux/linux-scp'},
+        {text: 'Linux 定时任务', link: '/linux/linux-crontab'},
+        {text: 'Linux 开机启动', link: '/linux/linux-boot'},
       ]
     }
   ]

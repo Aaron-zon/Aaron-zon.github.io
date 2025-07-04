@@ -156,3 +156,15 @@ cp b.txt ./test/b.txt
 - kill：结束进程
     - kill 进程ID：结束目标进程
     - kill -9 进程ID：强制结束目标进程
+
+## 通过端口号查进程（lsof）
+
+lsof 这个命令不时centos本身的命令需要安装
+
+```shell
+yum install lsof
+```
+- `lsof`：列出全部端口进程
+- `lsof -i:8080`： 查看端口号是8080的进程
+
+
