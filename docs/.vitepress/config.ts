@@ -217,6 +217,16 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'Nginx location & rewrie', link: '/nginx/nginx-location-rewrite'},
       ]
     }
+  ],
+  '/redis/': [
+    {
+      text: 'Redis',
+      items: [
+        {text: 'Redis 介绍', link: 'redis/redis-intro'},
+        
+      ]
+    }
+
   ]
 }
 
