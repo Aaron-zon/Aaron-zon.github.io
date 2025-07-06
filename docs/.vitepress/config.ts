@@ -15,7 +15,6 @@ const nav: ThemeConfig['nav'] = [
       { text: 'webpack', link: '/webpack/webpack-intro' },
       { text: 'node', link: '/node/node-global'},
       { text: 'python', link: '/python/python-intro' },
-      // { text: 'docker', link: '/docker/docker-intro' },
       { text: 'docker', link: '/docker/docker-intro' },
       { text: 'ai 知识库', link: '/knowledgeBase/knowledgeBase-intro' },
       { text: 'linux', link: '/linux/linux-intro' },
@@ -166,7 +165,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ],
     }
   ],
-  '/docker2/': [
+  '/docker/': [
     {
       text: 'Docker 基础',
       items: [
@@ -223,7 +222,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Redis',
       items: [
         {text: 'Redis 介绍', link: 'redis/redis-intro'},
-        
+
       ]
     }
 
