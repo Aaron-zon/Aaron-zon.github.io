@@ -19,6 +19,8 @@ const nav: ThemeConfig['nav'] = [
       { text: 'docker', link: '/docker/docker-intro' },
       { text: 'ai 知识库', link: '/knowledgeBase/knowledgeBase-intro' },
       { text: 'linux', link: '/linux/linux-intro' },
+      { text: 'nginx', link: '/nginx/nginx-intro' },
+
     ]
   }
 ]
@@ -198,6 +200,21 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'Linux scp传输', link: '/linux/linux-scp'},
         {text: 'Linux 定时任务', link: '/linux/linux-crontab'},
         {text: 'Linux 开机启动', link: '/linux/linux-boot'},
+      ]
+    }
+  ],
+  '/nginx/': [
+    {
+      text: 'Nginx',
+      items: [
+        {text: 'Nginx 介绍', link: '/nginx/nginx-intro'},
+        {text: 'Nginx 命令', link: '/nginx/nginx-command'},
+        {text: 'Nginx 配置', link: '/nginx/nginx-config'},
+        {text: 'Nginx 日志', link: '/nginx/nginx-logs'},
+        {text: 'Nginx 反向代理', link: '/nginx/nginx-reverse-proxy'},
+        {text: 'Nginx 负载均衡', link: '/nginx/nginx-load-balance'},
+        {text: 'Nginx 动静分离', link: '/nginx/nginx-separation'},
+        {text: 'Nginx location & rewrie', link: '/nginx/nginx-location-rewrite'},
       ]
     }
   ]
