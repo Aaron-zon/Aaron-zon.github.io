@@ -163,6 +163,12 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'python JSON', link: '/python/python-' },
         { text: 'python 常用内置包', link: '/python/python-' },
       ],
+    },
+    {
+      text: '应用',
+      items: [
+        { text: 'pyenv-virtualenv虚拟环境', link: '/python/pyenv-virtualenv'}
+      ]
     }
   ],
   '/docker/': [
