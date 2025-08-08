@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.BLTIpkzl.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/reactive-implement.md","filePath":"vue3/reactive-implement.md"}'),r={name:"vue3/reactive-implement.md"};function c(n,i,m,o,s,p){return a(),t("div")}const d=e(r,[["render",c]]);export{_ as __pageData,d as default};
