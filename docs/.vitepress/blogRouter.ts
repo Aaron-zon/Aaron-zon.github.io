@@ -7,7 +7,7 @@ export const blogRouter = {
     { text: 'Html: table如何固定首行', link: 'table-first-line'},
     { text: 'windows虚拟机与主机互ping问题', link: 'windows-vm-ping'},
     { text: 'Scoop 添加文字扩展（nerd-fonts）', link: 'scoop-nerd-fonts'},
-
+    { text: 'SpringBoot FormData 参数个数限制', link: 'springboot-formdata-limit'}
     
   ],
 }
