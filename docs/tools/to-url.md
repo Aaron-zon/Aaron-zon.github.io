@@ -20,13 +20,13 @@ function decodeUrl() {
 
 function swap() {
   const temp = text.value
-  text.value = base64.value
-  base64.value = temp
+  text.value = url.value
+  url.value = temp
 }
 
 function clear() {
   text.value = ''
-  base64.value = ''
+  url.value = ''
 }
 </script>
 
