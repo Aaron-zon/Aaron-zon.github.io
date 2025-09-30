@@ -20,5 +20,8 @@
     "@vue/theme": "^2.2.5",
     "vitepress": "^1.5.0",
     "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "element-plus": "^2.11.4"
   }
 }

@@ -7,6 +7,10 @@ const nav: ThemeConfig['nav'] = [
     link: '/blog/index'
   },
   {
+    text: '工具',
+    link: '/tools/to-base64'
+  },
+  {
     text: '笔记',
     items: [
       { text: 'javaScript', link: '/js/js-intro'},
@@ -232,6 +236,16 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     }
 
+  ],
+  '/tools': [
+    {
+      text: '编码/解吗',
+      items: [
+        {text: 'Base64 编码/解码', link: '/tools/to-base64'},
+        {text: 'URL 编码/解码', link: '/tools/to-url'},
+        {text: 'MD5 编码/解码', link: '/tools/to-md5'},
+      ]
+    }
   ]
 }
 
@@ -250,7 +264,7 @@ export default defineConfig({
       provider: 'local',
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/Aaron-zon/Aaron-zon.github.io' }
     ],
   }
 })
