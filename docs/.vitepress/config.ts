@@ -163,7 +163,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'python 正则', link: '/python/python-reg-exp' },
         { text: 'python 模块化', link: '/python/python-modules' },
         { text: 'python IO', link: '/python/python-io' },
-        { text: 'python 异常处理', link: '/python/python-' },
+        { text: 'python 异常处理', link: '/python/python-exception' },
         { text: 'python JSON', link: '/python/python-' },
         { text: 'python 常用内置包', link: '/python/python-' },
       ],
