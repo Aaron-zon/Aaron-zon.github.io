@@ -1,0 +1,1 @@
+import{ax as e,A as t,z as a}from"./chunks/framework.BWRXlwpK.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"vue3/reactive-implement.md","filePath":"vue3/reactive-implement.md"}'),r={name:"vue3/reactive-implement.md"};function n(c,i,m,o,s,p){return a(),t("div")}const _=e(r,[["render",n]]);export{d as __pageData,_ as default};
