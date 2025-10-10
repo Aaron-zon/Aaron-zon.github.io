@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "crypto-js": "^4.2.0",
-    "element-plus": "^2.11.4"
+    "element-plus": "^2.11.4",
+    "vue-json-pretty": "^2.5.0"
   }
 }

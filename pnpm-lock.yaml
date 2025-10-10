@@ -14,6 +14,9 @@ importers:
       element-plus:
         specifier: ^2.11.4
         version: 2.11.4(vue@3.5.13)
+      vue-json-pretty:
+        specifier: ^2.5.0
+        version: 2.5.0(vue@3.5.13)
     devDependencies:
       '@types/node':
         specifier: ^22.10.3
@@ -881,6 +884,12 @@ packages:
     peerDependenciesMeta:
       '@vue/composition-api':
         optional: true
+
+  vue-json-pretty@2.5.0:
+    resolution: {integrity: sha512-nZA6qXYaiMaE2J0HkKtkrLcPJoN03SDSBdZWEPiRwoOVySWOfoZCyadhBwBN6wAHTga+c/R49ExGWoKFXnu37A==}
+    engines: {node: '>= 10.0.0', npm: '>= 5.0.0'}
+    peerDependencies:
+      vue: '>=3.0.0'
 
   vue@3.5.13:
     resolution: {integrity: sha512-wmeiSMxkZCSc+PM2w2VRsOYAZC8GdipNFRTsLSfodVqI9mbejKeXEGr8SckuLnrQPGe3oJN5c3K0vpoU9q/wCQ==}
@@ -1800,6 +1809,10 @@ snapshots:
       - universal-cookie
 
   vue-demi@0.14.10(vue@3.5.13):
+    dependencies:
+      vue: 3.5.13
+
+  vue-json-pretty@2.5.0(vue@3.5.13):
     dependencies:
       vue: 3.5.13
 

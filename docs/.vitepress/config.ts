@@ -244,6 +244,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'Base64 编码/解码', link: '/tools/to-base64'},
         {text: 'URL 编码/解码', link: '/tools/to-url'},
         {text: 'MD5 编码/解码', link: '/tools/to-md5'},
+        {text: 'JSON 格式化', link: '/tools/json-format'},
         // json 格式化
         // 驼峰转换（小驼峰、大驼峰、蛇形、自定义）
         // Oracle 转 Java实体类
