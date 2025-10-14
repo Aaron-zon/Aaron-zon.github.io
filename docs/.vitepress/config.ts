@@ -14,6 +14,7 @@ const nav: ThemeConfig['nav'] = [
     text: '笔记',
     items: [
       { text: 'javaScript', link: '/js/js-intro'},
+      { text: 'java', link: '/java/java-intro'},
       { text: 'vue3', link: '/vue3/change-efficiency' },
       { text: 'css', link: '/css/css-selector' },
       { text: 'webpack', link: '/webpack/webpack-intro' },
@@ -23,7 +24,6 @@ const nav: ThemeConfig['nav'] = [
       { text: 'ai 知识库', link: '/knowledgeBase/knowledgeBase-intro' },
       { text: 'linux', link: '/linux/linux-intro' },
       { text: 'nginx', link: '/nginx/nginx-intro' },
-
     ]
   }
 ]
@@ -36,6 +36,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'js 介绍', link: 'js/js-intro'},
         { text: '事件循环', link: '/js/js-event-loop' },
         { text: '预编译', link: '/js/js-precompile' }
+      ]
+    }
+  ],
+  '/java/': [
+    {
+      text: 'Java 基础',
+      items: [
+        { text: 'java 介绍', link: '/java/java-intro' },
       ]
     }
   ],
@@ -191,6 +199,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: '介绍', link: '/knowledgeBase/knowledgeBase-intro'},
         {text: 'cherryStudio知识库', link: '/knowledgeBase/cherryStudio-siliconflow'},
         {text: '搭建知识库（Java）', link: '/knowledgeBase/java-knowledgeBase'},
+      ]
+    }
+  ],
+  '/ai/': [
+    {
+      text: 'AI',
+      items: [
+        {text: 'AI 基础知识介绍', link: '/ai/ai-intro'},
       ]
     }
   ],
