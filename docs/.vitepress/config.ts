@@ -14,7 +14,7 @@ const nav: ThemeConfig['nav'] = [
     text: '笔记',
     items: [
       { text: 'javaScript', link: '/js/js-intro'},
-      { text: 'java', link: '/java/java-intro'},
+      { text: 'java', link: '/java/java-type'},
       { text: 'vue3', link: '/vue3/change-efficiency' },
       { text: 'css', link: '/css/css-selector' },
       { text: 'webpack', link: '/webpack/webpack-intro' },
@@ -43,7 +43,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'Java 基础',
       items: [
-        { text: 'java 介绍', link: '/java/java-intro' },
+        { text: '数据类型', link: '/java/java-type' },
       ]
     }
   ],
@@ -264,6 +264,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: '驼峰转换', link: '/tools/to-format-change'},
 
         // 驼峰转换（小驼峰、大驼峰、蛇形、自定义）
+        // JWT 加密解密
         // Oracle 转 Java实体类
         // Mysql 转 Java实体类
         // 二维码生成
