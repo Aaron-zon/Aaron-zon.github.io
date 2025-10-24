@@ -44,7 +44,27 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Java 基础',
       items: [
         { text: '数据类型', link: '/java/java-type' },
-        { text: '类型转换', link: '/java/type-conversion'}
+        { text: '类型转换', link: '/java/type-conversion'},
+        { text: '异常处理', link: '/java/exception'},
+        // 枚举
+        // 接口
+        // 继承
+        // 注解
+        // 集合
+        // IO
+        // 工具类
+        // 反射
+        // 线程
+        // JDBC
+        // Stream
+        // 正则表达式
+        // 加密与安全
+      ],
+    },
+    {
+      text: 'Spring Cloud',
+      items: [
+        { text: '', link: '' },
       ]
     }
   ],
