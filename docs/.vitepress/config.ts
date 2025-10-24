@@ -44,6 +44,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Java 基础',
       items: [
         { text: '数据类型', link: '/java/java-type' },
+        { text: '类型转换', link: '/java/type-conversion'}
       ]
     }
   ],

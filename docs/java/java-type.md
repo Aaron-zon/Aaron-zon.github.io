@@ -6,7 +6,7 @@ outline: deep
 
 ## 基本数据类型
 
-- 整形（4个）： `byte`、`byte`、`byte`、`byte`
+- 整形（4个）： `byte`、`short`、`int`、`long`
 - 浮点型（2个）：`float`、`double`
 - 字符型（1个）：`char`
 - 布尔型（1个）：`boolean`
@@ -62,11 +62,38 @@ byte 中用第一个bit位，记录符号的正负，0代表正数，1代表负�
 
 ## 引用数据类型
 
-- 数组（Array）
-- 类（Class）
-- 接口（interface）
-- 枚举（enum）
-- 注解（@interface）
+- 数组（Array）：
+```
+int[] ns = { 1, 4, 6, 9 }
+```
+- 类（Class）: Class Test
+```
+Class Test {
+  int x;
+  void pintX() {
+    System.out.println(x);
+  }
+}
+```
+- 接口（interface）: 
+```
+interface Printable {
+  void print();
+}
+```
+- 枚举（enum）: 
+```
+enum Clor {
+  RED, GREEN, BLUE;
+}
+```
+- 注解（@interface）:
+```
+@interface MyAnnotation {
+    String value();
+    int count() default 0;
+}
+```
 - ...
 
 
