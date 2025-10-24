@@ -260,11 +260,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'Base64 编码/解码', link: '/tools/to-base64'},
         {text: 'URL 编码/解码', link: '/tools/to-url'},
         {text: 'MD5 编码/解码', link: '/tools/to-md5'},
+        {text: 'JWT 编码/解码', link: '/tools/to-jwt'},
         {text: 'JSON 格式化', link: '/tools/json-format'},
-        {text: '驼峰转换', link: '/tools/to-format-change'},
-
         // 驼峰转换（小驼峰、大驼峰、蛇形、自定义）
-        // JWT 加密解密
+        {text: '驼峰转换', link: '/tools/to-format-change'},
         // Oracle 转 Java实体类
         // Mysql 转 Java实体类
         // 二维码生成
