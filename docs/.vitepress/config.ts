@@ -64,7 +64,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'Spring Cloud',
       items: [
-        { text: '', link: '' },
+        { text: '介绍', link: '/springCloud/spring-cloud-intro' },
       ]
     }
   ],
