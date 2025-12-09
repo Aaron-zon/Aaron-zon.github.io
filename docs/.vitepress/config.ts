@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import type { Config as ThemeConfig } from '@vue/theme'
+import { link } from 'fs'
 
 const nav: ThemeConfig['nav'] = [
   {
@@ -254,6 +255,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         {text: 'Ubuntu 换源', link: '/linux/ubuntu/ubuntu-source'},
         {text: 'Ubuntu 软件安装', link: '/linux/ubuntu/ubuntu-software'},
+        {text: 'scp文件传输', link: '/linux/ubuntu/ubuntu-scp'},
         {text: '安装/使用 nginx', link: '/linux/ubuntu/ubuntu-nginx'},
         {text: '安装/使用 php', link: '/linux/ubuntu/ubuntu-php'},
       ]
