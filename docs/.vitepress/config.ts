@@ -200,7 +200,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: '应用',
       items: [
-        { text: 'pyenv-virtualenv虚拟环境', link: '/python/pyenv-virtualenv'}
+        { text: 'pyenv-virtualenv虚拟环境', link: '/python/pyenv-virtualenv'},
+        { text: 'pyenv 常用命令', link: '/python/pyenv-command'}
       ]
     }
   ],
