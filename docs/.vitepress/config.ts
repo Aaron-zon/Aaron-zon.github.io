@@ -248,6 +248,15 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'Linux 定时任务', link: '/linux/linux-crontab'},
         {text: 'Linux 开机启动', link: '/linux/linux-boot'},
       ]
+    },
+    {
+      text: 'Ubuntu',
+      items: [
+        {text: 'Ubuntu 换源', link: '/linux/ubuntu/ubuntu-source'},
+        {text: 'Ubuntu 软件安装', link: '/linux/ubuntu/ubuntu-software'},
+        {text: '安装/使用 nginx', link: '/linux/ubuntu/ubuntu-nginx'},
+        {text: '安装/使用 php', link: '/linux/ubuntu/ubuntu-php'},
+      ]
     }
   ],
   '/nginx/': [
