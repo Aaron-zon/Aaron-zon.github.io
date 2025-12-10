@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Ubuntu 安装 nginx
 
 ## 下载安装

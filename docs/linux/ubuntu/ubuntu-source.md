@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Ubuntu 换源
 
 Ubuntu 24.04LTS后，apt 源的位置替换到了 `/etc/apt/sources.list.d/ubuntu.sources` 中。

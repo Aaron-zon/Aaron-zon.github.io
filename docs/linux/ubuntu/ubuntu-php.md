@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # 安装/使用 php
 
 这里以安装 php8.2 为例。
@@ -47,3 +51,17 @@ php -v
 php-fpm8.2 -v
 ```
 - 显示 PHP 版本信息，确认安装成功。
+
+## 部署 Laravel
+
+这是一个部署laravel的项目实例
+
+前提条件
+- 已安装 Ubuntu 24.04
+- 已安装 PHP 8.2 
+- 已安装 Nginx 
+- 已放入 Laravel 项目代码
+
+
+
+

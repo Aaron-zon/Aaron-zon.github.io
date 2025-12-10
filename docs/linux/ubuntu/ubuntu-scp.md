@@ -1,4 +1,8 @@
 
+---
+outline: deep
+---
+
 # scp 文件传输
 
 scp 是 secure copy 的缩写，用于在本地和远程服务器之间安全地传输文件。
