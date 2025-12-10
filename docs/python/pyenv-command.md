@@ -7,7 +7,7 @@
 - pyenv install
   - -l: 查看可安装的版本
   - 安装指定版本: 例如 `pyenv install 3.10.10`
-- pyenv global <version>: 设置全局版本，例如 `pyenv global 3.10.10`
+- pyenv global `<version>`: 设置全局版本，例如 `pyenv global 3.10.10`
 
 
 ### pyenv version && pyenv versions
