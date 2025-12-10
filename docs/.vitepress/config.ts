@@ -36,7 +36,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'js 介绍', link: 'js/js-intro'},
         { text: '事件循环', link: '/js/js-event-loop' },
-        { text: '预编译', link: '/js/js-precompile' }
+        { text: '预编译', link: '/js/js-precompile' },
+        { text: 'String', link: '/js/js-string' },
       ]
     }
   ],
@@ -202,7 +203,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: '应用',
       items: [
         { text: 'pyenv-virtualenv虚拟环境', link: '/python/pyenv-virtualenv'},
-        { text: 'pyenv 常用命令', link: '/python/pyenv-command'}
+        { text: 'pyenv 常用命令', link: '/python/pyenv-command'},
+        { text: 'python conda', link: '/python/python-conda'}
       ]
     }
   ],
@@ -230,6 +232,12 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'AI',
       items: [
         {text: 'AI 基础知识介绍', link: '/ai/ai-intro'},
+      ]
+    },
+    {
+      text: 'LnagChain',
+      items: [
+        {text: 'LangChain 介绍', link: '/ai/langchain-intro'},
       ]
     }
   ],
