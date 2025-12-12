@@ -8,9 +8,11 @@ LangChain 是一个基于 LLM 构建智能体和应用程序的框架。
 
 ## 相关生态
 
-- LangChain
-- LangGraph
-- Deep Agents
+- LangChain：提供基础工具，构建基础智能体
+- LangGraph：提供图结构支持，构建多智能体
+- Deep Agents：构建复杂智能体
+- Integration packages：继承访问各种LLM的Provider，提供实现各种功能的Component
+- LangSmith：商业组件（付费可选），提供 部署、建工、测试、日志等功能
 
 ## 环境
 
@@ -22,8 +24,10 @@ LangChain 是一个基于 LLM 构建智能体和应用程序的框架。
 ```bash
 # 安装 LangChain 核心库
 pip install -U langchain
+# 安装 多智能体集成
+pip install -U langgraph
 # 安装 OpenAI 集成
 pip install -U langchain-openai
-# 安装 Anthropic 集成
-pip install -U langchain-anthropic
+# 安装 复杂智能体集成
+pip install -U deepagents
 ```
