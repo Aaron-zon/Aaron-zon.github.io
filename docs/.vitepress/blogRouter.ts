@@ -9,5 +9,6 @@ export const blogRouter = {
     { text: 'Scoop 添加文字扩展（nerd-fonts）', link: 'scoop-nerd-fonts'},
     { text: 'SpringBoot FormData 参数个数限制', link: 'springboot-formdata-limit'},
     { text: 'SqlServer 导出表结构和数据', link: 'sqlserver-export-table'},
+    { text: 'IDEA 启动一个 Tomcat 项目', link: 'idea-start-tomcat'},
   ],
 }
