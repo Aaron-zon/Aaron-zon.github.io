@@ -49,6 +49,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '类型转换', link: '/java/type-conversion'},
         { text: '异常处理', link: '/java/exception'},
         { text: '枚举', link: '/java/java-enum' },
+        { text: '接口', link: '/java/java-interface' }
         // 接口
         // 继承
         // 注解
