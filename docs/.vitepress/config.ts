@@ -48,7 +48,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '数据类型', link: '/java/java-type' },
         { text: '类型转换', link: '/java/type-conversion'},
         { text: '异常处理', link: '/java/exception'},
-        // 枚举
+        { text: '枚举', link: '/java/java-enum' },
         // 接口
         // 继承
         // 注解
