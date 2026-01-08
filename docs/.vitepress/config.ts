@@ -38,7 +38,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '预编译', link: '/js/js-precompile' },
         { text: '事件循环', link: '/js/js-event-loop' },
         { text: '浏览器渲染过程', link: '/js/js-render-process' },
-        // 闭包的优缺点
+        { text: '闭包', link: '/js/js-closure' }
+        // 闭包
         // Fiber 架构
         // 空闲渲染
         // 高阶函数
