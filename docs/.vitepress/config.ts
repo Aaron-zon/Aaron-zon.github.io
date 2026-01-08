@@ -32,12 +32,33 @@ const nav: ThemeConfig['nav'] = [
 export const sidebar: ThemeConfig['sidebar'] = {
   '/js/': [
     {
-      text: 'JS',
+      text: 'JS基础',
       items: [
         { text: 'js 介绍', link: 'js/js-intro'},
-        { text: '事件循环', link: '/js/js-event-loop' },
         { text: '预编译', link: '/js/js-precompile' },
-        { text: 'String', link: '/js/js-string' },
+        { text: '事件循环', link: '/js/js-event-loop' },
+        { text: '浏览器渲染过程', link: '/js/js-render-process' },
+        // 闭包的优缺点
+        // Fiber 架构
+        // 空闲渲染
+        // 高阶函数
+        // http和https的区别，s是什么，加密是怎么做的
+        //
+      ]
+    },
+    {
+      text: '实际应用',
+      items: [
+        // 快速排序
+        // 手写深拷贝
+        // 工程架构怎么做，技术选型怎么做
+        // 如何做性能优化
+        // 懒加载的实现
+        // 网页从请求到渲染经历了什么
+        // 跨域是什么，有哪些解决办法
+        // 弹幕的实现与设计，怎么架构的
+        // 弹幕库实现原理
+        // 完整的购买流程
       ]
     }
   ],
@@ -50,6 +71,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '异常处理', link: '/java/exception'},
         { text: '枚举', link: '/java/java-enum' },
         { text: '接口', link: '/java/java-interface' },
+        { text: '注解', link: 'java/java-annotation'},
+        { text: '注解解析', link: 'java/java-annotation-parse'},
         // 注解
         // 集合
         // IO

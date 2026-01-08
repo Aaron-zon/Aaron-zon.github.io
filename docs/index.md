@@ -24,5 +24,11 @@ features:
   - title: WebPack
     details: WebPack 学习笔记
     link: /webpack/webpack-intro
+  - title: Linux
+    details: Linux 学习笔记
+    link: /linux/linux-intro
+  - title: Java
+    details: Java 学习笔记
+    link: /java/java-type
 ---
 
