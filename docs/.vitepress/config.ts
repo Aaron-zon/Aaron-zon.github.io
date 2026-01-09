@@ -78,10 +78,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '接口', link: '/java/java-interface' },
         { text: '注解', link: 'java/java-annotation'},
         { text: '注解解析', link: 'java/java-annotation-parse'},
-        // 注解
         // 集合
-        // IO
         // 工具类
+        // IO
         // 反射
         // 线程
         // JDBC
@@ -222,8 +221,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'python 模块化', link: '/python/python-modules' },
         { text: 'python IO', link: '/python/python-io' },
         { text: 'python 异常处理', link: '/python/python-exception' },
-        { text: 'python JSON', link: '/python/python-' },
-        { text: 'python 常用内置包', link: '/python/python-' },
+        { text: 'python JSON', link: '/python/python-json' },
+        { text: 'python 常用内置包', link: '/python/python-built-in-package' },
       ],
     },
     {
@@ -346,17 +345,15 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'Base64 编码/解码', link: '/tools/to-base64'},
         {text: 'URL 编码/解码', link: '/tools/to-url'},
         {text: 'MD5 编码/解码', link: '/tools/to-md5'},
-        // {text: 'JWT 编码/解码', link: '/tools/to-jwt'},
+        {text: 'JWT 编码/解码', link: '/tools/to-jwt'},
         {text: 'JSON 格式化', link: '/tools/json-format'},
-        // 驼峰转换（小驼峰、大驼峰、蛇形、自定义）
-        // {text: '驼峰转换', link: '/tools/to-format-change'},
+        {text: '驼峰转换', link: '/tools/to-format-change'},
         // Oracle 转 Java实体类
         // Mysql 转 Java实体类
         // 二维码生成
         // 图片转SVG
         // 图片转Canvas
         // word转pdf
-
       ]
     }
   ]
