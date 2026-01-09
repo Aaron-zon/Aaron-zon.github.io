@@ -38,7 +38,7 @@ Project Structure → Modules → 你的模块 → Web
 确认项目设置：
 
 - Deployment Descriptors
-  - Path: `src/main/webapp`
+  - Path: `src/main/webapp/WEB-INF/web.xml`
 - Web Resource Directories
   - Web Resource Directory: `src/main/webapp`
 

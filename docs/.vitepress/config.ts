@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress'
 import type { Config as ThemeConfig } from '@vue/theme'
-import { link } from 'fs'
 
 const nav: ThemeConfig['nav'] = [
   {
@@ -35,23 +34,27 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'JS基础',
       items: [
         { text: 'js 介绍', link: 'js/js-intro'},
+        { text: '闭包', link: '/js/js-closure' },
         { text: '预编译', link: '/js/js-precompile' },
         { text: '事件循环', link: '/js/js-event-loop' },
         { text: '浏览器渲染过程', link: '/js/js-render-process' },
-        { text: '闭包', link: '/js/js-closure' }
-        // 闭包
-        // Fiber 架构
-        // 空闲渲染
+        // 原型原型链
+        // this
+        // 继承
+        // 深拷贝/浅拷贝
         // 高阶函数
-        // http和https的区别，s是什么，加密是怎么做的
-        //
+        // 柯里化
+        // 防抖节流
+        // Promise
+        // async/await
+        // 跨域
+        // 排序
       ]
     },
     {
       text: '实际应用',
       items: [
-        // 快速排序
-        // 手写深拷贝
+        // 大数据量优化
         // 工程架构怎么做，技术选型怎么做
         // 如何做性能优化
         // 懒加载的实现
@@ -60,6 +63,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         // 弹幕的实现与设计，怎么架构的
         // 弹幕库实现原理
         // 完整的购买流程
+        // http和https的区别，s是什么，加密是怎么做的
       ]
     }
   ],
@@ -263,6 +267,24 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'LangChain 介绍', link: '/ai/langchain-intro'},
       ]
     }
+    // 本地文件 mcp
+    // 邮件 mcp
+    // Wikipedia MCP
+    // 新闻 mcp
+    // github mcp
+    // b站 mcp
+    // youtube mcp
+    // tiktok mcp
+    // 数据库 mcp
+    // 日志 mcp
+    // 运维 mcp
+    // 天气 mcp
+    // 影视剧 mcp
+    // 音乐 mcp
+    // api代理 mcp
+    // rag mcp
+    // 工作流 mcp
+
   ],
   '/linux/': [
     {
