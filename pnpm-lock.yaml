@@ -14,6 +14,9 @@ importers:
       element-plus:
         specifier: ^2.11.4
         version: 2.11.4(vue@3.5.13)
+      qrcode.vue:
+        specifier: ^3.6.0
+        version: 3.6.0(vue@3.5.13)
       vue-json-pretty:
         specifier: ^2.5.0
         version: 2.5.0(vue@3.5.13)
@@ -756,6 +759,11 @@ packages:
 
   property-information@6.5.0:
     resolution: {integrity: sha512-PgTgs/BlvHxOu8QuEN7wi5A0OmXaBcHpmCSTehcs6Uuu9IkDIEo13Hy7n898RHfrQ49vKCoGeWZSaAK01nwVig==}
+
+  qrcode.vue@3.6.0:
+    resolution: {integrity: sha512-vQcl2fyHYHMjDO1GguCldJxepq2izQjBkDEEu9NENgfVKP6mv/e2SU62WbqYHGwTgWXLhxZ1NCD1dAZKHQq1fg==}
+    peerDependencies:
+      vue: ^3.0.0
 
   regex-recursion@5.1.1:
     resolution: {integrity: sha512-ae7SBCbzVNrIjgSbh7wMznPcQel1DNlDtzensnFxpiNpXt1U2ju/bHugH422r+4LAVS1FpW1YCwilmnNsjum9w==}
@@ -1641,6 +1649,10 @@ snapshots:
   preact@10.25.4: {}
 
   property-information@6.5.0: {}
+
+  qrcode.vue@3.6.0(vue@3.5.13):
+    dependencies:
+      vue: 3.5.13
 
   regex-recursion@5.1.1:
     dependencies:
