@@ -333,10 +333,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'Redis',
       items: [
         {text: 'Redis 介绍', link: 'redis/redis-intro'},
-
       ]
     }
-
   ],
   '/tools': [
     {
@@ -348,9 +346,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'JWT 编码/解码', link: '/tools/to-jwt'},
         {text: 'JSON 格式化', link: '/tools/json-format'},
         {text: '驼峰转换', link: '/tools/to-format-change'},
-        // Oracle 转 Java实体类
-        // Mysql 转 Java实体类
-        // 二维码生成
+        {text: 'Java实体类转换', link: '/tools/java-entity'},
+        {text: '二维码生成', link: '/tools/to-qrcode'},
         // 图片转SVG
         // 图片转Canvas
         // word转pdf
