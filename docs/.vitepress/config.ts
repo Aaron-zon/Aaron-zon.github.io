@@ -73,26 +73,45 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: '数据类型', link: '/java/java-type' },
         { text: '类型转换', link: '/java/type-conversion'},
+        { text: '集合', link: '/java/java-collection' },
+        { text: '工具类', link: '/java/java-util' },
         { text: '异常处理', link: '/java/exception'},
         { text: '枚举', link: '/java/java-enum' },
         { text: '接口', link: '/java/java-interface' },
         { text: '注解', link: 'java/java-annotation'},
         { text: '注解解析', link: 'java/java-annotation-parse'},
-        // 集合
-        // 工具类
-        // IO
-        // 反射
-        // 线程
-        // JDBC
-        // Stream
-        // 正则表达式
-        // 加密与安全
+        { text: '反射', link: '/java/java-reflection' },
+        { text: 'IO', link: '/java/java-io' },
+        { text: '线程', link: '/java/java-thread' },
+        // { text: 'JDBC', link: '/java/java-jdbc' },
+        // { text: 'Stream', link: '/java/java-stream' },
+        { text: '正则表达式', link: '/java/java-regex' },
       ],
+    },
+    {
+      text: '应用',
+      items: [
+        { text: '正则的常用方法', link: '/java/useJava/java-regex-method' },
+        // IO
+        // 正则
+        // Stream
+        
+      ]
     },
     {
       text: 'Spring Cloud',
       items: [
         { text: '介绍', link: '/springCloud/spring-cloud-intro' },
+        // 服务注册中心 Nacos/Eureka
+        // 服务调用 OpenFeign
+        // 负载均衡
+        // 配置中心
+        // 服务熔断降级
+        // 超时机制
+        // 网关
+        // 认证体系 JWT/Gateway 校验 Token/微服务无状态
+        // 链路追踪 & 日志
+        // 部署 & 运维
       ]
     }
   ],
