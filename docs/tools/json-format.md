@@ -46,7 +46,7 @@ async function copy() {
 <ClientOnly>
   <div>
     <TTextarea v-model:text="text" placeholder="请输入需要格式化的 JSON 文本"/>
-    <div>
+    <div class="button-group">
       <el-button type="info" @click="copy">复制</el-button>
       <el-button type="info" @click="clear">清空</el-button>
     </div>
@@ -71,5 +71,8 @@ async function copy() {
   padding: 10px;
   border-radius: 8px;
   font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+.button-group {
+  margin-bottom: 20px;
 }
 </style>
