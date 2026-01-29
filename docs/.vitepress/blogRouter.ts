@@ -10,6 +10,7 @@ export const blogRouter = {
     { text: 'SpringBoot FormData 参数个数限制', link: 'springboot-formdata-limit'},
     { text: 'SqlServer 导出表结构和数据', link: 'sqlserver-export-table'},
     { text: 'IDEA 启动一个 Tomcat 项目', link: 'idea-start-tomcat'},
-    { text: '常见的企业信息化系统（OA/ERP/MES/WMS）', link: 'enterprise-system'}
+    { text: '常见的企业信息化系统（OA/ERP/MES/WMS）', link: 'enterprise-system'},
+    { text: 'electron 打包', link: 'electron-pack'}
   ],
 }
