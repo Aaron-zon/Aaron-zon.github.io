@@ -72,6 +72,22 @@ const toCustomSeparator = () => {
   }).join('\n')
 }
 
+// 转大写
+const toUpperCase = () => {
+  if (!inputText.value) return
+  // 按换行符分割，每行单独转换
+  const lines = inputText.value.split('\n')
+  outputText.value = lines.map(line => line.toUpperCase()).join('\n')
+}
+
+// 转小写
+const toLowerCase = () => {
+  if (!inputText.value) return
+  // 按换行符分割，每行单独转换
+  const lines = inputText.value.split('\n')
+  outputText.value = lines.map(line => line.toLowerCase()).join('\n')
+}
+
 // 清空输入输出
 const clear = () => {
   inputText.value = ''
@@ -83,19 +99,25 @@ const clear = () => {
   <div class="format-change-container">
     <TTextarea v-model:text="inputText" placeholder="请输入需要转换的字符串"/>
     <div class="button-group">
-      <el-button type="success" @click="toPascalCase">大驼峰 (PascalCase)</el-button>
-      <el-button type="success" @click="toCamelCase">小驼峰 (camelCase)</el-button>
-      <el-button type="success" @click="toSnakeCase">蛇形 (snake_case)</el-button>
-      <div class="custom-separator">
-        <el-input 
-          v-model="customSeparator" 
-          placeholder="自定义分隔符" 
-          style="width: 120px; margin-right: 10px;"
-          maxlength="1"
-        />
-        <el-button type="success" @click="toCustomSeparator">自定义分隔</el-button>
-      </div>
-      <el-button type="info" @click="clear">清空</el-button>
+      <el-row>
+        <el-button type="success" @click="toPascalCase">大驼峰</el-button>
+        <el-button type="success" @click="toCamelCase">小驼峰</el-button>
+        <el-button type="success" @click="toSnakeCase">蛇形</el-button>
+        <el-button type="success" @click="toUpperCase">转大写</el-button>
+        <el-button type="success" @click="toLowerCase">转小写</el-button>
+      </el-row>
+      <el-row>
+        <div class="custom-separator">
+          <el-input 
+            v-model="customSeparator" 
+            placeholder="自定义分隔符" 
+            style="width: 120px; margin-right: 10px;"
+            maxlength="1"
+          />
+          <el-button type="success" @click="toCustomSeparator">自定义分隔</el-button>
+        </div>
+        <el-button class="clear-btn" type="info" @click="clear">清空</el-button>
+      </el-row>
     </div>
     <TTextarea v-model:text="outputText" placeholder="转换结果"/>
   </div>
@@ -109,14 +131,19 @@ const clear = () => {
   
   .button-group {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 10px;
-    align-items: center;
+    /* align-items: center; */
   }
   
   .custom-separator {
     display: flex;
     align-items: center;
+  }
+
+  .clear-btn {
+    margin-left: 20px;
   }
   </style>
 </ClientOnly>
