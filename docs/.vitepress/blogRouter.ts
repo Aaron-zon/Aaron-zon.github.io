@@ -13,4 +13,7 @@ export const blogRouter = {
     { text: '常见的企业信息化系统（OA/ERP/MES/WMS）', link: 'enterprise-system'},
     { text: 'electron 打包', link: 'electron-pack'}
   ],
+  2026: [
+    { text: '创建一个electron + vue项目', link: 'electron-vue-project'}
+  ]
 }
