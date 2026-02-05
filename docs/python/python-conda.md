@@ -64,10 +64,10 @@ conda info -e
 ```
 
 **4.删除环境**
-> conda env remove -n [环境名] -all
+> conda remove -n [环境名] --all
 
 ```bash
-conda env remove -n myenv --all # 删除名为 myenv 的环境
+conda remove -n myenv --all # 删除名为 myenv 的环境
 ```
 
 ## 包（库）管理
