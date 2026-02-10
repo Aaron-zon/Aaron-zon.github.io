@@ -14,6 +14,14 @@ LangChain 是一个基于 LLM 构建智能体和应用程序的框架。
 - Integration packages：继承访问各种LLM的Provider，提供实现各种功能的Component
 - LangSmith：商业组件（付费可选），提供 部署、建工、测试、日志等功能
 
+## 构建一个基于LLM的应用需要哪些组件？
+
+- 首先，需要能够访问各种各样的LLM模型。LangChain就提供了访问各种大模型的工具，称为Provider。
+- 然后，需要能够实现各种围绕大模型的功能组件。LangChain就提供了各种Components，分别实现了各种功能。
+- 接下来，还有一些构建复杂应用的非必要的功能扩展。比如对请求记录进行统计，这就是LangChain提供的LangSmith。比如需要对复杂工作流进行编排，这就是LangChain提供的LangGraph。
+
+
+
 ## 环境
 
 - Python 3.10 或以上版本

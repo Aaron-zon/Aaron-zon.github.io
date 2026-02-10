@@ -21,7 +21,9 @@ const nav: ThemeConfig['nav'] = [
       { text: 'node', link: '/node/node-global'},
       { text: 'python', link: '/python/python-intro' },
       { text: 'docker', link: '/docker/docker-intro' },
+      { text: 'AI', link: '/ai/ai-intro' },
       { text: 'ai 知识库', link: '/knowledgeBase/knowledgeBase-intro' },
+      { text: 'langChain', link: '/langChain/langchain-intro' },
       { text: 'linux', link: '/linux/linux-intro' },
       { text: 'nginx', link: '/nginx/nginx-intro' },
     ]
@@ -277,12 +279,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'AI',
       items: [
         {text: 'AI 基础知识介绍', link: '/ai/ai-intro'},
-      ]
-    },
-    {
-      text: 'LnagChain',
-      items: [
-        {text: 'LangChain 介绍', link: '/ai/langchain-intro'},
+        {text: 'GEO生成式引擎优化', link: '/ai/ai-geo'}
       ]
     }
     // 本地文件 mcp
@@ -303,6 +300,15 @@ export const sidebar: ThemeConfig['sidebar'] = {
     // rag mcp
     // 工作流 mcp
 
+  ],
+  '/langChain/': [
+    {
+      text: 'LangChain',
+      items: [
+        {text: 'LangChain 介绍', link: '/langChain/langchain-intro'},
+        {text: 'LangChain 使用大模型', link: '/langChain/use-llm'}
+      ]
+    }
   ],
   '/linux/': [
     {
