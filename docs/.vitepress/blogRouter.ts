@@ -14,6 +14,7 @@ export const blogRouter = {
   ],
   2026: [
     { text: '创建一个electron + vue项目', link: 'electron-vue-project'},
-    { text: 'electron 打包', link: 'electron-pack'}
+    { text: 'electron 打包', link: 'electron-pack'},
+    { text: 'windows 安装 Claude Code', link: 'windows-claude-code'},
   ]
 }
