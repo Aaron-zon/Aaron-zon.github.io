@@ -16,5 +16,7 @@ export const blogRouter = {
     { text: '创建一个electron + vue项目', link: 'electron-vue-project'},
     { text: 'electron 打包', link: 'electron-pack'},
     { text: 'windows 安装 Claude Code', link: 'windows-claude-code'},
+    { text: 'DeepSeek 接入Claude Code', link: 'deepseek-claude-code'},
+    { text: 'Claude Code 跳过登录', link: 'claude-code-skip-login'},
   ]
 }
