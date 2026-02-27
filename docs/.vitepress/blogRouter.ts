@@ -11,6 +11,7 @@ export const blogRouter = {
     { text: 'SqlServer 导出表结构和数据', link: 'sqlserver-export-table'},
     { text: 'IDEA 启动一个 Tomcat 项目', link: 'idea-start-tomcat'},
     { text: '常见的企业信息化系统（OA/ERP/MES/WMS）', link: 'enterprise-system'},
+
   ],
   2026: [
     { text: '创建一个electron + vue项目', link: 'electron-vue-project'},
@@ -18,5 +19,7 @@ export const blogRouter = {
     { text: 'windows 安装 Claude Code', link: 'windows-claude-code'},
     { text: 'DeepSeek 接入Claude Code', link: 'deepseek-claude-code'},
     { text: 'Claude Code 跳过登录', link: 'claude-code-skip-login'},
+    { text: 'mac 安装图形界面版 openclaw', link: 'mac-openclaw-problem'},
+    { text: 'openclaw 接入 telegram', link: 'openclaw-telegram'},
   ]
 }
