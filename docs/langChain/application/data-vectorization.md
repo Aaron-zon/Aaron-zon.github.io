@@ -5,10 +5,15 @@
 
 ## 安装包
 - pip install langchain
+- pip install langgraph
+- pip install langchain-openai
 - pip install langchain_community
 - pip install langchain_huggingface
+- pip install langchain-text-splitters
 - python -m pip install huggingface-hub==0.36.1 transformers==4.41.2 sentence-transformers==2.7.0
 - pip install chromadb
+- pip install fastapi
+- pip install uvicorn
 
 ## 嵌入模型
 
