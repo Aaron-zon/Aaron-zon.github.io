@@ -30,7 +30,7 @@ const translate = async () => {
 
   try {
     const query = new URLSearchParams({ msg: message }).toString()
-    const response = await fetch(`http://43.139.208.69:8081/translate?${query}`)
+    const response = await fetch(`https://43.139.208.69/translate?${query}`)
 
     if (!response.ok) {
       throw new Error(`请求失败：${response.status}`)
