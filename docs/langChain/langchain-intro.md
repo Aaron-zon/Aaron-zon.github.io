@@ -20,8 +20,6 @@ LangChain 是一个基于 LLM 构建智能体和应用程序的框架。
 - 然后，需要能够实现各种围绕大模型的功能组件。LangChain就提供了各种Components，分别实现了各种功能。
 - 接下来，还有一些构建复杂应用的非必要的功能扩展。比如对请求记录进行统计，这就是LangChain提供的LangSmith。比如需要对复杂工作流进行编排，这就是LangChain提供的LangGraph。
 
-
-
 ## 环境
 
 - Python 3.10 或以上版本

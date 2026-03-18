@@ -278,7 +278,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'AI',
       items: [
-        {text: 'AI 基础知识介绍', link: '/ai/ai-intro'},
+        {text: '生成式人工智能原理', link: '/ai/ai-intro'},
         {text: 'GEO生成式引擎优化', link: '/ai/ai-geo'},
         // mcp
         // skills
@@ -308,7 +308,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'LangChain',
       items: [
         {text: 'LangChain 介绍', link: '/langChain/langchain-intro'},
-        {text: 'LangChain 使用大模型', link: '/langChain/use-llm'}
+        {text: 'LangChain 使用大模型', link: '/langChain/use-llm'},
+        {text: '构建聊天机器人', link: '/langChain/chat-bot'}
       ]
     }
   ],

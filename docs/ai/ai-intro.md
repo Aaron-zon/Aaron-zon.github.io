@@ -1,4 +1,4 @@
-# AI 基础知识介绍
+# 生成式人工智能原理
 
 AI即人工智能（Artificial Intelligence），是指人造机器所展现的智慧。
 
