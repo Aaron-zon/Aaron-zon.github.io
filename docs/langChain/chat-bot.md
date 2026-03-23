@@ -228,7 +228,7 @@ llm = ChatOpenAI(
   api_key=os.getenv("DEEPSEEK_API_KEY"),
 )
 
-history = RedisChatMessageHistory(session_id="test", redis_url="redis://:Kenes123@43.139.208.69:6379/0")
+history = RedisChatMessageHistory(session_id="test", redis_url="redis://:密码@ip:端口/库号")
 
 runnable = RunnableWithMessageHistory(
     llm, 
@@ -236,4 +236,42 @@ runnable = RunnableWithMessageHistory(
 )
 
 print(runnable.invoke({"text": "请重复一次"}).content)
+```
+
+当然也可以给 MessageHistory 整合一个Chain，来完成更复杂的应用逻辑
+
+```python
+import os
+from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
+from langchain_redis import RedisChatMessageHistory
+from langchain_core.runnables.history import RunnableWithMessageHistory
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import ChatPromptTemplate
+
+load_dotenv()
+
+llm = ChatOpenAI(
+  model="deepseek-chat",
+  base_url="https://api.deepseek.com/v1", 
+  api_key=os.getenv("DEEPSEEK_API_KEY"),
+)
+
+history = RedisChatMessageHistory(session_id="test", redis_url="redis://:密码@ip:端口/库号")
+
+prompt_template = ChatPromptTemplate.from_messages([
+    ("user", "{text}")
+])
+
+parser = StrOutputParser()
+
+chain = prompt_template | llm | parser
+
+runnable = RunnableWithMessageHistory(
+    chain, 
+    get_session_history=lambda: history
+)
+
+print(runnable.invoke({"text": "请重复一次"}))
+
 ```
