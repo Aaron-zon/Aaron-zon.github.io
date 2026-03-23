@@ -193,7 +193,7 @@ llm = ChatOpenAI(
 )
 
 
-history = RedisChatMessageHistory(session_id="test", redis_url="redis://:密码@ip:端口/库号")
+history = RedisChatMessageHistory(session_id="test", redis_url="redis://:密码@localhost:6379/库号")
 
 history.add_user_message("你是谁？")
 aimessage = llm.invoke(history.messages)

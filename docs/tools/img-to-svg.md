@@ -137,7 +137,6 @@ function clearAll() {
 }
 
 function isAcceptedFile(file) {
-
   const extension = file.name.split('.').pop()?.toLowerCase() || ''
   return ACCEPTED_MIME_TYPES.includes(file.type) || ACCEPTED_EXTENSIONS.includes(extension)
 }
@@ -345,7 +344,6 @@ async function startConvert() {
     isConverting.value = false
   }
 }
-
 
 async function copySvg() {
   if (!hasResult.value) {
