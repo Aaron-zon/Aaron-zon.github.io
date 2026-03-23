@@ -377,7 +377,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'Java实体类转换', link: '/tools/java-entity'},
         {text: '二维码生成', link: '/tools/to-qrcode'},
         {text: '日语翻译', link: '/tools/to-translate'},
-        // {text: '图片 to SVG', link: '/tools/img-to-svg'}
+        {text: '图片 to SVG', link: '/tools/img-to-svg'}
         // 图片转Canvas
         // word转pdf
         // 固定大小压缩包

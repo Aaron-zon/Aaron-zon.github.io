@@ -32,6 +32,11 @@ const traceOptions = {
   blurdelta: 24,
 }
 
+const CONVERT_MODES = {
+  EMBED: 'embed',
+  TRACE: 'trace',
+}
+
 const fileInputRef = ref(null)
 const selectedFile = ref(null)
 const originalPreviewUrl = ref('')
@@ -39,12 +44,24 @@ const svgText = ref('')
 const isConverting = ref(false)
 const imageMeta = ref(null)
 const conversionMeta = ref(null)
+const convertMode = ref(CONVERT_MODES.EMBED)
+const isDragActive = ref(false)
 
 let imageTracerPromise = null
+let dragDepth = 0
 
 const hasFile = computed(() => Boolean(selectedFile.value && originalPreviewUrl.value))
+
 const hasResult = computed(() => Boolean(svgText.value))
 const fileName = computed(() => selectedFile.value?.name || '未选择文件')
+const currentModeText = computed(() => (
+  convertMode.value === CONVERT_MODES.EMBED ? '图片包 SVG' : '矢量追踪'
+))
+const currentModeDescription = computed(() => (
+  convertMode.value === CONVERT_MODES.EMBED
+    ? '当前为图片包 SVG：正常尺寸显示更平滑，但不是真矢量。'
+    : '当前为矢量追踪：会生成路径，复杂图片可能出现毛刺。'
+))
 const downloadFileName = computed(() => {
   if (!selectedFile.value) {
     return 'image-to-svg.svg'
@@ -106,14 +123,21 @@ function clearResult() {
   conversionMeta.value = null
 }
 
+function handleModeChange() {
+  clearResult()
+}
+
 function clearAll() {
   selectedFile.value = null
   imageMeta.value = null
+  isDragActive.value = false
+  dragDepth = 0
   clearResult()
   revokeOriginalPreview()
 }
 
 function isAcceptedFile(file) {
+
   const extension = file.name.split('.').pop()?.toLowerCase() || ''
   return ACCEPTED_MIME_TYPES.includes(file.type) || ACCEPTED_EXTENSIONS.includes(extension)
 }
@@ -136,14 +160,33 @@ async function getImageTracer() {
   return imageTracerPromise
 }
 
-async function handleFileChange(event) {
-  const file = event.target.files?.[0]
-  event.target.value = ''
+function readFileAsDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(String(reader.result || ''))
+    reader.onerror = () => reject(new Error('图片读取失败'))
+    reader.readAsDataURL(file)
+  })
+}
 
-  if (!file) {
-    return
-  }
+function escapeXmlAttr(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+}
 
+function buildEmbeddedSvg({ dataUrl, width, height }) {
+  const safeHref = escapeXmlAttr(dataUrl)
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+  <image href="${safeHref}" x="0" y="0" width="${width}" height="${height}" preserveAspectRatio="xMidYMid meet" />
+</svg>`
+}
+
+async function processSelectedFile(file) {
   if (!isAcceptedFile(file)) {
     ElMessage.error('仅支持 PNG、JPG、JPEG、WEBP 格式')
     return
@@ -179,8 +222,57 @@ async function handleFileChange(event) {
   }
 }
 
+async function handleFileChange(event) {
+  const file = event.target.files?.[0]
+  event.target.value = ''
+
+  if (!file) {
+    return
+  }
+
+  await processSelectedFile(file)
+}
+
+function handleDragEnter(event) {
+  event.preventDefault()
+  dragDepth += 1
+  isDragActive.value = true
+}
+
+function handleDragOver(event) {
+  event.preventDefault()
+  if (event.dataTransfer) {
+    event.dataTransfer.dropEffect = 'copy'
+  }
+  isDragActive.value = true
+}
+
+function handleDragLeave(event) {
+  event.preventDefault()
+  dragDepth = Math.max(0, dragDepth - 1)
+
+  if (dragDepth === 0) {
+    isDragActive.value = false
+  }
+}
+
+async function handleDrop(event) {
+  event.preventDefault()
+  dragDepth = 0
+  isDragActive.value = false
+
+  const file = event.dataTransfer?.files?.[0]
+
+  if (!file) {
+    return
+  }
+
+  await processSelectedFile(file)
+}
+
+
 async function startConvert() {
-  if (!hasFile.value) {
+  if (!hasFile.value || !selectedFile.value || !imageMeta.value) {
     ElMessage.warning('请先选择一张图片')
     return
   }
@@ -189,13 +281,31 @@ async function startConvert() {
   clearResult()
 
   try {
+    if (convertMode.value === CONVERT_MODES.EMBED) {
+      const dataUrl = await readFileAsDataUrl(selectedFile.value)
+      const { width, height } = imageMeta.value
+
+      svgText.value = buildEmbeddedSvg({
+        dataUrl,
+        width,
+        height,
+      })
+      conversionMeta.value = {
+        mode: CONVERT_MODES.EMBED,
+        width,
+        height,
+        scaleRatio: 1,
+      }
+      ElMessage.success('SVG 转换完成（图片包 SVG）')
+      return
+    }
+
     const [imageTracer, image] = await Promise.all([
       getImageTracer(),
       loadImage(originalPreviewUrl.value),
     ])
 
-    const { width, height } = getImageDimensions(image)
-    const { width: targetWidth, height: targetHeight, scaleRatio } = calculateTargetSize(width, height)
+    const { targetWidth, targetHeight, scaleRatio } = imageMeta.value
     const canvas = document.createElement('canvas')
     canvas.width = targetWidth
     canvas.height = targetHeight
@@ -222,11 +332,12 @@ async function startConvert() {
 
     svgText.value = svg
     conversionMeta.value = {
+      mode: CONVERT_MODES.TRACE,
       width: targetWidth,
       height: targetHeight,
       scaleRatio,
     }
-    ElMessage.success('SVG 转换完成')
+    ElMessage.success('SVG 转换完成（矢量追踪）')
   } catch (error) {
     console.error(error)
     ElMessage.error('转换失败，请尝试更换图片后重试')
@@ -234,6 +345,7 @@ async function startConvert() {
     isConverting.value = false
   }
 }
+
 
 async function copySvg() {
   if (!hasResult.value) {
@@ -274,7 +386,7 @@ onBeforeUnmount(() => {
   <div class="img-to-svg-page">
     <div class="page-intro">
       <p>纯前端图片转 SVG，文件不会上传到服务器。</p>
-      <p>支持 <code>png / jpg / jpeg / webp</code>，单张图片最大 5MB，超大图片会自动缩放后再矢量化。</p>
+      <p>支持 <code>png / jpg / jpeg / webp</code>，默认使用图片包 SVG，也可切换到矢量追踪模式。</p>
     </div>
     <div class="toolbar">
       <input
@@ -285,6 +397,14 @@ onBeforeUnmount(() => {
         @change="handleFileChange"
       >
       <el-button type="primary" @click="triggerSelectFile">选择图片</el-button>
+      <el-select
+        v-model="convertMode"
+        style="width: 220px"
+        @change="handleModeChange"
+      >
+        <el-option label="图片包 SVG（默认）" :value="CONVERT_MODES.EMBED" />
+        <el-option label="矢量追踪（旧方式）" :value="CONVERT_MODES.TRACE" />
+      </el-select>
       <el-button type="success" :loading="isConverting" :disabled="!hasFile" @click="startConvert">
         开始转换
       </el-button>
@@ -294,15 +414,19 @@ onBeforeUnmount(() => {
     </div>
     <div class="file-summary">
       <span>当前文件：{{ fileName }}</span>
+      <span>转换模式：{{ currentModeText }}</span>
       <span v-if="imageMeta">文件大小：{{ imageMeta.sizeText }}</span>
       <span v-if="imageMeta">
         原图尺寸：{{ imageMeta.width }} × {{ imageMeta.height }}
       </span>
-      <span v-if="imageMeta && imageMeta.scaleRatio < 1">
-        转换前会自动缩放到 {{ imageMeta.targetWidth }} × {{ imageMeta.targetHeight }}
+      <span v-if="imageMeta && convertMode === CONVERT_MODES.TRACE && imageMeta.scaleRatio < 1">
+        矢量追踪前会自动缩放到 {{ imageMeta.targetWidth }} × {{ imageMeta.targetHeight }}
+      </span>
+      <span v-else-if="imageMeta && convertMode === CONVERT_MODES.TRACE">
+        当前尺寸无需缩放
       </span>
       <span v-else-if="imageMeta">
-        当前尺寸无需缩放
+        图片将按原始尺寸嵌入 SVG
       </span>
     </div>
     <div class="panel-grid">
@@ -310,13 +434,29 @@ onBeforeUnmount(() => {
         <div class="panel-head">
           <div>
             <h3>原图预览</h3>
-            <p>上传后点击“开始转换”才会执行矢量化。</p>
+            <!-- <p>支持点击选择，也可以直接拖拽图片到预览区上传。</p> -->
           </div>
         </div>
-        <div class="preview-stage checkerboard">
+        <div
+          class="preview-stage checkerboard upload-stage"
+          :class="{ 'is-drag-active': isDragActive }"
+          @click="triggerSelectFile"
+          @keydown.enter.prevent="triggerSelectFile"
+          @keydown.space.prevent="triggerSelectFile"
+          @dragenter="handleDragEnter"
+          @dragover="handleDragOver"
+          @dragleave="handleDragLeave"
+          @drop="handleDrop"
+          role="button"
+          tabindex="0"
+        >
           <img v-if="originalPreviewUrl" :src="originalPreviewUrl" alt="原图预览" class="preview-image">
           <div v-else class="empty-state">
-            请选择一张图片开始
+            <strong>拖拽图片到这里上传</strong>
+            <span>或点击此区域选择文件</span>
+          </div>
+          <div v-if="originalPreviewUrl" class="upload-tip">
+            {{ isDragActive ? '松手即可替换当前图片' : '拖拽新图片到这里可直接替换' }}
           </div>
         </div>
       </section>
@@ -324,7 +464,7 @@ onBeforeUnmount(() => {
         <div class="panel-head">
           <div>
             <h3>SVG 预览</h3>
-            <p>默认使用偏保真的转换参数，保留透明背景。</p>
+            <!-- <p>{{ currentModeDescription }}</p> -->
           </div>
           <span v-if="isConverting" class="status-text">转换中...</span>
         </div>
@@ -335,8 +475,9 @@ onBeforeUnmount(() => {
           </div>
         </div>
         <div v-if="conversionMeta" class="result-meta">
+          <span>输出方式：{{ currentModeText }}</span>
           <span>输出尺寸：{{ conversionMeta.width }} × {{ conversionMeta.height }}</span>
-          <span v-if="conversionMeta.scaleRatio < 1">
+          <span v-if="convertMode === CONVERT_MODES.TRACE && conversionMeta.scaleRatio < 1">
             缩放比例：{{ Math.round(conversionMeta.scaleRatio * 100) }}%
           </span>
         </div>
@@ -345,10 +486,11 @@ onBeforeUnmount(() => {
     <div class="tips-card">
       <h4>说明</h4>
       <ul>
-        <li>当前是一键转换版本，代码里已经预留了后续扩展参数的位置。</li>
-        <li>如果原图特别复杂，生成的 SVG 体积可能会比较大，这是矢量化保真模式的正常现象。</li>
+        <li>默认使用图片包 SVG，适合优先保证正常尺寸下的显示平滑度。</li>
+        <li>矢量追踪模式会生成路径，复杂图片的 SVG 体积可能更大，也可能出现边缘毛刺。</li>
       </ul>
     </div>
+
   </div>
 </ClientOnly>
 
@@ -439,7 +581,30 @@ onBeforeUnmount(() => {
   background-color: #fff;
 }
 
+.upload-stage {
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.upload-stage:hover,
+.upload-stage:focus-visible {
+  border-color: var(--vp-c-brand-1);
+}
+
+.upload-stage:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vp-c-brand-1) 20%, transparent);
+}
+
+.upload-stage.is-drag-active {
+  border-color: var(--vp-c-brand-1);
+  background-color: color-mix(in srgb, var(--vp-c-brand-1) 6%, #fff);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vp-c-brand-1) 20%, transparent);
+}
+
 .checkerboard {
+
   background-image:
     linear-gradient(45deg, #f2f3f5 25%, transparent 25%),
     linear-gradient(-45deg, #f2f3f5 25%, transparent 25%),
@@ -474,12 +639,33 @@ onBeforeUnmount(() => {
 }
 
 .empty-state {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   color: var(--vp-c-text-3);
   font-size: 14px;
   text-align: center;
 }
 
+.empty-state strong {
+  color: var(--vp-c-text-1);
+}
+
+.upload-tip {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  line-height: 1.4;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
 .tips-card ul {
+
   margin: 12px 0 0;
   padding-left: 18px;
   color: var(--vp-c-text-2);
