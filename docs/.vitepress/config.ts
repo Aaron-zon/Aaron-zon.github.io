@@ -310,7 +310,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         {text: 'LangChain 介绍', link: '/langChain/langchain-intro'},
         {text: 'LangChain 使用大模型', link: '/langChain/use-llm'},
-        {text: '构建聊天机器人', link: '/langChain/chat-bot'}
+        {text: '构建聊天机器人', link: '/langChain/chat-bot'},
+        {text: 'agent与本地工具', link: '/langChain/agent-and-tool'},
       ]
     }
   ],
