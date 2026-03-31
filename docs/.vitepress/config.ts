@@ -281,6 +281,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         {text: '生成式人工智能原理', link: '/ai/ai-intro'},
         {text: 'GEO生成式引擎优化', link: '/ai/ai-geo'},
+        {text: '提示词Prompt', link: '/ai/ai-prompt'},
         // mcp
         // skills
       ]
