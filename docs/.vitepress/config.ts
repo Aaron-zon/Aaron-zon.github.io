@@ -26,6 +26,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'langChain', link: '/langChain/langchain-intro' },
       { text: 'linux', link: '/linux/linux-intro' },
       { text: 'nginx', link: '/nginx/nginx-intro' },
+      { text: 'dart', link: '/dart/dart-intro' },
     ]
   }
 ]
