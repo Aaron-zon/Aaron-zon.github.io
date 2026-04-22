@@ -75,7 +75,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'dart基础',
       items: [
         { text: 'dart 介绍', link: '/dart/dart-intro'},
-        { text: 'dart 数据类型', link: '/dart/dart-type' }
+        { text: 'dart 数据类型', link: '/dart/dart-type' },
+        { text: 'dart 类型转换', link: '/dart/dart-type-conversion' },
+        { text: 'dart 流程控制', link: '/dart/dart-flow-control' },
       ]
     }
   ],
