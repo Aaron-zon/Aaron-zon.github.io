@@ -70,6 +70,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     }
   ],
+  '/dart/': [
+    {
+      text: 'dart基础',
+      items: [
+        { text: 'dart 介绍', link: '/dart/dart-intro'},
+      ]
+    }
+  ],
   '/java/': [
     {
       text: 'Java 基础',
