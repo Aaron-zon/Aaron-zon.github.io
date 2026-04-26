@@ -27,6 +27,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'linux', link: '/linux/linux-intro' },
       { text: 'nginx', link: '/nginx/nginx-intro' },
       { text: 'dart', link: '/dart/dart-intro' },
+      { text: 'Nuxt', link: '/nuxt/nuxt-intro' },
     ]
   }
 ]
@@ -78,6 +79,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'dart 数据类型', link: '/dart/dart-type' },
         { text: 'dart 类型转换', link: '/dart/dart-type-conversion' },
         { text: 'dart 流程控制', link: '/dart/dart-flow-control' },
+      ]
+    }
+  ],
+  '/nuxt/': [
+    {
+      text: '基础',
+      items: [
+        { text: 'Nuxt 介绍', link: '/nuxt/nuxt-intro' },
       ]
     }
   ],
