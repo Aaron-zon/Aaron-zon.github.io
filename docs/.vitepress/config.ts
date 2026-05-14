@@ -275,6 +275,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'pyenv 常用命令', link: '/python/pyenv-command' },
         { text: 'python conda', link: '/python/python-conda' },
         { text: 'python 包上传', link: '/python/python-package-upload' },
+        { text: 'python 连接数据库', link: '/python/python-connect-database' }
       ]
     }
   ],
