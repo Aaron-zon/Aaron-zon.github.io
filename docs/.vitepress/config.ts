@@ -344,6 +344,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'langchain 环境', link: '/langchain/langchain-env' },
         { text: 'langchain ollama', link: '/langchain/langchain-ollama' },
         { text: 'langchain deepseek', link: '/langchain/langchain-deepseek' },
+        { text: 'langchain PDF转向量', link: '/langchain/langchain-pdf-vector' },
       ]
     }
   ],
