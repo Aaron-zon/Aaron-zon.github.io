@@ -57,13 +57,3 @@ pip installlangchain-chroma
 # 可以导出当前环境下已下载的包，以及其版本号
 pip freeze > pypackage.txt
 ```
-
-选择下载：
-
-```bash
-# 使用ollama本地模型时
-pip install langchain-ollama
-
-# 使用deepseek
-pip install langchain-deepseek
-```
