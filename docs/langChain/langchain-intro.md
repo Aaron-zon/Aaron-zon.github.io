@@ -30,6 +30,8 @@ LangChain 是一个基于 LLM 构建智能体和应用程序的框架。
 ```bash
 # 安装 LangChain 核心库
 pip install langchain
+# 安装 langChain 扩展库
+pip install langchain-community
 # 安装 多智能体集成
 pip install langgraph
 # 安装 OpenAI 集成
