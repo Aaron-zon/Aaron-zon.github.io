@@ -341,7 +341,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'Langchain1.0',
       items: [
-        { text: 'langchain 环境', link: '/langchain/langchain-env'}
+        { text: 'langchain 环境', link: '/langchain/langchain-env' },
+        { text: 'langchain ollama', link: '/langchain/langchain-ollama' },
+        { text: 'langchain deepseek', link: '/langchain/langchain-deepseek' },
       ]
     }
   ],
