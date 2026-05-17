@@ -23,7 +23,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'docker', link: '/docker/docker-intro' },
       { text: 'AI', link: '/ai/ai-intro' },
       { text: 'ai 知识库', link: '/knowledgeBase/knowledgeBase-intro' },
-      { text: 'langChain', link: '/langChain/langchain-intro' },
+      { text: 'langChain', link: '/langChain/langchain-env' },
       { text: 'linux', link: '/linux/linux-intro' },
       { text: 'nginx', link: '/nginx/nginx-intro' },
       { text: 'dart', link: '/dart/dart-intro' },
@@ -341,10 +341,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'Langchain1.0',
       items: [
-        { text: 'langchain 环境', link: '/langchain/langchain-env' },
-        { text: 'langchain ollama', link: '/langchain/langchain-ollama' },
-        { text: 'langchain deepseek', link: '/langchain/langchain-deepseek' },
-        { text: 'langchain PDF转向量', link: '/langchain/langchain-pdf-vector' },
+        { text: 'langchain 环境', link: '/langChain/langchain-env' },
+        { text: 'langchain ollama', link: '/langChain/langchain-ollama' },
+        { text: 'langchain deepseek', link: '/langChain/langchain-deepseek' },
+        { text: 'langchain PDF转向量', link: '/langChain/langchain-pdf-vector' },
       ]
     }
   ],
