@@ -345,6 +345,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'langchain ollama', link: '/langChain/langchain-ollama' },
         { text: 'langchain deepseek', link: '/langChain/langchain-deepseek' },
         { text: 'langchain PDF转向量', link: '/langChain/langchain-pdf-vector' },
+        { text: 'langchain 语义搜索', link: '/langChain/langchain-search' },
       ]
     }
   ],
