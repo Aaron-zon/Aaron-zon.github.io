@@ -2,7 +2,9 @@
 outline: deep
 ---
 
-# ArrayList 常用方法
+# ArrayList
+
+## ArrayList 常用方法
 
 - **boolean add(E e)**: 将指定元素添加到列表尾部
 - **void add(int index, E e)**: 将指定元素插入此列表中指定位置
