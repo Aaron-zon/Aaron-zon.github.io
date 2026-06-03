@@ -126,9 +126,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
     {
-      text: '面试',
+      text: '解析',
       items: [
         { text: 'ArragList', link: 'java/interview/java-arraylist' },
+        { text: 'HashMap', link: 'java/interview/java-hashmap' },
       ]
     },
     {
