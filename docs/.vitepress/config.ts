@@ -118,6 +118,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: '应用',
       items: [
         { text: '正则的常用方法', link: '/java/useJava/java-regex-method' },
+        { text: 'ArragList 常用方法', link: 'java/useJava/java-arraylist-method' },
         // IO
         // 正则
         // Stream
@@ -127,7 +128,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: '面试',
       items: [
-        { text: 'ArragList', link: 'java/java-arraylist' },
+        { text: 'ArragList', link: 'java/interview/java-arraylist' },
       ]
     },
     {
