@@ -98,8 +98,6 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '数据类型', link: '/java/java-type' },
         { text: '类型转换', link: '/java/type-conversion'},
         { text: '集合', link: '/java/java-collection' },
-        { text: 'ArragList', link: 'java/java-arraylist' },
-        // { text: 'ArragList 常用方法', link: 'java/java-arraylist-method' },
         { text: '工具类', link: '/java/java-util' },
         { text: '异常处理', link: '/java/exception'},
         { text: '枚举', link: '/java/java-enum' },
@@ -130,6 +128,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'ArragList', link: 'java/interview/java-arraylist' },
         { text: 'HashMap', link: 'java/interview/java-hashmap' },
+        { text: 'IO', link: 'java/interview/java-io' },
       ]
     },
     {
