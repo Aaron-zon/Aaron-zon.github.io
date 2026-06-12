@@ -391,7 +391,7 @@ read()
 
 这也是一种 `NIO`，它的思想是: 
 
-> 我不主动问，操作系统通知我
+> 我不主动问，数据到位，可以读取的时候，由操作系统通知我
 
 ```java
 selector.select();
@@ -406,7 +406,7 @@ selector.select();
 
 非阻塞IO：你主动问，有没有数据？
 
-异步IO：有数据时，系统主动通知你
+异步IO：数据已经读完了，系统通知你“处理结果吧”
 
 区别：
 
@@ -420,10 +420,118 @@ selector.select();
 事件通知
 ```
 
-## Unix支持的5种IO模型
+## 不同IO的使用场景
 
-## 同步非阻塞NIO
+目前没有一种 IO 能统治所有场景。
 
-## NIO网络通信与IO多路复用模型
+### 普通文件读写（最常见）
 
-## AIO以及异步IO模型
+现在很少 Java 项目里写：
+
+```java
+FileInputStream
+FileOutputStream
+BufferedReader
+BufferedWriter
+```
+
+更多是（11+）：
+
+```java
+Path path = Path.of("test.txt");
+
+String content = Files.readString(path);
+
+Files.writeString(path, content);
+```
+
+或者：
+
+```java
+byte[] bytes = Files.readAllBytes(path);
+```
+
+这些属于 **Java NIO.2（java.nio.file）**。
+
+**优点：**
+
+- API 简洁
+- 自动处理资源
+- 编码支持好
+- 底层性能不错
+
+这是目前最推荐的文件操作方式。
+
+### 高并发网络服务器—— NIO（Selector）
+
+- Web服务器
+- RPC框架
+- 网关
+- IM聊天系统
+
+这些通常不会使用BIO，而是使用 NIO + Selector + epoll
+
+典型代表：
+
+- Netty
+- Apache Tomcat
+- Apache Dubbo
+
+这些底层基本都是 Selector + epoll。
+
+### 业务开发中最常见的其实是框架封装
+
+你写：
+
+```
+@RestController
+public class UserController {}
+```
+
+实际上
+
+```java
+Spring Boot
+↓
+Tomcat
+↓
+NIO
+↓
+epoll
+```
+
+已经帮你处理好了。
+
+因此我们正常开发时虽然不会直接写 Selector、SocketChannel，但其实每天都在使用他们。
+
+### AIO
+
+java有 `AsynchronousSocketChannel` 属于 AIO，但是实际项目很少见。
+
+原因：
+- API 复杂
+- 生态弱
+- Linux 下尝其以 epoll 更程数
+- Netty 没有全面采用 AIO
+
+### 超大文件处理
+
+如果文件达到 `GB`、`TB`级别，会使用 `MappedByteBuffer`.
+
+即内存映射文件（Memory Mapped File）
+
+例如：
+
+```java
+FileChannel channel = ...
+MappedByteBuffer buffer =
+    channel.map(...);
+```
+
+底层利用操作系统的虚拟内存机制。
+
+常见于：
+
+- 数据库
+- 消息队列
+- 搜索引擎
