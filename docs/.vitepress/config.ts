@@ -26,6 +26,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'langChain', link: '/langChain/langchain-env' },
       { text: 'linux', link: '/linux/linux-intro' },
       { text: 'nginx', link: '/nginx/nginx-intro' },
+      { text: 'redis', link: '/redis/redis-intro' },
       { text: 'dart', link: '/dart/dart-intro' },
       { text: 'Nuxt', link: '/nuxt/nuxt-intro' },
     ]
@@ -118,10 +119,11 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '正则的常用方法', link: '/java/useJava/java-regex-method' },
         { text: 'ArragList 常用方法', link: 'java/useJava/java-arraylist-method' },
         { text: 'IO 常用方法', link: 'java/useJava/java-io-method' }
-        // IO
-        // 正则
-        // Stream
-        
+        // Spring Boot  自动装配原理
+        // Spring 生命周期
+        // AOP
+        // Spring 事务
+
       ]
     },
     {
@@ -404,12 +406,42 @@ export const sidebar: ThemeConfig['sidebar'] = {
   ],
   '/redis/': [
     {
-      text: 'Redis',
+      text: '基础',
       items: [
-        {text: 'Redis 介绍', link: 'redis/redis-intro'},
+        { text: 'Redis 介绍', link: '/redis/redis-intro' },
+        { text: '数据类型', link: '/redis/data-type' },
+        // 常用命令
+        // 过期时间
+        // Spring Boot整合Redis
+
+        // 缓存
+        // 登录
+        // 延迟队列
+        // 缓存穿透
+        // 缓存击穿
+        // 缓存雪崩
+
+        // 分布式锁
+        // 消息队列
+        // 排行榜（游戏、直播、积分系统）
+
+        // 内存操作
+        // 单线程模型
+        // IO多路复用
+        // 持久化
+        // RDB/AOF/淘汰策略
+        
+        // 集群
+        // 主从复制
+        // Sentinel哨兵模式
+        // Redis Cluster
+
       ]
-    }
+    },
   ],
+  // 消息队列 MQ
+  // RabbitMQ
+  // Kafka
   '/tools': [
     {
       text: '编码/解吗',
