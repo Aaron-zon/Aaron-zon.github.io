@@ -108,8 +108,6 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '反射', link: '/java/java-reflection' },
         { text: 'IO', link: '/java/java-io' },
         { text: '线程', link: '/java/java-thread' },
-        // { text: 'JDBC', link: '/java/java-jdbc' },
-        // { text: 'Stream', link: '/java/java-stream' },
         { text: '正则表达式', link: '/java/java-regex' },
       ],
     },
@@ -410,7 +408,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Redis 介绍', link: '/redis/redis-intro' },
         { text: '数据类型', link: '/redis/data-type' },
-        // 常用命令
+        { text: '常用命令', link: '/redis/command' },
         // 过期时间
         // Spring Boot整合Redis
 
