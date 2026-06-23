@@ -410,7 +410,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '数据类型', link: '/redis/data-type' },
         { text: '常用命令', link: '/redis/command' },
         { text: '过期时间', link: '/redis/expire' },
-        // Spring Boot整合Redis
+        { text: 'Spring Boot整合Redis', link: '/redis/spring-boot-redis'}
 
         // 缓存
         // 登录
