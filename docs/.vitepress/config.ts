@@ -415,7 +415,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '缓存穿透', link: '/redis/cache-penetration' },
         { text: '缓存击穿', link: '/redis/cache-break'},
         { text: '缓存雪崩', link: '/redis/cache-avalanche' },
-        // 登录
+        { text: '延迟队列', link: '/redis/delay-queue' },
+        
         // 延迟队列
 
         // 分布式锁
