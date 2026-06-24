@@ -413,9 +413,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'Spring Boot整合Redis', link: '/redis/spring-boot-redis'},
         { text: '缓存', link: '/redis/cache' },
         { text: '缓存穿透', link: '/redis/cache-penetration' }
+        { text: '缓存击穿', link: '/redis/cache-break'}
         // 登录
         // 延迟队列
-        // 缓存穿透
         // 缓存击穿
         // 缓存雪崩
 
