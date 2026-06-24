@@ -411,8 +411,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '常用命令', link: '/redis/command' },
         { text: '过期时间', link: '/redis/expire' },
         { text: 'Spring Boot整合Redis', link: '/redis/spring-boot-redis'},
-        { text: '缓存', link: '/redis/cache' }
-        
+        { text: '缓存', link: '/redis/cache' },
+        { text: '缓存穿透', link: '/redis/cache-penetration' }
         // 登录
         // 延迟队列
         // 缓存穿透
