@@ -412,12 +412,11 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '过期时间', link: '/redis/expire' },
         { text: 'Spring Boot整合Redis', link: '/redis/spring-boot-redis'},
         { text: '缓存', link: '/redis/cache' },
-        { text: '缓存穿透', link: '/redis/cache-penetration' }
-        { text: '缓存击穿', link: '/redis/cache-break'}
+        { text: '缓存穿透', link: '/redis/cache-penetration' },
+        { text: '缓存击穿', link: '/redis/cache-break'},
+        { text: '缓存雪崩', link: '/redis/cache-avalanche' },
         // 登录
         // 延迟队列
-        // 缓存击穿
-        // 缓存雪崩
 
         // 分布式锁
         // 消息队列
