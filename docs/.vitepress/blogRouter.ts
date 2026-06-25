@@ -21,6 +21,7 @@ export const blogRouter = {
     { text: 'Claude Code 跳过登录', link: 'claude-code-skip-login'},
     { text: 'mac 安装图形界面版 openclaw', link: 'mac-openclaw-problem'},
     { text: 'openclaw 接入 telegram', link: 'openclaw-telegram'},
-    { text: 'ADB reverse解决不同网段app无法调用接口的问题', link: 'adb-reverse'}
+    { text: 'ADB reverse解决不同网段app无法调用接口的问题', link: 'adb-reverse'},
+    { text: 'Android WebView 调试', link: 'android-webview-debug' },
   ]
 }
