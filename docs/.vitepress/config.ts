@@ -416,10 +416,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '缓存击穿', link: '/redis/cache-break'},
         { text: '缓存雪崩', link: '/redis/cache-avalanche' },
         { text: '延迟队列', link: '/redis/delay-queue' },
-        
-        // 延迟队列
-
-        // 分布式锁
+        { text: '分布式锁', link: '/redis/distributed-lock' },
         // 消息队列
         // 排行榜（游戏、直播、积分系统）
 
