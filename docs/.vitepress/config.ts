@@ -22,7 +22,6 @@ const nav: ThemeConfig['nav'] = [
       { text: 'python', link: '/python/python-intro' },
       { text: 'docker', link: '/docker/docker-intro' },
       { text: 'AI', link: '/ai/ai-intro' },
-      { text: 'ai 知识库', link: '/knowledgeBase/knowledgeBase-intro' },
       { text: 'langChain', link: '/langChain/langchain-env' },
       { text: 'linux', link: '/linux/linux-intro' },
       { text: 'nginx', link: '/nginx/nginx-intro' },
@@ -298,16 +297,6 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     }
   ],
-  '/knowledgeBase/': [
-    {
-      text: 'AI 知识库',
-      items: [
-        {text: '介绍', link: '/knowledgeBase/knowledgeBase-intro'},
-        {text: 'cherryStudio知识库', link: '/knowledgeBase/cherryStudio-siliconflow'},
-        {text: '搭建知识库（Java）', link: '/knowledgeBase/java-knowledgeBase'},
-      ]
-    }
-  ],
   '/ai/': [
     {
       text: 'AI',
@@ -315,8 +304,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: '生成式人工智能原理', link: '/ai/ai-intro'},
         {text: 'GEO生成式引擎优化', link: '/ai/ai-geo'},
         {text: '提示词Prompt', link: '/ai/ai-prompt'},
-        // mcp
-        // skills
+      ]
+    },
+    {
+      text: '知识库',
+      items: [
+        {text: '介绍', link: '/knowledgeBase/knowledgeBase-intro'},
+        {text: 'cherryStudio知识库', link: '/knowledgeBase/cherryStudio-siliconflow'},
+        {text: '搭建知识库（Java）', link: '/knowledgeBase/java-knowledgeBase'},
       ]
     }
     // 本地文件 mcp
