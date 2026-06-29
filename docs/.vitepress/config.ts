@@ -418,10 +418,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '延迟队列', link: '/redis/delay-queue' },
         { text: '分布式锁', link: '/redis/distributed-lock' },
         { text: '消息队列', link: '/redis/message-queue' },
-        { text: '事务', link: '/redis/transaction' },
-        // 管道
         { text: 'Lua 脚本', link: '/redis/lua-script' },
-
+        // 管道
         // 持久化
         // 内存淘汰机制
         // 过期删除策略
