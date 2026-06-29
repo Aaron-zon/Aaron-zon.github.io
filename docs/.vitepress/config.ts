@@ -417,7 +417,18 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '缓存雪崩', link: '/redis/cache-avalanche' },
         { text: '延迟队列', link: '/redis/delay-queue' },
         { text: '分布式锁', link: '/redis/distributed-lock' },
-        // 消息队列
+        { text: '消息队列', link: '/redis/message-queue' },
+        { text: '事务', link: '/redis/transaction' },
+        // 管道
+        { text: 'Lua 脚本', link: '/redis/lua-script' },
+
+        // 持久化
+        // 内存淘汰机制
+        // 过期删除策略
+        // 主从复制
+        // 哨兵
+        // Redis Cluster
+
         // 排行榜（游戏、直播、积分系统）
 
         // 内存操作
