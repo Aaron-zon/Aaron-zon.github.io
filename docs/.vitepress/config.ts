@@ -294,6 +294,13 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         {text: 'docker 介绍', link: '/docker/docker-intro'},
         {text: 'docker 安装', link: '/docker/docker-install'},
+        // Image 镜像
+        // Container 容器
+        // Volume 数据卷
+        // Network 网络
+        // Dockerfile
+        // Docker Compose
+        // Spring Boot项目Docker化
       ]
     }
   ],
@@ -387,7 +394,6 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: '查询', link: '/linux/useLinux/use-query'},
         {text: '进程管理', link: '/linux/useLinux/use-process'},
         {text: '服务器资源', link: '/linux/useLinux/use-server'},
-        // 部署 chmod、chown、tar
         // JDK诊断 jps、jstack、jmap、jstat、jcmd
       ]
     }
