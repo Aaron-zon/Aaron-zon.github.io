@@ -309,9 +309,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: '知识库',
       items: [
-        {text: '介绍', link: '/knowledgeBase/knowledgeBase-intro'},
-        {text: 'cherryStudio知识库', link: '/knowledgeBase/cherryStudio-siliconflow'},
-        {text: '搭建知识库（Java）', link: '/knowledgeBase/java-knowledgeBase'},
+        {text: '介绍', link: '/ai/knowledgeBase-intro'},
+        {text: 'cherryStudio知识库', link: '/ai/cherryStudio-siliconflow'},
+        {text: '搭建知识库（Java）', link: '/ai/java-knowledgeBase'},
       ]
     }
     // 本地文件 mcp
@@ -379,6 +379,15 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'scp文件传输', link: '/linux/ubuntu/ubuntu-scp'},
         {text: '安装/使用 nginx', link: '/linux/ubuntu/ubuntu-nginx'},
         {text: '安装/使用 php', link: '/linux/ubuntu/ubuntu-php'},
+      ]
+    },
+    {
+      text: '应用',
+      items: [
+        {text:'查询', link: '/linux/useLinux/use-query'},
+        // 线上排查 ps、top、kill
+        // 部署
+        // 
       ]
     }
   ],
