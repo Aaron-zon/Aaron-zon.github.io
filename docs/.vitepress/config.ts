@@ -385,9 +385,11 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: '应用',
       items: [
         {text:'查询', link: '/linux/useLinux/use-query'},
-        // 线上排查 ps、top、kill
-        // 部署
-        // 
+        {text:'进程管理', link: '/linux/useLinux/use-process'},
+        // 线上排查 ps、top、kill、ss
+        // 服务器资源 df、free、uptime
+        // 部署 chmod、chown、tar
+        // JDK诊断 jps、jstack、jmap、jstat、jcmd
       ]
     }
   ],
