@@ -297,7 +297,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'Image 镜像', link: '/docker/docker-image'},
         {text: 'Container 容器', link: '/docker/docker-container'},
         {text: 'Volume 数据卷', link: '/docker/docker-volume'},
-        // {text: 'Network', link: '/docker/docker-network'},
+        {text: 'Network', link: '/docker/docker-network'},
         // Network 网络
         // Dockerfile
         // Docker Compose
