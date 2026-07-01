@@ -294,9 +294,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         {text: 'docker 介绍', link: '/docker/docker-intro'},
         {text: 'docker 安装', link: '/docker/docker-install'},
-        // Image 镜像
-        // Container 容器
-        // Volume 数据卷
+        {text: 'Image 镜像', link: '/docker/docker-image'},
+        {text: 'Container 容器', link: '/docker/docker-container'},
+        {text: 'Volume 数据卷', link: '/docker/docker-volume'},
+        // {text: 'Network', link: '/docker/docker-network'},
         // Network 网络
         // Dockerfile
         // Docker Compose
