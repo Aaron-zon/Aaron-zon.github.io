@@ -454,8 +454,23 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
   ],
-  // 消息队列 MQ
-  // RabbitMQ
+  '/RabbitMQ/': [
+    {
+      text: '基础',
+      items: [
+        {text: 'RabbitMQ 介绍', link: '/rabbitMQ/rabbitmq-intro'},
+        {text: '整体架构', link: '/rabbitMQ/rabbitmq-architecture'},
+        // Exchange 四种类型
+        // Binding、RoutingKey
+        // Spring Boot 整合 RabbitMQ
+        // ACK、NACK、Confirm、Return（消息可靠性）
+        // 持久化、消费者模型、Prefetch
+        // TTL、死信队列（DLX）、延迟消息
+        // 幂等性、重复消费、失败重试
+        // 性能优化、监控与企业实战
+      ]
+    }
+  ],
   // Kafka
   '/tools': [
     {
