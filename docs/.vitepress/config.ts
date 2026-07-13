@@ -28,6 +28,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'redis', link: '/redis/redis-intro' },
       { text: 'dart', link: '/dart/dart-intro' },
       { text: 'Nuxt', link: '/nuxt/nuxt-intro' },
+      { text: 'RabbitMQ', link: '/rabbitMQ/rabbitmq-intro' },
     ]
   }
 ]
@@ -460,6 +461,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         {text: 'RabbitMQ 介绍', link: '/rabbitMQ/rabbitmq-intro'},
         {text: '整体架构', link: '/rabbitMQ/rabbitmq-architecture'},
+        {text: 'Connection 与 Channel', link: '/rabbitMQ/connection-channel'},
         // Exchange 四种类型
         // Binding、RoutingKey
         // Spring Boot 整合 RabbitMQ
