@@ -473,6 +473,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     }
   ],
+  '/android': [
+    {
+      text: '基础',
+      items: [
+        { text: '目录结构', link: '/android/android-intro'},
+      ]
+    }
+  ],
   // Kafka
   '/tools': [
     {
