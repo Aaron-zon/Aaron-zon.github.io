@@ -462,9 +462,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'RabbitMQ 介绍', link: '/rabbitMQ/rabbitmq-intro'},
         {text: '整体架构', link: '/rabbitMQ/rabbitmq-architecture'},
         {text: 'Connection 与 Channel', link: '/rabbitMQ/connection-channel'},
-        {text: 'Exchange', link: '/rabbitMQ/exchange'}
-        // Exchange 四种类型
-        // Binding、RoutingKey
+        {text: 'Exchange', link: '/rabbitMQ/exchange'},
+        {text: 'Queue', link: '/rabbitMQ/queue'}
         // Spring Boot 整合 RabbitMQ
         // ACK、NACK、Confirm、Return（消息可靠性）
         // 持久化、消费者模型、Prefetch
