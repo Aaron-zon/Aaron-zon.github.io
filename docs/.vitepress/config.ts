@@ -462,6 +462,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'RabbitMQ 介绍', link: '/rabbitMQ/rabbitmq-intro'},
         {text: '整体架构', link: '/rabbitMQ/rabbitmq-architecture'},
         {text: 'Connection 与 Channel', link: '/rabbitMQ/connection-channel'},
+        {text: 'Exchange', link: '/rabbitMQ/exchange'}
         // Exchange 四种类型
         // Binding、RoutingKey
         // Spring Boot 整合 RabbitMQ
