@@ -29,6 +29,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'dart', link: '/dart/dart-intro' },
       { text: 'Nuxt', link: '/nuxt/nuxt-intro' },
       { text: 'RabbitMQ', link: '/rabbitMQ/rabbitmq-intro' },
+      { text: 'Gradle', link: '/gradle/' },
     ]
   }
 ]
@@ -463,13 +464,22 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: '整体架构', link: '/rabbitMQ/rabbitmq-architecture'},
         {text: 'Connection 与 Channel', link: '/rabbitMQ/connection-channel'},
         {text: 'Exchange', link: '/rabbitMQ/exchange'},
-        {text: 'Queue', link: '/rabbitMQ/queue'}
+        {text: 'Queue', link: '/rabbitMQ/queue'},
+        {text: 'Consumer与ACK消息确认机制', link: '/rabbitMQ/consumer-ack'}
         // Spring Boot 整合 RabbitMQ
         // ACK、NACK、Confirm、Return（消息可靠性）
         // 持久化、消费者模型、Prefetch
         // TTL、死信队列（DLX）、延迟消息
         // 幂等性、重复消费、失败重试
         // 性能优化、监控与企业实战
+      ]
+    }
+  ],
+  '/gradle/': [
+    {
+      text: '下载',
+      items: [
+        { text: 'Gradle 8.14 下载', link: '/gradle/' },
       ]
     }
   ],
@@ -481,6 +491,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     }
   ],
+  // Kotlin
+  // Flutter
+  // React Native
   // Kafka
   '/tools': [
     {
@@ -495,7 +508,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: 'Java实体类转换', link: '/tools/java-entity'},
         {text: '二维码生成', link: '/tools/to-qrcode'},
         {text: '日语翻译', link: '/tools/to-translate'},
-        {text: '图片 to SVG', link: '/tools/img-to-svg'}
+        {text: '图片 to SVG', link: '/tools/img-to-svg'},
+        {text: '图片转 PDF', link: '/tools/img-to-pdf'}
         // 图片转Canvas
         // word转pdf
         // 固定大小压缩包
