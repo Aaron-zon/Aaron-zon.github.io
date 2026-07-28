@@ -507,7 +507,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
         {text: '驼峰转换', link: '/tools/to-format-change'},
         {text: 'Java实体类转换', link: '/tools/java-entity'},
         {text: '二维码生成', link: '/tools/to-qrcode'},
-        {text: '日语翻译', link: '/tools/to-translate'},
+        // {text: '日语翻译', link: '/tools/to-translate'},
         {text: '图片 to SVG', link: '/tools/img-to-svg'},
         {text: '图片转 PDF', link: '/tools/img-to-pdf'}
         // 图片转Canvas
