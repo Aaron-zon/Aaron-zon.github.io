@@ -30,6 +30,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'Nuxt', link: '/nuxt/nuxt-intro' },
       { text: 'RabbitMQ', link: '/rabbitMQ/rabbitmq-intro' },
       { text: 'Gradle', link: '/gradle/' },
+      { text: 'ReactNative', link: '/reactNative/intro' },
     ]
   }
 ]
@@ -494,6 +495,15 @@ export const sidebar: ThemeConfig['sidebar'] = {
   // Kotlin
   // Flutter
   // React Native
+  '/reactNative': [
+    {
+      text: '基础',
+      items: [
+        { text: '入门', link: '/reactNative/intro' },
+        { text: 'React Navigation', link: '/reactNative/react-navigation' }
+      ]
+    }
+  ],
   // Kafka
   '/tools': [
     {
