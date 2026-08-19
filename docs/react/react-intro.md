@@ -29,3 +29,167 @@ React 起源于 Facebook 的内部项目。
 - Diff算法
 
 其实这些特性基本和 Vue 差不多，不过 Vue 提供了更多的语法糖。而 React 则让开发者更自由。他们的大部分周边和语法都是相似的在我的理解中仅是自动挡和手动挡的差别。
+
+## 生产项目结构
+
+```
+my-react-app/
+│
+├── public/
+│   ├── favicon.ico
+│   └── images/
+│
+├── src/
+│   │
+│   ├── assets/
+│   │   ├── images/
+│   │   └── fonts/
+│   │
+│   ├── components/
+│   │   ├── Button/
+│   │   │   ├── Button.tsx
+│   │   │   └── index.ts
+│   │   ├── Modal/
+│   │   ├── Table/
+│   │   └── Loading/
+│   │
+│   ├── features/
+│   │   ├── auth/
+│   │   │   ├── api/
+│   │   │   │   └── authApi.ts
+│   │   │   ├── components/
+│   │   │   │   ├── LoginForm.tsx
+│   │   │   │   └── RegisterForm.tsx
+│   │   │   ├── hooks/
+│   │   │   │   └── useAuth.ts
+│   │   │   ├── store/
+│   │   │   │   └── authSlice.ts
+│   │   │   └── types.ts
+│   │   │
+│   │   ├── users/
+│   │   │   ├── api/
+│   │   │   │   └── userApi.ts
+│   │   │   ├── components/
+│   │   │   │   ├── UserTable.tsx
+│   │   │   │   └── UserForm.tsx
+│   │   │   ├── hooks/
+│   │   │   └── types.ts
+│   │   │
+│   │   ├── products/
+│   │   │   ├── api/
+│   │   │   ├── components/
+│   │   │   ├── hooks/
+│   │   │   └── types.ts
+│   │   │
+│   │   └── orders/
+│   │   │   ├── api/
+│   │   │   ├── components/
+│   │   │   ├── hooks/
+│   │   │   └── types.ts
+│   │   |
+│   │   └── ...
+│   │
+│   ├── pages/
+│   │   ├── Login/
+│   │   │   └── LoginPage.tsx
+│   │   ├── Dashboard/
+│   │   │   └── DashboardPage.tsx
+│   │   ├── Users/
+│   │   │   └── UsersPage.tsx
+│   │   └── Orders/
+│   │       └── OrdersPage.tsx
+│   │
+│   ├── layouts/
+│   │   ├── MainLayout.tsx
+│   │   └── AuthLayout.tsx
+│   │
+│   ├── routes/
+│   │   └── index.tsx
+│   │
+│   ├── hooks/
+│   │   ├── useDebounce.ts
+│   │   └── useLocalStorage.ts
+│   │
+│   ├── services/
+│   │   ├── http.ts
+│   │   └── storage.ts
+│   │
+│   ├── store/
+│   │   ├── index.ts
+│   │   └── hooks.ts
+│   │
+│   ├── types/
+│   │   └── common.ts
+│   │
+│   ├── utils/
+│   │   ├── date.ts
+│   │   ├── format.ts
+│   │   └── validation.ts
+│   │
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── .env
+├── .env.development
+├── .env.production
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+- assets: 静态资源
+- components: 非业务的通用公共组件
+- features: 业务组件
+- pages: 页面
+- layouts: 布局
+- routes: 路由
+- hooks: Hook函数
+- services: 统一配置 Axios
+- store: 全局状态
+- types: 数据类型
+- utils: 工具函数
+- App.tsx: 根组件
+- main.tsx: 入口文件
+
+这个结构中比较关键的是 **features**。
+
+不使用传统的这种方式：
+
+```
+components/
+├── UserTable.tsx
+├── UserForm.tsx
+├── ProductTable.tsx
+├── ProductForm.tsx
+├── OrderTable.tsx
+├── OrderForm.tsx
+
+api/
+├── userApi.ts
+├── productApi.ts
+├── orderApi.ts
+
+hooks/
+├── useUser.ts
+├── useProduct.ts
+├── useOrder.ts
+```
+
+因为项目大了之后会发现，一个页面所需要的内容散落在整个 src 中，而使用 **features**，则让一个画面中的内容更加集中。
+
+## 模块
+
+- 样式
+- 显示数据
+- 条件渲染
+- 渲染列表
+- 事件响应
+- 界面更新
+- Hook
+- 组件间共享数据
+- 组件导入/导出
+- props
+- state
+- 状态管理
+- 脱围机制
