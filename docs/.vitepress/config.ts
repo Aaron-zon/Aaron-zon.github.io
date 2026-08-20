@@ -209,7 +209,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: '概览',
       items: [
-        { text: 'React 介绍', link: '/react/react-intro' }
+        { text: 'React 介绍', link: '/react/react-intro' },
+        { text: '组件间共享数据', link: '/react/组件间共享数据.md'}
       ]
     }
   ],
