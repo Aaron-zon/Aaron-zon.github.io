@@ -75,3 +75,15 @@ React Native 没有 XML 标签，而是使用 JavaScript 来定义样式。
     </Text>
 </View>
 ```
+
+## 生态
+
+- React Navigation
+- 状态管理（Zustand / Redux）
+- 服务端数据（TanStack Query）
+- UI 组件库
+- 本地数据存储
+- 网络请求
+- 权限
+- 通知 / 震动 / 蓝牙等原生能力
+- 工程化

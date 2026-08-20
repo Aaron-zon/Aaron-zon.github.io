@@ -209,3 +209,17 @@ hooks/
    ↓
 ⑭ 自定义 Hook
 ```
+
+## 生态
+
+- React Router
+- 状态管理（Zustand/Redux Toolkit）
+- 服务器数据（TanStack Query）
+- UI 组件库（Material UI/Ant Design/Chakra UI/...）
+- CSS / 样式（原生/Flexbox/Tailwind CSS原子化）
+- HTTP / API
+- 表单（React Hook Form/Zod）
+- Next.js
+- Jest
+- Vitest
+

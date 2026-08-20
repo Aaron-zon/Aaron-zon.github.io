@@ -30,6 +30,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'Nuxt', link: '/nuxt/nuxt-intro' },
       { text: 'RabbitMQ', link: '/rabbitMQ/rabbitmq-intro' },
       { text: 'Gradle', link: '/gradle/' },
+      { text: 'React', link: '/react/react-intro' },
       { text: 'ReactNative', link: '/reactNative/intro' },
     ]
   }
@@ -205,12 +206,19 @@ export const sidebar: ThemeConfig['sidebar'] = {
     // Script
     // Style
   ],
-  'React': [
+  '/react/': [
     {
-      text: '概览',
+      text: 'React',
       items: [
         { text: 'React 介绍', link: '/react/react-intro' },
-        { text: '组件间共享数据', link: '/react/组件间共享数据.md'}
+        { text: '组件间共享数据', link: '/react/组件间共享数据' },
+        { text: 'Hook', link: '/react/hook'}
+      ]
+    },
+    {
+      text: 'React Router',
+      items: [
+        { text: '声明式', link: '/react/ReactRouter/声明式模式'}
       ]
     }
   ],
@@ -459,7 +467,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     },
   ],
-  '/RabbitMQ/': [
+  '/rabbitMQ/': [
     {
       text: '基础',
       items: [
