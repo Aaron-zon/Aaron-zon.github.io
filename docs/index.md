@@ -10,6 +10,12 @@ hero:
     - theme: brand
       text: 文章
       link: /blog/index
+    - theme: brand
+      text: 工具
+      link: /tools/to-base64
+    - theme: brand
+      text: 笔记
+      link: /vue3/change-efficiency
 
 features:
   - title: Vue3
@@ -30,5 +36,14 @@ features:
   - title: Java
     details: Java 学习笔记
     link: /java/java-type
+  - title: Python
+    details: Python 学习笔记
+    link: /python/python-intro
+  - title: Nginx
+    details: Nginx 学习笔记
+    link: /nginx/nginx-intro
+  - title: Redis
+    details: Redis 学习笔记
+    link: /redis/redis-intro
 ---
 
