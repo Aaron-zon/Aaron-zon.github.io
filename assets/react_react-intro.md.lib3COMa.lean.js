@@ -1,4 +1,4 @@
-import{ax as n,A as a,aQ as p,z as l}from"./chunks/framework.BWRXlwpK.js";const h=JSON.parse('{"title":"React 介绍","description":"","frontmatter":{},"headers":[],"relativePath":"react/react-intro.md","filePath":"react/react-intro.md"}'),e={name:"react/react-intro.md"};function i(t,s,c,o,r,u){return l(),a("div",null,s[0]||(s[0]=[p(`<h1 id="react-介绍" tabindex="-1">React 介绍 <a class="header-anchor" href="#react-介绍" aria-label="Permalink to &quot;React 介绍&quot;">​</a></h1><p>React 起源于 Facebook 的内部项目。</p><p>是一个用于构建用户界面的 JavaScript 库，拥有较高的性能，代码逻辑简单，相比于 Vue 等框架更接近原生 JS。</p><p>在 React 中以 16.8 版本为分界点，前后有巨大的变化。</p><h2 id="重大更新节点" tabindex="-1">重大更新节点 <a class="header-anchor" href="#重大更新节点" aria-label="Permalink to &quot;重大更新节点&quot;">​</a></h2><ul><li>React 16：出现了 Fiber，整个更新变得可中断、可分片、具有优先级</li><li>React 16.8：推出了 Hooks，类组件正式向函数组件转变 <ul><li>在 16.8 以前，函数组件只能作为静态画面</li></ul></li><li>React 17：过渡版本，主要侧重于升级简化 React 本身</li><li>React 18： <ul><li>transition</li><li>Suspense</li><li>新的Hooks</li><li>Offscreen</li><li>...</li></ul></li></ul><h2 id="react-特性" tabindex="-1">React 特性 <a class="header-anchor" href="#react-特性" aria-label="Permalink to &quot;React 特性&quot;">​</a></h2><ul><li>声明式：画面和数据的单向绑定</li><li>组件化：可以将画面拆分成组件</li><li>跨平台：这部分指基于React开发的React Native 它可以开发移动端应用。</li><li>单向数据流：数据流从上（父组件）向下（子组件）流动，也就是说父组件可以影响子组件的数据，但子组件原则上不能影响父组件数据</li><li>虚拟 DOM</li><li>Diff算法</li></ul><p>其实这些特性基本和 Vue 差不多，不过 Vue 提供了更多的语法糖。而 React 则让开发者更自由。他们的大部分周边和语法都是相似的在我的理解中仅是自动挡和手动挡的差别。</p><h2 id="生产项目结构" tabindex="-1">生产项目结构 <a class="header-anchor" href="#生产项目结构" aria-label="Permalink to &quot;生产项目结构&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>my-react-app/</span></span>
+import{ax as n,A as a,aQ as p,z as l}from"./chunks/framework.BWRXlwpK.js";const h=JSON.parse('{"title":"React 介绍","description":"","frontmatter":{},"headers":[],"relativePath":"react/react-intro.md","filePath":"react/react-intro.md"}'),e={name:"react/react-intro.md"};function i(c,s,t,o,r,u){return l(),a("div",null,s[0]||(s[0]=[p(`<h1 id="react-介绍" tabindex="-1">React 介绍 <a class="header-anchor" href="#react-介绍" aria-label="Permalink to &quot;React 介绍&quot;">​</a></h1><p>React 起源于 Facebook 的内部项目。</p><p>是一个用于构建用户界面的 JavaScript 库，拥有较高的性能，代码逻辑简单，相比于 Vue 等框架更接近原生 JS。</p><p>在 React 中以 16.8 版本为分界点，前后有巨大的变化。</p><h2 id="重大更新节点" tabindex="-1">重大更新节点 <a class="header-anchor" href="#重大更新节点" aria-label="Permalink to &quot;重大更新节点&quot;">​</a></h2><ul><li>React 16：出现了 Fiber，整个更新变得可中断、可分片、具有优先级</li><li>React 16.8：推出了 Hooks，类组件正式向函数组件转变 <ul><li>在 16.8 以前，函数组件只能作为静态画面</li></ul></li><li>React 17：过渡版本，主要侧重于升级简化 React 本身</li><li>React 18： <ul><li>transition</li><li>Suspense</li><li>新的Hooks</li><li>Offscreen</li><li>...</li></ul></li></ul><h2 id="react-特性" tabindex="-1">React 特性 <a class="header-anchor" href="#react-特性" aria-label="Permalink to &quot;React 特性&quot;">​</a></h2><ul><li>声明式：画面和数据的单向绑定</li><li>组件化：可以将画面拆分成组件</li><li>跨平台：这部分指基于React开发的React Native 它可以开发移动端应用。</li><li>单向数据流：数据流从上（父组件）向下（子组件）流动，也就是说父组件可以影响子组件的数据，但子组件原则上不能影响父组件数据</li><li>虚拟 DOM</li><li>Diff算法</li></ul><p>其实这些特性基本和 Vue 差不多，不过 Vue 提供了更多的语法糖。而 React 则让开发者更自由。他们的大部分周边和语法都是相似的在我的理解中仅是自动挡和手动挡的差别。</p><h2 id="生产项目结构" tabindex="-1">生产项目结构 <a class="header-anchor" href="#生产项目结构" aria-label="Permalink to &quot;生产项目结构&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>my-react-app/</span></span>
 <span class="line"><span>│</span></span>
 <span class="line"><span>├── public/</span></span>
 <span class="line"><span>│   ├── favicon.ico</span></span>
@@ -116,4 +116,30 @@ import{ax as n,A as a,aQ as p,z as l}from"./chunks/framework.BWRXlwpK.js";const 
 <span class="line"><span>hooks/</span></span>
 <span class="line"><span>├── useUser.ts</span></span>
 <span class="line"><span>├── useProduct.ts</span></span>
-<span class="line"><span>├── useOrder.ts</span></span></code></pre></div><p>因为项目大了之后会发现，一个页面所需要的内容散落在整个 src 中，而使用 <strong>features</strong>，则让一个画面中的内容更加集中。</p><h2 id="模块" tabindex="-1">模块 <a class="header-anchor" href="#模块" aria-label="Permalink to &quot;模块&quot;">​</a></h2><ul><li>样式</li><li>显示数据</li><li>条件渲染</li><li>渲染列表</li><li>事件响应</li><li>界面更新</li><li>Hook</li><li>组件间共享数据</li><li>组件导入/导出</li><li>props</li><li>state</li><li>状态管理</li><li>脱围机制</li></ul>`,18)]))}const m=n(e,[["render",i]]);export{h as __pageData,m as default};
+<span class="line"><span>├── useOrder.ts</span></span></code></pre></div><p>因为项目大了之后会发现，一个页面所需要的内容散落在整个 src 中，而使用 <strong>features</strong>，则让一个画面中的内容更加集中。</p><h2 id="模块" tabindex="-1">模块 <a class="header-anchor" href="#模块" aria-label="Permalink to &quot;模块&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>① JSX</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>② 组件</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>③ 组件导入 / 导出</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>④ 显示数据</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>⑤ 条件渲染</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>⑥ 列表渲染</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>⑦ 事件响应</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>⑧ useState</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>⑨ Props</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>⑩ Context / useContext</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>⑪ useEffect</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>⑫ useRef</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>⑬ 表单</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>⑭ 自定义 Hook</span></span></code></pre></div>`,18)]))}const m=n(e,[["render",i]]);export{h as __pageData,m as default};
