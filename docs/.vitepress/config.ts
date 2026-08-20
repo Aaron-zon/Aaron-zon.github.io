@@ -220,6 +220,12 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: '声明式', link: '/react/ReactRouter/声明式模式'}
       ]
+    },
+    {
+      text: 'Zustand',
+      items: [
+        { text: 'Zustand', link: '/react/Zustand/intro'}
+      ]
     }
   ],
   '/css/': [
