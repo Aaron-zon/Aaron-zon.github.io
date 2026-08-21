@@ -218,7 +218,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'React Router',
       items: [
-        { text: '声明式', link: '/react/ReactRouter/声明式模式'}
+        { text: '声明式', link: '/react/ReactRouter/声明式模式' },
+        { text: '数据模式', link: '/react/ReactRouter/数据模式' },
       ]
     },
     {
@@ -226,7 +227,13 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: 'Zustand', link: '/react/Zustand/intro'}
       ]
-    }
+    },
+    // {
+    //   text: 'TanStack Query',
+    //   items: [
+    //     { text: 'TanStack Query', link: '/react/TanStackQuery/intro'}
+    //   ]
+    // }
   ],
   '/css/': [
     {
