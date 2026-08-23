@@ -276,6 +276,19 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'loader 处理实例', link: '/webpack/webpack-loader-example'},
         { text: 'plugin', link: '/webpack/webpack-plugin'},
       ]
+    },
+    {
+      text: 'vite',
+      items: [
+        { text: '介绍', link: '/webpack/vite/intro' },
+        { text: '基本配置', link: '/webpack/vite/config' },
+      ]
+    },
+    {
+      text: 'Rollup',
+      items: [
+        { text: '介绍', link: '/webpack/rollup/intro' },
+      ]
     }
   ],
   '/node/': [
