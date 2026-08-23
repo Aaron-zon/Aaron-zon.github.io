@@ -282,6 +282,8 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: '介绍', link: '/webpack/vite/intro' },
         { text: '基本配置', link: '/webpack/vite/config' },
+        { text: '与webpack对比', link: '/webpack/vite/compare' },
+
       ]
     },
     {
