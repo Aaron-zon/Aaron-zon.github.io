@@ -265,10 +265,16 @@ export const sidebar: ThemeConfig['sidebar'] = {
     {
       text: 'webpack',
       items: [
-        { text: 'webpack 介绍', link: '/webpack/webpack-intro'},
+        { text: '介绍', link: '/webpack/webpack-intro'},
+        { text: '安装', link: '/webpack/webpack-insert'},
+        { text: '前端自动化构建工具', link: '/webpack/webpack-introduce'},
         { text: '配置文件', link: '/webpack/webpack-config'},
+        { text: 'devtool配置', link: '/webpack/webpack-devtool'},
         { text: '编译过程', link: '/webpack/webpack-process'},
         { text: '入口和出口', link: '/webpack/webpack-entry-and-output'},
+        { text: 'loader', link: '/webpack/webpack-loader'},
+        { text: 'loader 处理实例', link: '/webpack/webpack-loader-example'},
+        { text: 'plugin', link: '/webpack/webpack-plugin'},
       ]
     }
   ],
