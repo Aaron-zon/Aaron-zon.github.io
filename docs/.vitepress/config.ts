@@ -32,6 +32,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'Gradle', link: '/gradle/' },
       { text: 'React', link: '/react/react-intro' },
       { text: 'ReactNative', link: '/reactNative/intro' },
+      { text: 'QA', link: '/qa/vue' },
     ]
   }
 ]
@@ -567,6 +568,14 @@ export const sidebar: ThemeConfig['sidebar'] = {
         // 图片转Canvas
         // word转pdf
         // 固定大小压缩包
+      ]
+    }
+  ],
+  '/qa': [
+    {
+      text: 'qa',
+      items: [
+        { text: 'vue', link: '/qa/vue' },
       ]
     }
   ]
