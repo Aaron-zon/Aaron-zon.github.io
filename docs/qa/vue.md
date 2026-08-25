@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # vue
 
 ## `v-if` 和 `v-show` 的区别
@@ -96,7 +100,6 @@ TypeScript：组合式提供了更友好的支持。
 
 选项式更适合简单组件和传统 Vue 项目，而组合式更适合复杂业务和大型项目，他最大的优势是可以按照业务逻辑组织代码，并通过组合式函数进行复用。
 
-## Options API 和 Composition API 的底层区别
 
 ## Vue 3 响应式和 Vue 2 有什么区别？
 
@@ -131,6 +134,82 @@ Vue3 使用 `Proxy` 实现响应式，可以完美监听到数组的变化，同
 适用于数据变化后执行副作用。
 
 `普通方法` 每次调用都会执行，没有如 `computed` 的缓存机制。
+
+## ref 和 reactive 的区别
+
+- ref: 可以保存基本类型和对象
+- reactive: 只能用于对象类型
+- ref 通过 `.value` 访问
+- reactive 可以直接访问
+
+- ref 不能解构，reactive 可以
+- ref 可以使用 `toRef` 转换成响应式对象
+- reactive 不能转换成 ref
+
+## 模板中 ref 为什么不需要 `.value`
+
+在模板中，ref可以自动解包。
+
+```vue
+<div> {{ count }} </div>
+```
+
+## watch 和 watchEffect
+
+|          | watch | watchEffect |
+| -------- | ----- | ----------- |
+| 是否明确指定依赖 | 是     | 自动收集        |
+| 第一次执行    | 默认不执行 | 默认执行        |
+| 获取旧值     | 可以    | 不方便         |
+| 使用场景     | 精确监听  | 自动监听        |
+
+## nextTick 是什么？
+
+```js
+count.value++
+
+console.log(document.querySelector('#app').innerText)
+```
+
+此时 DOM 可能还没更新，log打印出的可能不是想要的值。
+
+可以使用 nextTick 强制更新：
+
+```js
+await nextTick()
+```
+
+## keep-alive 缓存组件
+
+```vue
+<KeepAlive>
+  <Component />
+</KeepAlive>
+```
+
+作用：缓存组件实例，避免组件频繁销毁和重新创建。
+
+相关生命周期：
+- onActivated
+- onDeactivated
+
+## Teleport
+
+```vue
+<Teleport to="body">
+  <Dialog />
+</Teleport>
+```
+
+作用：**将组件的 DOM 渲染到执行位置，但组件逻辑上的父子关系仍然保持。**
+
+这里就是将 `<Dialog />` 组件渲染到 body 下，而不是当前组件下。
+
+常用于
+
+- 模态框
+- 通知弹窗
+
 
 ## Vue组件传值
 
@@ -335,35 +414,6 @@ role = admin
 sessionId=abc123
 ```
 
-## 防抖和节流
-
-### 防抖
-
-防抖：连续出发时不断重新计时，只有停止触发一段时间后菜执行。
-
-例如：
-
-```
-输入框搜索
-
-a
-ab
-abc
-```
-
-只在用户停止输入后才去请求。
-
-适合：
-
-- 搜索
-- 表单校验
-- 窗口 resize
-
-### 节流
-
-节流：一段时间内最多执行一次。
-
-例如：更新按钮，在请求回来前不允许再次触发。
 
 ## Webpack 和 Vite 是干什么的？
 
@@ -481,60 +531,6 @@ VNode
 
 > 虚拟 DOM 是一种 UI 抽象和更新机制，可以帮助框架进行高效更新，同时提高渲染层的可移植性。
 
-## 盒模型
-
-一个元素由：
-
-```
-┌─────────────────────┐
-│       margin        │
-│  ┌───────────────┐  │
-│  │    border     │  │
-│  │ ┌───────────┐ │  │
-│  │ │  padding  │ │  │
-│  │ │ ┌───────┐ │ │  │
-│  │ │ │content│ │ │  │
-│  │ │ └───────┘ │ │  │
-│  │ └───────────┘ │  │
-│  └───────────────┘  │
-└─────────────────────┘
-```
-
-组成：
-
-- content：内容
-- padding：内边距
-- border：边框
-- margin：外边距
-
-### box-sizing
-
-默认：
-
-```css
-box-sizing: content-box;
-```
-
-此时:
-
-```
-实际宽度 = width + padding + border
-实际高度 = height + padding + border
-```
-如果：
-
-```
-box-sizing: border-box
-```
-
-那么：
-
-```
-width = content width + padding + border
-height = content height + padding + border
-```
-
-实际开发中经常使用 `box-sizing: border-box` 来设置盒模型。
 
 ## v-deep 是什么？
 
@@ -772,10 +768,511 @@ import { ref } from 'vue'
 
 不使用的功能可以被 Tree Shaking 掉。
 
-### Composition API
+### 组合式 API（Composition API）
 
 提高复杂业务代码的：
 
 - 复用性
 - 可维护性
 - TypeScript 支持
+
+## Vue 插槽有哪些
+
+常见有三种：
+
+- 默认插槽
+- 具名插槽
+- 作用域插槽
+
+### 默认插槽
+
+子组件：
+
+```vue
+<slot />
+```
+
+父组件：
+
+```vue
+<Child>
+  Hello
+</Child>
+```
+
+### 具名插槽
+
+子组件：
+
+```vue
+<slot name="header" />
+<slot name="footer" />
+```
+
+父组件：
+
+```vue
+<template #header>
+  Header
+</template>
+
+<template #footer>
+  Footer
+</template>
+```
+
+### 作用域插槽
+
+子组件向父组件传数据：
+
+```vue
+<slot :user="user" />
+```
+
+父组件：
+
+```vue
+<template #default="{ user }">
+  {{ user.name }}
+</template>
+```
+
+> 子组件提供数据，父组件决定怎么渲染。
+
+## Vue 更新机制
+
+Vue 的响应式更新不是数据一改变就立刻执行 DOM 更新。
+
+例如：
+
+```js
+count.value = 1
+count.value = 2
+count.value = 3
+```
+
+Vue 不会：
+
+```
+count = 1
+count = 2
+count = 3
+     ↓
+调度更新
+     ↓
+异步执行
+     ↓
+render
+     ↓
+DOM 更新
+```
+
+而是：
+
+```
+count = 1
+count = 2
+count = 3
+     ↓
+调度更新
+     ↓
+异步执行
+     ↓
+render
+     ↓
+DOM 更新
+```
+
+也就是说，**Vue 会对更新任务进行调度和批处理（batching）**。
+
+## Vue 是怎么实现异步更新的？
+
+Vue内部有一个 **scheduler（调度器）**
+
+当响应式数据发生变化的时候不会立即执行组件更新，而是把更新任务放入队列中。
+
+然后通过：
+
+```js
+Promise.resolve().then(...)
+```
+
+把刷新任务安排到微任务中执行。
+
+简化理解：
+
+```js
+// 更新队列
+let queue = []
+
+// 响应式数据更新
+function update() {
+    queueJob(job)
+}
+
+// 将更新任务放入队列
+function queueJob(job) {
+    queue.push(job)
+
+    // 把刷新任务放到微任务中。
+    Promise.resolve().then(flushJobs)
+}
+```
+
+## 为什么 Vue 要异步更新？
+
+```js
+state.count++
+state.count++
+state.count++
+```
+
+如果每次修改都更新DOM，那么就会造成大量的无意义的DOM操作，影响性能，因为用户最终想要看到的只是最后一条结束后画面的样子，中间过程本就看不到。
+
+所以Vue会进行 **批量更新/去重更新**，把多次同步状态修改合并成一次更新。
+
+```
+同步代码开始
+    ↓
+修改 count = 1
+    ↓
+加入更新队列
+
+修改 count = 2
+    ↓
+已经有更新任务
+    ↓
+不重复添加
+
+修改 count = 3
+    ↓
+继续合并
+    ↓
+同步代码执行结束
+    ↓
+Promise 微任务
+    ↓
+flushJobs
+    ↓
+组件 render
+    ↓
+Diff
+    ↓
+DOM 更新
+```
+
+> Vue 的异步更新机制主要是为了批量处理状态变化，通过 scheduler 将更新任务放入队列并在当前同步任务执行完成后统一刷新，从而避免同一个事件循环中多次状态修改导致重复渲染，提高更新效率。
+
+## 详细的Vue异步更新
+
+例子：
+
+```js
+count.value = 1
+count.value = 2
+count.value = 3
+```
+
+流程：
+
+```
+同步代码开始
+↓
+count.value = 1
+↓
+得到影响范围 →  得到当前数据变化所影响的更新任务
+↓
+更新任务不存在 →  加入将更新任务队列
+↓
+放入微任务
+↓
+修改 count = 2
+↓
+得到影响范围 →  得到当前数据变化所影响的更新任务
+↓
+更新任务已存在 → 不重复加入
+↓
+修改 count = 3
+↓
+得到影响范围 →  得到当前数据变化所影响的更新任务
+↓
+更新任务已存在 → 不重复加入
+↓
+同步代码结束
+↓
+执行微任务 flushJobs
+↓
+重新 render
+↓
+获取新旧虚拟 DOM，进行Diff
+↓
+DOM 更新
+```
+
+## Vue Router
+
+### 路由守卫
+
+- 全局守卫
+- 路由独享守卫
+- 组件守卫
+- beforeEach
+- beforeResolve
+- afterEach
+
+```js
+router.beforeEach((to, from) => {})
+```
+
+### 路由权限如何实现
+
+```
+登录
+ ↓
+获取用户信息
+ ↓
+获取角色
+ ↓
+获取权限
+ ↓
+动态路由
+ ↓
+路由守卫
+ ↓
+判断是否允许访问
+```
+
+### Hash 和 History
+
+```
+Hash
+/#/user
+
+History
+/user
+```
+
+区别：
+
+- URL
+- SEO
+- 服务端配置
+- 浏览器兼容性
+- 部署方式
+
+## 状态管理
+
+### 为甚恶魔需要状态管理
+
+```
+    组件A       →       组件B
+      ↓                  ↓
+    A子组件             B子组件
+
+```
+
+如果A子组件要传值到B子组件，传统的方式需要层层传递，非常麻烦。
+
+所以可以:
+
+```
+        Pinia
+       ↙     ↘
+   组件 A    组件 B
+```
+
+### Pinia 和 Vuex 的区别
+
+- API更简单
+- Composition API 友好
+- TypeScript 支持更好
+- 没有 mutations
+- store 更灵活
+
+## 盒模型
+
+一个元素由：
+
+```
+┌─────────────────────┐
+│       margin        │
+│  ┌───────────────┐  │
+│  │    border     │  │
+│  │ ┌───────────┐ │  │
+│  │ │  padding  │ │  │
+│  │ │ ┌───────┐ │ │  │
+│  │ │ │content│ │ │  │
+│  │ │ └───────┘ │ │  │
+│  │ └───────────┘ │  │
+│  └───────────────┘  │
+└─────────────────────┘
+```
+
+组成：
+
+- content：内容
+- padding：内边距
+- border：边框
+- margin：外边距
+
+### box-sizing
+
+默认：
+
+```css
+box-sizing: content-box;
+```
+
+此时:
+
+```
+实际宽度 = width + padding + border
+实际高度 = height + padding + border
+```
+如果：
+
+```
+box-sizing: border-box
+```
+
+那么：
+
+```
+width = content width + padding + border
+height = content height + padding + border
+```
+
+实际开发中经常使用 `box-sizing: border-box` 来设置盒模型。
+
+## 防抖和节流
+
+### 防抖
+
+防抖：连续出发时不断重新计时，只有停止触发一段时间后菜执行。
+
+例如：
+
+```
+输入框搜索
+
+a
+ab
+abc
+```
+
+只在用户停止输入后才去请求。
+
+适合：
+
+- 搜索
+- 表单校验
+- 窗口 resize
+
+### 节流
+
+节流：一段时间内最多执行一次。
+
+例如：更新按钮，在请求回来前不允许再次触发。
+
+## var、let、const
+
+| 特性        | `var` | `let`     | `const`   |
+| --------- | ----- | --------- | --------- |
+| 作用域       | 函数作用域 | 块级作用域     | 块级作用域     |
+| 变量提升      | 有     | 有，但不能提前访问 | 有，但不能提前访问 |
+| 暂时性死区 TDZ | ❌     | ✅         | ✅         |
+| 同一作用域重复声明 | ✅     | ❌         | ❌         |
+| 重新赋值      | ✅     | ✅         | ❌         |
+| 必须初始化     | ❌     | ❌         | ✅         |
+
+
+## 闭包
+
+> 闭包：一个函数能够记住并访问它定义时所在作用域中的变量，即使这个函数已经离开了原来的作用域。
+
+最简单的例子就是一个方法A返回另一个方法B，且方法B中含有方法A中创建的变量。
+
+## Promise
+
+## async / await
+
+## 事件循环
+
+## 原型链
+
+## this
+
+## ES6
+
+```
+解构
+展开运算符
+模板字符串
+箭头函数
+Promise
+async/await
+Map
+Set
+Symbol
+Iterator
+Generator
+Proxy
+Reflect
+```
+
+## 浏览器输入URL发生了什么
+
+## 重排和重绘
+
+## 强缓存和协商缓存
+
+
+## HTTP
+
+- GET 和 POST
+- PUT / PATCH / DELETE
+- HTTP 状态码
+
+```
+200
+201
+204
+
+301
+302
+304
+
+400
+401*
+403*
+404
+405
+
+500
+502
+503
+504
+```
+
+- 401 → 没有认证 / 登录状态无效
+- 403 → 已经认证，但是没有权限
+
+## 前端性能优化
+
+- 代码分割
+- 懒加载
+- Tree Shaking
+- 图片压缩
+- WebP
+- CDN
+- 缓存
+- gzip / Brotli
+- 预加载
+- 预连接
+- 减少 JS
+- 减少 DOM
+- 虚拟列表
+- 防抖节流
+
+## 安全
+

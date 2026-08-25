@@ -576,6 +576,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: 'qa',
       items: [
         { text: 'vue', link: '/qa/vue' },
+        { text: 'react', link: '/qa/react' },
+        { text: 'java', link: '/qa/java' },
+        { text: 'java', link: '/qa/project' },
       ]
     }
   ]
