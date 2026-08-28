@@ -1,5 +1,38 @@
 import { defineConfig } from 'vitepress'
 import type { Config as ThemeConfig } from '@vue/theme'
+import { readdirSync, statSync, writeFileSync } from 'node:fs'
+import { join } from 'node:path'
+
+// 站点对外地址（GitHub Pages）
+const siteUrl = 'https://aaron-zon.github.io'
+
+// 递归收集 dist 下所有 .html 文件（排除 index.html 和 404.html）
+function collectHtmlFiles(dir: string, base: string, list: string[] = []) {
+  for (const name of readdirSync(dir)) {
+    const full = join(dir, name)
+    const stat = statSync(full)
+    if (stat.isDirectory()) {
+      collectHtmlFiles(full, base, list)
+    } else if (name.endsWith('.html') && name !== '404.html' && name !== 'index.html') {
+      list.push(full.slice(base.length + 1).replace(/\\/g, '/'))
+    }
+  }
+  return list
+}
+
+// 构建结束时生成 sitemap.xml
+function generateSitemap(outDir: string) {
+  const files = collectHtmlFiles(outDir, outDir)
+  const urls = files
+    .map((f) => `  <url>\n    <loc>${siteUrl}/${f}</loc>\n  </url>`)
+    .join('\n')
+  const xml =
+    '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    urls +
+    '\n</urlset>\n'
+  writeFileSync(join(outDir, 'sitemap.xml'), xml)
+}
 
 const nav: ThemeConfig['nav'] = [
   {
@@ -586,11 +619,44 @@ export const sidebar: ThemeConfig['sidebar'] = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Blog",
-  description: "我的博客和文档",
+  lang: 'zh-CN',
+  title: 'Aaron Notes - 技术笔记与踩坑记录',
+  description: '前端开发笔记、Vue3、JavaScript、Java、Android、Docker、Redis、Linux 等技术的实战经验与踩坑记录',
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vite.svg' }],
+    ['meta', { name: 'author', content: 'Aaron-zon' }],
+    ['meta', { property: 'og:site_name', content: 'Aaron Notes' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:image', content: `${siteUrl}/vite.svg` }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
   ],
+  // 页面底部与 sitemap 展示最近更新时间（基于 git 记录）
+  lastUpdated: true,
+  // 每个页面生成独立的 canonical / og:url 等标签，利于搜索引擎理解唯一地址
+  transformHead({ pageData }) {
+    const relativePath = (pageData.relativePath || '').replace(/\\/g, '/')
+    const url =
+      relativePath === 'index.md'
+        ? siteUrl
+        : `${siteUrl}/${relativePath.replace(/\.md$/, '.html')}`
+    const head: any[] = [
+      ['link', { rel: 'canonical', href: url }],
+      ['meta', { property: 'og:url', content: url }],
+      ['meta', { property: 'og:title', content: pageData.title }],
+    ]
+    if (pageData.description) {
+      head.push(['meta', { property: 'og:description', content: pageData.description }])
+    }
+    if (pageData.lastUpdated) {
+      const iso = new Date(pageData.lastUpdated).toISOString()
+      head.push(['meta', { property: 'article:published_time', content: iso }])
+    }
+    return head
+  },
+  // 构建完成后生成 sitemap.xml
+  buildEnd(siteConfig) {
+    generateSitemap(siteConfig.outDir)
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav,

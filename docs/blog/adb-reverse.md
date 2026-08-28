@@ -1,6 +1,15 @@
-# ADB reverse解决不同网段app无法调用接口的问题
+---
+title: ADB reverse 端口转发解决不同网段 App 无法调用接口的问题
+description: 电脑网口与手机 WiFi 不在同一网段时，Android App 无法访问电脑本地接口。本文讲解 adb reverse 端口转发原理与步骤，通过 USB 让手机直接访问电脑 localhost 服务，适用于 Android App 和 WebView 调试场景。
+---
 
-换新公司后网口和wifi不在一个网段，导致我的接口无法正常调用。无线网卡还没到只能先用这种方式凑合一下了。
+# ADB reverse 端口转发解决不同网段 App 无法调用接口的问题
+
+> 本文介绍 **adb reverse（端口转发）** 的用法，解决 Android 手机与电脑不在同一网段时，**App 无法访问电脑本地接口**（localhost 后台服务）的问题。
+
+换新公司后网口和 wifi 不在一个网段，导致我的接口无法正常调用。无线网卡还没到只能先用这种方式凑合一下了。
+
+**适用场景**：手机 App 联调时，电脑连的是网口、手机连的是 WiFi，两者不在同一网段，App 直接访问电脑 IP 会超时。此时可以用 USB 连接 + `adb reverse` 把手机端口转发到电脑端口。
 
 ## 准备
 
