@@ -578,7 +578,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
       text: '基础',
       items: [
         { text: '入门', link: '/reactNative/intro' },
-        { text: 'React Navigation', link: '/reactNative/react-navigation' }
+        { text: 'React Navigation（expo-router）', link: '/reactNative/react-navigation' },
+        { text: 'Stack', link: '/reactNative/stack' }
+
       ]
     }
   ],

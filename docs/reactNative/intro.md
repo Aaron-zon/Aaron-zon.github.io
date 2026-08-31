@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # 入门
 
 ## 什么是 React Native
