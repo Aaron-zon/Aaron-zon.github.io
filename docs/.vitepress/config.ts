@@ -65,7 +65,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'Gradle', link: '/gradle/' },
       { text: 'React', link: '/react/react-intro' },
       { text: 'ReactNative', link: '/reactNative/intro' },
-      { text: 'QA', link: '/qa/vue' },
+      // { text: 'QA', link: '/qa/vue' },
     ]
   }
 ]
