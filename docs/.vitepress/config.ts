@@ -44,27 +44,38 @@ const nav: ThemeConfig['nav'] = [
     link: '/tools/to-base64'
   },
   {
-    text: '笔记',
+    text: '后端',
     items: [
-      { text: 'javaScript', link: '/js/js-intro'},
-      { text: 'java', link: '/java/java-type'},
-      { text: 'vue3', link: '/vue3/change-efficiency' },
-      { text: 'css', link: '/css/css-selector' },
-      { text: 'webpack', link: '/webpack/webpack-intro' },
-      { text: 'node', link: '/node/node-global'},
-      { text: 'python', link: '/python/python-intro' },
-      { text: 'docker', link: '/docker/docker-intro' },
-      { text: 'AI', link: '/ai/ai-intro' },
-      { text: 'langChain', link: '/langChain/langchain-env' },
-      { text: 'linux', link: '/linux/linux-intro' },
-      { text: 'nginx', link: '/nginx/nginx-intro' },
-      { text: 'redis', link: '/redis/redis-intro' },
-      { text: 'dart', link: '/dart/dart-intro' },
-      { text: 'Nuxt', link: '/nuxt/nuxt-intro' },
+      { text: 'Java', link: '/java/java-type'},
+      { text: 'Node', link: '/node/node-global'},
+      { text: 'Python', link: '/python/python-intro' },
+      { text: 'Dart', link: '/dart/dart-intro' },
+      { text: 'Docker', link: '/docker/docker-intro' },
+      { text: 'Linux', link: '/linux/linux-intro' },
+      { text: 'Nginx', link: '/nginx/nginx-intro' },
+      { text: 'Redis', link: '/redis/redis-intro' },
       { text: 'RabbitMQ', link: '/rabbitMQ/rabbitmq-intro' },
-      { text: 'Gradle', link: '/gradle/' },
+
+    ]
+  },
+  {
+    text: '前端',
+    items: [
+      { text: 'JavaScript', link: '/js/js-intro'},
+      { text: 'Css', link: '/css/css-selector' },
+      { text: 'Vue3', link: '/vue3/change-efficiency' },
       { text: 'React', link: '/react/react-intro' },
       { text: 'ReactNative', link: '/reactNative/intro' },
+      { text: 'Webpack', link: '/webpack/webpack-intro' },
+      { text: 'Nuxt', link: '/nuxt/nuxt-intro' },
+    ]
+  },
+  {
+    text: 'AI',
+    items: [
+      { text: 'AI', link: '/ai/ai-intro' },
+      { text: 'langChain', link: '/langChain/langchain-env' },
+      // { text: 'Gradle', link: '/gradle/' },
       // { text: 'QA', link: '/qa/vue' },
     ]
   }
