@@ -593,7 +593,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: 'Stack', link: '/reactNative/stack' },
         { text: 'Tabs', link: '/reactNative/tabs' }
 
-        // tabs
+        // 列表
+        // FlatList
+        // 状态栏
+        // galex
       ]
     }
   ],
@@ -657,7 +660,7 @@ export const sidebar: ThemeConfig['sidebar'] = {
   //       { text: '原生插件' },
   //     ]
   //   }
-  ]
+  // ]
   // '/qa': [
   //   {
   //     text: 'qa',
