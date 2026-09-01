@@ -590,8 +590,10 @@ export const sidebar: ThemeConfig['sidebar'] = {
       items: [
         { text: '入门', link: '/reactNative/intro' },
         { text: 'React Navigation（expo-router）', link: '/reactNative/react-navigation' },
-        { text: 'Stack', link: '/reactNative/stack' }
+        { text: 'Stack', link: '/reactNative/stack' },
+        { text: 'Tabs', link: '/reactNative/tabs' }
 
+        // tabs
       ]
     }
   ],
@@ -617,6 +619,45 @@ export const sidebar: ThemeConfig['sidebar'] = {
       ]
     }
   ],
+  '/Next': [
+    {
+      text: 'Next',
+      items: [
+
+      ]
+    }
+  ]
+  // '/uniapp': [
+  //   {
+  //     text: 'uniapp',
+  //     items: [
+  //       { text: '页面生命周期' },
+  //       { text: '内置组件' },
+  //       { text: '扩展组件' },
+  //       { text: '自定义组件' },
+  //       { text: '组件传值' },
+  //       { text: '页面跳转' },
+  //       { text: 'uniapp API' },
+  //       { text: '本地存储' },
+  //       { text: '设备能力' },
+  //       { text: '条件编译' },
+  //       { text: '跨平台差异' },
+  //       { text: '状态管理' },
+  //       { text: 'UI组件库' },
+  //       { text: '移动端布局' },
+  //       { text: '导肮/tabBar' },
+  //       { text: '文件/图片/视频/音频' },
+  //       { text: '网络请求与登录' },
+  //       { text: 'pages.json配置项' },
+  //       { text: 'manifest.json配置项' },
+  //       { text: '权限' },
+  //       { text: '小程序打包' },
+  //       { text: '分包' },
+  //       // 长列表、分包、图片
+  //       { text: '原生插件' },
+  //     ]
+  //   }
+  ]
   // '/qa': [
   //   {
   //     text: 'qa',

@@ -315,9 +315,16 @@ nodeLinker: hoisted
 pn i
 ```
 
+## 包安装
 
+在 react native 中，当我们要安装一个包，且包的开头是 `@expo/` 时不要直接通过包管理器安装。
 
+如：`@expo/vector-icons`
 
+当我们要安装他时应该使用：
 
+```bash
+pn expo install @expo/vector-icons
+```
 
-
+这样安装有一个好处是 **Expo** 会自动帮我们检测匹配当前这个 `react native` 和 `expo` 的版本，不会出现兼容性的问题。
