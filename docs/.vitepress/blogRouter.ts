@@ -24,5 +24,7 @@ export const blogRouter = {
     { text: 'ADB reverse解决不同网段app无法调用接口的问题', link: 'adb-reverse'},
     { text: 'Android WebView 调试', link: 'android-webview-debug' },
     { text: 'UUID', link: 'uuid' },
+    { text: 'tailwind css', link: 'tailwindcss' },
+
   ]
 }
