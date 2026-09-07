@@ -591,7 +591,9 @@ export const sidebar: ThemeConfig['sidebar'] = {
         { text: '入门', link: '/reactNative/intro' },
         { text: 'React Navigation（expo-router）', link: '/reactNative/react-navigation' },
         { text: 'Stack', link: '/reactNative/stack' },
-        { text: 'Tabs', link: '/reactNative/tabs' }
+        { text: 'Tabs', link: '/reactNative/tabs' },
+        { text: '列表', link: '/reactNative/list' },
+        { text: '状态栏', link: '/reactNative/status-bar'}
 
         // 列表
         // FlatList
