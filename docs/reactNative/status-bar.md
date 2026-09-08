@@ -295,8 +295,8 @@ export default function () {
 
 | 属性 | 效果 | 
 | ---- | ---- |
-| animated | 如果状态栏属性更改之间的过渡需要动画效果。支持 `style` 和 `hidden`。|
+| animated | 如果状态栏属性更改之间的过渡需要动画效果。支持 `style` 和 `hidden`。 |
 | hidden | 控制状态栏显示隐藏 |
-| hideTransitionAnimation | 使用 `hidden` 属性显示和隐藏状态栏时的过渡效果。|
+| hideTransitionAnimation | 使用 `hidden` 属性显示和隐藏状态栏时的过渡效果。 |
 | style | 设置状态栏文本的颜色。默认值会 `auto` 根据当前激活的配色方案选择合适的值，例如：如果您的应用处于深色模式，则样式将为`light`。 |
 
