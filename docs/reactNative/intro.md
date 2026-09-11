@@ -22,7 +22,11 @@ outline: deep
 ## 创建项目
 
 ```bash
-pnpm create-expo-app@latest
+npm create-expo-app@latest
+
+# 或
+
+pnpm create expo-app
 ```
 
 **项目初始文件十分复杂可以reset画面，以简化复杂度**
@@ -72,6 +76,18 @@ npm run start
 并且确保服务器与手机在同一个网络中。
 
 如果要在浏览器打开，只需在浏览器中输入 `pn start` 运行成功后提供的网址即可。
+
+## 简化项目
+
+项目创建后默认会有一个相对复杂的示例，通过命令可以简化项目
+
+```bash
+pn reset-project
+```
+
+Do you want to move existing files to /example instead of deleting them?(是否要将现有文件移动到/example，而不是删除它们？)
+
+这里选择 `y` 会创建一个 /example 文件夹来存放原本的示例，不想要也可以删除。
 
 ## 常用组件
 
@@ -307,6 +323,22 @@ pnpm add react-native-css-interop
 
 ```yaml
 nodeLinker: hoisted
+```
+
+如：
+
+```yaml
+nodeLinker: hoisted
+minimumReleaseAgeExclude:
+  - "@expo/cli@57.0.23"
+  - "@expo/metro-file-map@57.0.3"
+  - "@expo/ui@57.0.17"
+  - babel-preset-expo@57.0.11
+  - expo-glass-effect@57.0.2
+  - expo-modules-core@57.0.17
+  - expo-modules-jsi@57.1.0
+  - expo-router@57.0.20
+  - expo@57.0.21
 ```
 
 随后删除 `node_modules` 目录，重新安装依赖：
